@@ -3,6 +3,20 @@ from fastapi.security import OAuth2PasswordBearer
 from firebase_admin import auth, credentials
 import firebase_admin
 
+from .database import SessionLocal # Importamos nuestra SessionLocal
+# --- Dependencia para la Sesión de BD ---
+def get_db():
+    """
+    Esta fun crea una sesion de base de datos por cada petición
+    y se asegura de cerrarla al terminar.
+    """
+    db = SessionLocal()
+
+    try:
+        yield db # "yield" entrega la sesioj a la dun del endpoint
+    finally:
+        db.close() # Esto se ejecuta al final, cerrando la sesión
+# --------------------------------------
 #es necesario el archivo de credenciales de firebase
 try:
     cred = credentials.Certificate("firebase-service-account.json")
