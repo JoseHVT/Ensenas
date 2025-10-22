@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+mysqlclient
+firebase-admin
+alembic
+python-dotenv
+PyMySQL
