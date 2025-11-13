@@ -1,0 +1,154 @@
+# Backend de EnSeñas (FastAPI)
+
+Este repositorio contiene el backend para la aplicación movil "EnSeñas", un sistema para el aprendizaje de Lengua de Señas Mexicana (LSM).
+
+Esta construido con **FastAPI**, **SQLAlchemy** (con una base de datos SQLite para desarrollo) y se integra con **Firebase Auth** para la autenticacion.
+
+
+##primer commit 
+
+## Estado Actual: ¡Funcional!
+
+En este commit, la API implementa:
+* Conexion a la base de datos y creacion automatica de todas las tablas (`User`, `Module`, `Lesson`, `Quiz`, etc.).
+* Estructura de proyecto modularizada (carpetas `routers`, `crud`, `models`, `schemas`).
+* Autenticacion de Firebase (`get_current_user`) para proteger endpoints.
+* Endpoint protegido `GET /users/me`.
+* **Endpoints CRUD funcionales para Modulos (`POST /modules` y `GET /modules`).**
+
+---
+
+## Como Ejecutar y Probar
+
+Sigue estos pasos para levantar el servidor y probar la funcionalidad de los moulos.
+
+1.  **Activar el Entorno Virtual**
+    (Asegurate de estar en la carpeta raiz del proyecto)
+    ```powershell
+    .\venv\Scripts\activate
+    ```
+
+2.  **Iniciar el Servidor**
+    ```powershell
+    uvicorn app.main:app --reload
+    ```
+    El servidor estara corriendo en `http://127.0.0.1:8000`.
+
+3.  **Abrir la Documentacion**
+    Abre tu navegador y ve a la documentación interactiva:
+    **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)**
+
+4.  **Prueba 1: Crear un Modulo (POST)**
+    * En la documentacion, busca la seccion **"Modules"** y expande el endpoint `POST /modules`.
+    * Haz clic en el boton **"Try it out"**.
+    * En el campo "Request body", pega el siguiente JSON:
+        ```json
+        {
+          "title": "Modulo 1: Saludos",
+          "description": "Aprende a decir hola y adios.",
+          "code": "MOD-01",
+          "sort_order": 1
+        }
+        ```
+    * Haz clic en el boton azul **"Execute"**.
+    * Deberias recibir una respuesta **Code 201** con el modulo que acabas de crear.
+
+5.  **Prueba 2: Leer los Modulos (GET)**
+    * Ahora, expande el endpoint `GET /modules`.
+    * Haz clic en **"Try it out"** y luego en **"Execute"**.
+    * En la respuesta, deberias ver una lista que contiene el "Modulo 1: Saludos" que creaste en el paso anterior.
+
+    ##comit 2
+
+    ---
+    recapitulacion
+
+12/11/2025
+
+arquitectura: api first modular
+
++tecnologias: 
+-FastAPI : endpoints
+-SQLAlchemy : ORM
+-Pydantic : validacion de datos / 'schemas.py'
+-firebase auth : tokens JWT
+
+base completa (en base a los requerimientos)
+
++arq m:
+-app/routers    : Endpoints 
+-app/crud       : Logica de negocio 
+-app/models.py  : Modelos/tablas de la db segun el doc
+-app/schemas.py : Planos/politicas de los datos recibidos y dados
+
++db local:
+-enseñas.db
+-dentro de main - models.Base.metadata.create_all(bind=enfgine)
+--es linea automatiza la creacion de las tablas de la db al arrancar el servidor
+
++seguridad
+-get_db()           : cierra y abre la conexion por cada peticion para gestionara las sessiones de la db
+-get_current_user() : protegue los endpoints. Lee el token y usa firebase admin para validarlo. Lo esperado es un 401 cada que se usa un endpoint sin token
+
++funcionalidaades:
+-----
+-Modulos
+-
+POST /modules : crea un nuevo modulo de aprendizaje
+
+GET  /modules : devuelve la lista de todos los Modulos
+-
+
+-Diccionario
+-
+POST /dictionary : Crea una sena en el Diccionario
+
+GET  / busca una sena
+-
+
+-Quizzes
+-
+GET /quizzes/{quiz_id}: Obtiene un quiz especifico con sus preguntas
+
+POST /quizzes/attempt (Protegido):  Recibe las respuestas del usuario, las compara con las respuestas correctas en la BD, calcula la calificacion (score/total) y guarda el intento
+
+GET /my-attempts (Protegido): Devuelve el historial de quizzes del usuario
+
+_TEMP_ /quizzes/seed-test-quiz: Un endpoint temporal de desarrollo para crear datos de prueba (quizz de p)
+-
+
+-MEmory game
+-
+GET /memory/deck: Obtiene un mazo aleatorio de pares (palabra-seña) para iniciar un juego
+
+
+POST /memory/attempt (Protegido): Guarda el resultado de una partida (intentos, duracion, etc.)
+
+_TEMP_ /memory/create-pair: Un helper temporal para crear pares de prueba.
+-
+
+-progreso y stats
+-
+POST /progress (Protegido): Permite a la app crear o actualizar (Upsert) el porcentaje de progreso de un usuario en un modulo
+
+
+GET /progress (Protegido): Devuelve todo el historial de progreso del usuario
+
+
+GET /stats/summary (Protegido): calcula en tiempo real las estadhsticas del dashboard del usuario (precision global, tiempo total, senas dominadas) consultando multiples tablas
+
+-------
+
++uso de los endpoints
+
+POST /modules (para crear un modulo)
+
+GET /modules (para ver el modulo creado)
+
+POST /dictionary (para crear una seña)
+
+GET /dictionary (para buscar la seña)
+
+POST /quizzes/seed-test-quiz (para crear datos de quiz)
+
+GET /quizzes/{quiz_id} (para ver el quiz id: 1)

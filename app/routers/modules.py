@@ -2,12 +2,15 @@ from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 from typing import List
 
-from .. import crud, schemas # Importamos el crud y los esquemas
+from .. import schemas # Importamos el crud y los esquemas
 from ..dependencies import get_db # Importamos el conector a la BD
+from ..crud import modules as crud_modules
 
+
+#router
 router = APIRouter(
     prefix="/modules",  # Todos los endpoints aqui empezaran con /modules
-    tags=["Modules"]    # Se agruparán como "Modules" en /docs
+    tags=["Modules"]    # Se agruparan como "Modules" en /docs
 )
 
 @router.get("/", response_model=List[schemas.Module])
@@ -19,8 +22,7 @@ def read_modules(
     """
     Obtiene una lista de todos los mmdulos.
     """
-    modules = crud.get_modules(db, skip=skip, limit=limit)
-    return modules
+    return crud_modules.get_modules(db, skip=skip, limit=limit)
 
 @router.post("/", 
              response_model=schemas.Module, 
@@ -29,9 +31,11 @@ def read_modules(
 def create_new_module(
     module: schemas.ModuleCreate, 
     db: Session = Depends(get_db)
+
+    
 ):
     """
-    Crea un nuevo módulo.
+    Crea un nuevo modulo.
     (OJO: Por ahora no esta protegido, ¡es solo para probar!)
     """
-    return crud.create_module(db=db, module=module)
+    return crud_modules.create_module(db=db, module=module)

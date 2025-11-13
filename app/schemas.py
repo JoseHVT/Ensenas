@@ -132,3 +132,48 @@ class QuizAttempt(QuizAttemptBase):
     created_at: datetime
     class Config:
         from_attributes = True
+
+# --- Esquemas de SignPair (Memory Match) ---
+class SignPairBase(BaseModel):
+    word: str
+    sign_id: int
+
+class SignPairCreate(SignPairBase):
+    pass
+
+class SignPair(SignPairBase):
+    id: int
+    # metemos el objeto sign para que la app tenga el video o imagen como url.
+    sign: Sign
+
+    class Config:
+        from_attributes = True
+
+class MemoryRunBase(BaseModel):
+    matches: int
+    attempts: int
+    streak: Optional[int] = None
+    duration_ms: int
+    module_id: Optional[int] = None
+    streak: Optional[int] = None
+
+class MemoryRunCreate(MemoryRunBase):
+    pass
+
+class MemoryRun(MemoryRunBase):
+    id: int
+    user_id: str
+    created_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+#--estats
+
+class StatsSummary(BaseModel):
+    precision_global: float = 0.0
+    tiempo_total_ms: int = 0
+    racha_actual: int = 0
+    senas_dominadas: int = 0
+
+    
