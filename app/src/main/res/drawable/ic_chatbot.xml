@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Círculo exterior -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M12,2a10,10 0,1 1,0 20a10,10 0,1 1,0 -20z" />
+
+    <!-- Ojo izquierdo -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8.5,10.5a1.5,1.5 0,1 1,0 3a1.5,1.5 0,1 1,0 -3z" />
+
+    <!-- Ojo derecho -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15.5,10.5a1.5,1.5 0,1 1,0 3a1.5,1.5 0,1 1,0 -3z" />
+
+    <!-- Boca -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.4"
+        android:strokeLineCap="round"
+        android:pathData="M8.5,15c1.2,1 2.3,1 3.5,0 1.2,1 2.3,1 3.5,0" />
+</vector>
