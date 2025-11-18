@@ -1,0 +1,405 @@
+package com.example.chat_bot.screens
+
+import androidx.compose.foundation.*
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import com.example.chat_bot.R
+import com.example.chat_bot.data.models.UserLevel
+import com.example.chat_bot.ui.theme.*
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ProfileScreen(
+    onLogout: () -> Unit,
+    onNavigateToAchievements: () -> Unit = {},
+    username: String = "Usuario Estudiante",
+    email: String = "usuario@tec.mx",
+    totalXP: Int = 245,
+    currentStreak: Int = 7,
+    completedModules: Int = 3,
+    completedLessons: Int = 29,
+    userLevel: UserLevel? = null,
+    unlockedAchievements: Int = 12,
+    totalAchievements: Int = 25
+) {
+    var showLogoutDialog by remember { mutableStateOf(false) }
+    
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { 
+                    Text(
+                        "Mi Perfil",
+                        fontWeight = FontWeight.Bold
+                    )
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = AzulTec,
+                    titleContentColor = Color.White
+                )
+            )
+        }
+    ) { paddingValues ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
+                .verticalScroll(rememberScrollState())
+        ) {
+            // Header con información del usuario
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(AzulTec)
+                    .padding(vertical = 32.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.borrego_normal),
+                        contentDescription = "Avatar",
+                        modifier = Modifier
+                            .size(100.dp)
+                            .clip(CircleShape)
+                            .background(Color.White.copy(alpha = 0.2f))
+                            .padding(8.dp)
+                    )
+                    
+                    Spacer(modifier = Modifier.height(16.dp))
+                    
+                    Text(
+                        text = username,
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold
+                    )
+                    
+                    Text(
+                        text = email,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = Color.White.copy(alpha = 0.9f)
+                    )
+                    
+                    if (userLevel != null) {
+                        Spacer(modifier = Modifier.height(8.dp))
+                        
+                        Surface(
+                            color = AmarilloOro.copy(alpha = 0.2f),
+                            shape = RoundedCornerShape(20.dp)
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                Icon(
+                                    Icons.Default.EmojiEvents,
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    StatisticCard(
+                        icon = Icons.Default.EmojiEvents,
+                        value = "$totalXP",
+                        label = "XP Total",
+                        color = AmarilloOro,
+                        modifier = Modifier.weight(1f)
+                    )
+                    StatisticCard(
+                        icon = Icons.Default.LocalFireDepartment,
+                        value = "$currentStreak",
+                        label = "Racha",
+                        color = RojoError,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                
+                Spacer(modifier = Modifier.height(12.dp))
+                
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    StatisticCard(
+                        icon = Icons.Default.School,
+                        value = "$completedModules",
+                        label = "Módulos",
+                        color = AzulInfo,
+                        modifier = Modifier.weight(1f)
+                    )
+                    StatisticCard(
+                        icon = Icons.Default.CheckCircle,
+                        value = "$completedLessons",
+                        label = "Lecciones",
+                        color = VerdeExito,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                
+                Spacer(modifier = Modifier.height(16.dp))
+                
+                // Achievements summary card
+                Card(
+                    onClick = onNavigateToAchievements,
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(
+                        containerColor = Color.White
+                    ),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                    shape = RoundedCornerShape(16.dp)
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(12.dp)
+                        ) {
+                            Icon(
+                                Icons.Default.Stars,
+                                contentDescription = null,
+                                tint = AmarilloOro,
+                                modifier = Modifier.size(32.dp)
+                            )
+                            Column {
+                                Text(
+                                    text = "Logros Desbloqueados",
+                                    style = MaterialTheme.typography.labelMedium,
+                                    color = GrisMedio
+                                )
+                                Text(
+                                    text = "$unlockedAchievements / $totalAchievements",
+                                    style = MaterialTheme.typography.titleMedium,
+                                    fontWeight = FontWeight.Bold,
+                                    color = AzulTec
+                                )
+                            }
+                        }
+                        
+                        Icon(
+                            Icons.Default.ChevronRight,
+                            contentDescription = null,
+                            tint = GrisOscuro.copy(alpha = 0.4f)
+                        )
+                    }
+                }       icon = Icons.Default.LocalFireDepartment,
+                        value = "7",
+                        label = "Racha",
+                        color = RojoError,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+                
+                Spacer(modifier = Modifier.height(12.dp))
+                
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    StatisticCard(
+                        icon = Icons.Default.School,
+                        value = "3",
+                        label = "Módulos",
+                        color = AzulInfo,
+                        modifier = Modifier.weight(1f)
+                    )
+                    StatisticCard(
+                        icon = Icons.Default.CheckCircle,
+                        value = "29",
+                        label = "Lecciones",
+                        color = VerdeExito,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+            }
+            
+            Spacer(modifier = Modifier.height(24.dp))
+            
+            // Opciones
+            Column(modifier = Modifier.padding(horizontal = 16.dp)) {
+                Text(
+                    text = "Configuración",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = AzulTec,
+                    modifier = Modifier.padding(bottom = 12.dp)
+                )
+                
+                ProfileOption(
+                    icon = Icons.Default.Person,
+                    title = "Editar Perfil",
+                    onClick = { /* TODO */ }
+                )
+                
+                ProfileOption(
+                    icon = Icons.Default.Notifications,
+                    title = "Notificaciones",
+                    onClick = { /* TODO */ }
+                )
+                
+                ProfileOption(
+                    icon = Icons.Default.Language,
+                    title = "Idioma",
+                    subtitle = "Español",
+                    onClick = { /* TODO */ }
+                )
+                
+                ProfileOption(
+                    icon = Icons.Default.Help,
+                    title = "Ayuda y Soporte",
+                    onClick = { /* TODO */ }
+                )
+                
+                ProfileOption(
+                    icon = Icons.Default.Info,
+                    title = "Acerca de EnSeñas",
+                    onClick = { /* TODO */ }
+                )
+                
+                Spacer(modifier = Modifier.height(16.dp))
+                
+                ProfileOption(
+                    icon = Icons.Default.ExitToApp,
+                    title = "Cerrar Sesión",
+                    iconTint = RojoError,
+                    onClick = { showLogoutDialog = true }
+                )
+            }
+            
+            Spacer(modifier = Modifier.height(32.dp))
+        }
+    }
+    
+    // Diálogo de confirmación de cierre de sesión
+    if (showLogoutDialog) {
+        AlertDialog(
+            onDismissRequest = { showLogoutDialog = false },
+            title = { Text("Cerrar Sesión") },
+            text = { Text("¿Estás seguro de que deseas cerrar sesión?") },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        showLogoutDialog = false
+                        onLogout()
+                    }
+                ) {
+                    Text("Cerrar Sesión", color = RojoError)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showLogoutDialog = false }) {
+                    Text("Cancelar")
+                }
+            }
+        )
+    }
+}
+
+@Composable
+fun StatisticCard(
+    icon: ImageVector,
+    value: String,
+    label: String,
+    color: Color,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Icon(
+                imageVector = icon,
+                contentDescription = null,
+                tint = color,
+                modifier = Modifier.size(32.dp)
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = value,
+                style = MaterialTheme.typography.headlineMedium,
+                fontWeight = FontWeight.Bold,
+                color = AzulTec
+            )
+            Text(
+                text = label,
+                style = MaterialTheme.typography.bodySmall,
+                color = GrisOscuro.copy(alpha = 0.7f)
+            )
+        }
+    }
+}
+
+@Composable
+fun ProfileOption(
+    icon: ImageVector,
+    title: String,
+    subtitle: String? = null,
+    iconTint: Color = AzulTec,
+    onClick: () -> Unit
+) {
+    Card(
+        onClick = onClick,
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                imageVector = icon,
+                contentDescription = null,
+                tint = iconTint,
+                modifier = Modifier.size(24.dp)
+            )
+            Spacer(modifier = Modifier.width(16.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = AzulTec
+                )
+                if (subtitle != null) {
+                    Text(
+                        text = subtitle,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = GrisOscuro.copy(alpha = 0.6f)
+                    )
+                }
+            }
+            Icon(
+                imageVector = Icons.Default.ChevronRight,
+                contentDescription = null,
+                tint = GrisOscuro.copy(alpha = 0.4f)
+            )
+        }
+    }
+    Spacer(modifier = Modifier.height(8.dp))
+}
