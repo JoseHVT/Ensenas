@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
@@ -23,6 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.chat_bot.ui.theme.*
+import kotlin.math.sin
 
 /**
  * Shimmer Loading Effect - Estilo profesional para estados de carga
@@ -128,7 +130,7 @@ fun AnimatedCircularProgress(
             durationMillis = animationDuration,
             easing = FastOutSlowInEasing
         ),
-        label = \"circularProgress\"
+        label = "circularProgress"
     )
     
     Box(
@@ -182,7 +184,7 @@ fun BouncingIcon(
     content: @Composable () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val infiniteTransition = rememberInfiniteTransition(label = \"bounce\")
+    val infiniteTransition = rememberInfiniteTransition(label = "bounce")
     val scale by infiniteTransition.animateFloat(
         initialValue = 1f,
         targetValue = 1.2f,
@@ -190,7 +192,7 @@ fun BouncingIcon(
             animation = tween(600, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Reverse
         ),
-        label = \"bounceScale\"
+        label = "bounceScale"
     )
     
     Box(
@@ -239,7 +241,7 @@ fun PulsingDot(
     size: Dp = 8.dp,
     modifier: Modifier = Modifier
 ) {
-    val infiniteTransition = rememberInfiniteTransition(label = \"pulse\")
+    val infiniteTransition = rememberInfiniteTransition(label = "pulse")
     val alpha by infiniteTransition.animateFloat(
         initialValue = 0.3f,
         targetValue = 1f,
@@ -247,7 +249,7 @@ fun PulsingDot(
             animation = tween(1000, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Reverse
         ),
-        label = \"pulseAlpha\"
+        label = "pulseAlpha"
     )
     
     Box(
@@ -256,43 +258,6 @@ fun PulsingDot(
             .clip(CircleShape)
             .background(color.copy(alpha = alpha))
     )
-}
-
-/**
- * Wave Animation Background - Fondo con ondas animadas
- */
-@Composable
-fun WaveBackground(
-    modifier: Modifier = Modifier,
-    waveColor: Color = AzulTecLight.copy(alpha = 0.1f)
-) {
-    val infiniteTransition = rememberInfiniteTransition(label = \"wave\")
-    val waveOffset by infiniteTransition.animateFloat(
-        initialValue = 0f,
-        targetValue = 360f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(3000, easing = LinearEasing),
-            repeatMode = RepeatMode.Restart
-        ),
-        label = \"waveOffset\"
-    )
-    
-    Canvas(modifier = modifier.fillMaxWidth().height(200.dp)) {
-        val width = size.width
-        val height = size.height
-        val path = Path()
-        
-        path.moveTo(0f, height / 2)
-        for (x in 0..width.toInt() step 10) {
-            val y = height / 2 + 30 * kotlin.math.sin((x + waveOffset) * 0.02)
-            path.lineTo(x.toFloat(), y.toFloat())
-        }
-        path.lineTo(width, height)
-        path.lineTo(0f, height)
-        path.close()
-        
-        drawPath(path, waveColor)
-    }
 }
 
 /**
@@ -311,7 +276,7 @@ fun AnimatedCheckmark(
             dampingRatio = Spring.DampingRatioMediumBouncy,
             stiffness = Spring.StiffnessLow
         ),
-        label = \"checkmarkScale\"
+        label = "checkmarkScale"
     )
     
     Box(
@@ -325,10 +290,12 @@ fun AnimatedCheckmark(
     ) {
         Canvas(modifier = Modifier.fillMaxSize()) {
             val strokeWidth = 6.dp.toPx()
+            val canvasWidth = this.size.width
+            val canvasHeight = this.size.height
             val checkPath = Path().apply {
-                moveTo(size.width * 0.25f, size.height * 0.5f)
-                lineTo(size.width * 0.4f, size.height * 0.7f)
-                lineTo(size.width * 0.75f, size.height * 0.3f)
+                moveTo(canvasWidth * 0.25f, canvasHeight * 0.5f)
+                lineTo(canvasWidth * 0.4f, canvasHeight * 0.7f)
+                lineTo(canvasWidth * 0.75f, canvasHeight * 0.3f)
             }
             drawPath(
                 path = checkPath,
