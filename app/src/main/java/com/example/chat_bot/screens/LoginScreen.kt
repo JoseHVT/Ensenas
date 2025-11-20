@@ -1,5 +1,7 @@
 package com.example.chat_bot.screens
 
+import androidx.compose.animation.*
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -11,7 +13,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.focus.FocusDirection
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
@@ -38,9 +43,36 @@ fun LoginScreen(
     var passwordVisible by remember { mutableStateOf(false) }
     var isLoading by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
+    var startAnimations by remember { mutableStateOf(false) }
     
     val focusManager = LocalFocusManager.current
     val coroutineScope = rememberCoroutineScope()
+    
+    // Animaciones de entrada
+    val headerAlpha by animateFloatAsState(
+        targetValue = if (startAnimations) 1f else 0f,
+        animationSpec = tween(600, easing = FastOutSlowInEasing),
+        label = "headerAlpha"
+    )
+    
+    val contentAlpha by animateFloatAsState(
+        targetValue = if (startAnimations) 1f else 0f,
+        animationSpec = tween(600, delayMillis = 200, easing = FastOutSlowInEasing),
+        label = "contentAlpha"
+    )
+    
+    val logoScale by animateFloatAsState(
+        targetValue = if (startAnimations) 1f else 0.8f,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioMediumBouncy,
+            stiffness = Spring.StiffnessLow
+        ),
+        label = "logoScale"
+    )
+    
+    LaunchedEffect(Unit) {
+        startAnimations = true
+    }
     
     Box(
         modifier = Modifier

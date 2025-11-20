@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "209937812644",
+    "project_id": "ensenas-ecc27",
+    "storage_bucket": "ensenas-ecc27.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209937812644:android:927b387b68d2d9f653ea31",
+        "android_client_info": {
+          "package_name": "com.example.chat_bot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMehSL3QZpROgVLRG1GZNITF_knz83jtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

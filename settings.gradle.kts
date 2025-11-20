@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "chat_Bot"
+rootProject.name = "Ensenas"
 include(":app")
  

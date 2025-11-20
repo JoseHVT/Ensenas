@@ -125,10 +125,11 @@ fun ProfileScreen(
                 }
             }
         
-        Spacer(modifier = Modifier.height(24.dp))
-        
-        // Statistics Cards
-        Row(
+            Spacer(modifier = Modifier.height(24.dp))
+            
+            // Statistics Cards
+            Column(modifier = Modifier.padding(horizontal = 16.dp)) {
+                Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
