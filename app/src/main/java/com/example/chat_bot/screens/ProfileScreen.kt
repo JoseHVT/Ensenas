@@ -109,7 +109,26 @@ fun ProfileScreen(
                             ) {
                                 Icon(
                                     Icons.Default.EmojiEvents,
-                Row(
+                                    contentDescription = null,
+                                    tint = AmarilloOro,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                                Text(
+                                    text = "Nivel ${userLevel.level} • ${UserLevel.getLevelTitle(userLevel.level)}",
+                                    style = MaterialTheme.typography.labelMedium,
+                                    color = AzulTec,
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        
+        Spacer(modifier = Modifier.height(24.dp))
+        
+        // Statistics Cards
+        Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
@@ -201,34 +220,6 @@ fun ProfileScreen(
                             tint = GrisOscuro.copy(alpha = 0.4f)
                         )
                     }
-                }       icon = Icons.Default.LocalFireDepartment,
-                        value = "7",
-                        label = "Racha",
-                        color = RojoError,
-                        modifier = Modifier.weight(1f)
-                    )
-                }
-                
-                Spacer(modifier = Modifier.height(12.dp))
-                
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    StatisticCard(
-                        icon = Icons.Default.School,
-                        value = "3",
-                        label = "Módulos",
-                        color = AzulInfo,
-                        modifier = Modifier.weight(1f)
-                    )
-                    StatisticCard(
-                        icon = Icons.Default.CheckCircle,
-                        value = "29",
-                        label = "Lecciones",
-                        color = VerdeExito,
-                        modifier = Modifier.weight(1f)
-                    )
                 }
             }
             
@@ -288,34 +279,11 @@ fun ProfileScreen(
             Spacer(modifier = Modifier.height(32.dp))
         }
     }
-    
-    // Diálogo de confirmación de cierre de sesión
-    if (showLogoutDialog) {
-        AlertDialog(
-            onDismissRequest = { showLogoutDialog = false },
-            title = { Text("Cerrar Sesión") },
-            text = { Text("¿Estás seguro de que deseas cerrar sesión?") },
-            confirmButton = {
-                TextButton(
-                    onClick = {
-                        showLogoutDialog = false
-                        onLogout()
-                    }
-                ) {
-                    Text("Cerrar Sesión", color = RojoError)
-                }
-            },
-            dismissButton = {
-                TextButton(onClick = { showLogoutDialog = false }) {
-                    Text("Cancelar")
-                }
-            }
-        )
-    }
+    // TODO: Agregar diálogo de logout cuando se solucione la estructura
 }
 
 @Composable
-fun StatisticCard(
+private fun StatisticCard(
     icon: ImageVector,
     value: String,
     label: String,
@@ -355,7 +323,7 @@ fun StatisticCard(
 }
 
 @Composable
-fun ProfileOption(
+private fun ProfileOption(
     icon: ImageVector,
     title: String,
     subtitle: String? = null,

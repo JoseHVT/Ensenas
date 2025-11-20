@@ -16,6 +16,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -25,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import com.example.chat_bot.R
 import com.example.chat_bot.data.models.DailyGoal
 import com.example.chat_bot.data.models.UserLevel
+import com.example.chat_bot.ui.components.pressAnimation
 import com.example.chat_bot.ui.theme.*
 import kotlinx.coroutines.delay
 
@@ -99,6 +101,14 @@ fun HomeScreen(
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
                             text = "Nivel ${userLevel.level} • ${UserLevel.getLevelTitle(userLevel.level)}",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = Color.White.copy(alpha = 0.85f)
+                        )
+                    }
+                }
+            }
+        }
+        
         // Racha semanal con calendario
         AnimatedVisibility(
             visible = isVisible,
@@ -208,6 +218,18 @@ fun HomeScreen(
                 MiniQuickAccessCard(
                     title = "Práctica",
                     icon = Icons.Default.Quiz,
+                    color = VerdeExito,
+                    onClick = onNavigateToModules,
+                    modifier = Modifier.weight(1f)
+                )
+            }
+            
+            Spacer(modifier = Modifier.height(12.dp))
+            
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
                 MiniQuickAccessCard(
                     title = "Logros",
                     icon = Icons.Default.EmojiEvents,
@@ -236,7 +258,10 @@ fun HomeScreen(
                     color = AzulInfo,
                     onClick = { /* TODO: Navigate to stats */ },
                     modifier = Modifier.weight(1f)
-                )r(modifier = Modifier.height(12.dp))
+                )
+            }
+            
+            Spacer(modifier = Modifier.height(12.dp))
             
             Row(
                 modifier = Modifier.fillMaxWidth(),
