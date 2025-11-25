@@ -21,23 +21,33 @@ def get_db():
         db.close()
 
 # 1. Buscamos si existe la variable de entorno con el JSON completo (produccion/Nube)
-firebase_creds_json = os.getenv("FIREBASE_CREDENTIALS_JSON")
-
 try:
+    firebase_creds_json = os.getenv("FIREBASE_CREDENTIALS_JSON")
+
     if firebase_creds_json:
         # Si estamos en la nube, cargamos el JSON desde la variable
+        # Nube: Intentamos cargar desde variable de entorno
+        print("Intentando cargar credenciales de Firebase desde Variable de Entorno...")
         cred_dict = json.loads(firebase_creds_json)
         cred = credentials.Certificate(cred_dict)
     else:
         # Si estamos en local, buscamos el archivo
-        cred = credentials.Certificate("firebase-service-account.json")
-        
-    # Inicializamos la app (verificamos si ya existe para no reiniciarla)
-    try:
-        firebase_admin.get_app()
-    except ValueError:
-        firebase_admin.initialize_app(cred)
+        print("Variable de entorno no encontrada. Buscando archivo local...")
+        if os.path.exists("firebase-service-account.json"):
+            cred = credentials.Certificate("firebase-service-account.json")
+        else:
+        # Si no hay variable Y no hay archivo, lanzamos advertencia pero NO rompemos
+            print("ADVERTENCIA: No se encontraron credenciales de Firebase (ni Variable ni Archivo).")
+            cred = None
 
+    # Inicializamos la app (verificamos si ya existe para no reiniciarla)
+    if cred:
+        try:
+            firebase_admin.get_app()
+        except ValueError:
+            firebase_admin.initialize_app(cred)
+            print("Firebase inicializado exitosamente.")
+            
 except Exception as e:
     print(f"ADVERTENCIA CRIT: No se pudo cargar credenciales de Firebase. Error: {e}")
     # No lanzamos error aqi para que la app arranque, 
