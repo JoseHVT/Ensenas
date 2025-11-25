@@ -18,6 +18,7 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -27,26 +28,42 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chat_bot.R
 import com.example.chat_bot.ui.theme.*
-import androidx.compose.runtime.rememberCoroutineScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.delay
+import com.example.chat_bot.viewmodels.AuthViewModel
+import com.example.chat_bot.viewmodels.ViewModelFactory
+import com.example.chat_bot.data.auth.AuthState
 
 @Composable
 fun LoginScreen(
     onNavigateToRegister: () -> Unit,
     onLoginSuccess: () -> Unit
 ) {
+    val context = LocalContext.current
+    val viewModel: AuthViewModel = viewModel(factory = ViewModelFactory(context))
+    
+    // Estados observables del ViewModel
+    val authState by viewModel.authState.collectAsState()
+    val errorMessage by viewModel.errorMessage.collectAsState()
+    
+    // Estados locales de UI
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
-    var isLoading by remember { mutableStateOf(false) }
-    var errorMessage by remember { mutableStateOf<String?>(null) }
     var startAnimations by remember { mutableStateOf(false) }
     
     val focusManager = LocalFocusManager.current
-    val coroutineScope = rememberCoroutineScope()
+    
+    // Observar cambios en el estado de autenticación
+    LaunchedEffect(authState) {
+        when (authState) {
+            is AuthState.Authenticated -> {
+                onLoginSuccess()
+            }
+            else -> { /* No hacer nada */ }
+        }
+    }
     
     // Animaciones de entrada
     val headerAlpha by animateFloatAsState(
@@ -131,7 +148,7 @@ fun LoginScreen(
                     value = email,
                     onValueChange = { 
                         email = it
-                        errorMessage = null
+                        viewModel.clearError()
                     },
                     placeholder = { Text("Correo electrónico") },
                     leadingIcon = {
@@ -168,7 +185,7 @@ fun LoginScreen(
                     value = password,
                     onValueChange = { 
                         password = it
-                        errorMessage = null
+                        viewModel.clearError()
                     },
                     placeholder = { Text("Contraseña") },
                     leadingIcon = {
@@ -241,22 +258,14 @@ fun LoginScreen(
             Button(
                 onClick = {
                     if (email.isBlank() || password.isBlank()) {
-                        errorMessage = "Por favor completa todos los campos"
                         return@Button
                     }
                     if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                        errorMessage = "Correo electrónico inválido"
                         return@Button
                     }
                     
-                    isLoading = true
-                    errorMessage = null
-                    
-                    coroutineScope.launch {
-                        delay(1500)
-                        isLoading = false
-                        onLoginSuccess()
-                    }
+                    // Llamar al ViewModel para hacer login real
+                    viewModel.signIn(email, password)
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -266,9 +275,9 @@ fun LoginScreen(
                     disabledContainerColor = AzulTec.copy(alpha = 0.6f)
                 ),
                 shape = RoundedCornerShape(16.dp),
-                enabled = !isLoading
+                enabled = authState !is AuthState.Loading
             ) {
-                if (isLoading) {
+                if (authState is AuthState.Loading) {
                     CircularProgressIndicator(
                         modifier = Modifier.size(24.dp),
                         color = Color.White,

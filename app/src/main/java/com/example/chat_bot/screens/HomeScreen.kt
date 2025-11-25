@@ -18,17 +18,21 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chat_bot.R
 import com.example.chat_bot.data.models.DailyGoal
 import com.example.chat_bot.data.models.UserLevel
 import com.example.chat_bot.ui.components.pressAnimation
 import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
+import com.example.chat_bot.viewmodels.HomeViewModel
+import com.example.chat_bot.viewmodels.ViewModelFactory
 import kotlinx.coroutines.delay
 
 @Composable
@@ -37,12 +41,19 @@ fun HomeScreen(
     onNavigateToDictionary: () -> Unit,
     onNavigateToAchievements: () -> Unit = {},
     onNavigateToLeaderboard: () -> Unit = {},
-    onNavigateToChatBot: () -> Unit = {},
-    currentStreak: Int = 7,
-    userLevel: UserLevel? = null,
-    dailyGoal: DailyGoal? = null,
-    username: String = "Usuario Estudiante"
+    onNavigateToChatBot: () -> Unit = {}
 ) {
+    val context = LocalContext.current
+    val viewModel: HomeViewModel = viewModel(factory = ViewModelFactory(context))
+    
+    // Estados observables del ViewModel
+    val userLevel by viewModel.userLevel.collectAsState()
+    val currentStreak by viewModel.currentStreak.collectAsState()
+    val userName by viewModel.userName.collectAsState()
+    val dailyGoal by viewModel.dailyGoal.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+    val errorMessage by viewModel.errorMessage.collectAsState()
+    
     var isVisible by remember { mutableStateOf(false) }
     
     LaunchedEffect(Unit) {
@@ -83,7 +94,7 @@ fun HomeScreen(
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
-                        text = "¡Hola${if (username.isNotEmpty()) ", " + username.split(" ").firstOrNull() else ""}! 👋",
+                        text = "¡Hola${if (userName.isNotEmpty()) ", " + userName.split(" ").firstOrNull() else ""}! 👋",
                         style = MaterialTheme.typography.headlineSmall,
                         color = Color.White,
                         fontWeight = FontWeight.Bold
@@ -99,9 +110,10 @@ fun HomeScreen(
                         color = Color.White.copy(alpha = 0.9f)
                     )
                     if (userLevel != null) {
+                        val level = userLevel!! // Safe to use after null check
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
-                            text = "Nivel ${userLevel.level} • ${UserLevel.getLevelTitle(userLevel.level)}",
+                            text = "Nivel ${level.level} • ${UserLevel.getLevelTitle(level.level)}",
                             style = MaterialTheme.typography.bodySmall,
                             color = Color.White.copy(alpha = 0.85f)
                         )
@@ -124,6 +136,7 @@ fun HomeScreen(
         
         // XP Progress Bar
         if (dailyGoal != null) {
+            val goal = dailyGoal!! // Safe after null check
             AnimatedVisibility(
                 visible = isVisible,
                 enter = fadeIn() + slideInVertically(),
@@ -131,8 +144,8 @@ fun HomeScreen(
             ) {
                 Column(modifier = Modifier.padding(horizontal = 24.dp)) {
                     XPProgressCard(
-                        currentXP = dailyGoal.currentXP,
-                        dailyGoal = dailyGoal.targetXP
+                        currentXP = goal.currentXP,
+                        dailyGoal = goal.targetXP
                     )
                 }
             }
@@ -147,7 +160,7 @@ fun HomeScreen(
                 enter = fadeIn() + slideInVertically()
             ) {
                 Column(modifier = Modifier.padding(horizontal = 24.dp)) {
-                    UserLevelCard(userLevel = userLevel)
+                    UserLevelCard(userLevel = userLevel!!)
                 }
             }
         }

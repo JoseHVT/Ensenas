@@ -3,6 +3,7 @@ package com.example.chat_bot.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.chat_bot.data.auth.AuthRepository
+import com.example.chat_bot.data.auth.AuthState
 import com.example.chat_bot.data.auth.TokenManager
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -214,14 +215,4 @@ class AuthViewModel(
             else -> exception.message ?: "Error desconocido"
         }
     }
-}
-
-/**
- * Estados posibles de autenticación
- */
-sealed class AuthState {
-    object Loading : AuthState()
-    object Authenticated : AuthState()
-    object Unauthenticated : AuthState()
-    data class Error(val message: String) : AuthState()
 }
