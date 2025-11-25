@@ -7,6 +7,8 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
@@ -16,9 +18,12 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import androidx.navigation.NavType
+import com.example.chat_bot.data.auth.AuthState
 import com.example.chat_bot.screens.*
 import com.example.chat_bot.screens.DifficultyLevel
 import com.example.chat_bot.ui.theme.EnsenasTheme
+import com.example.chat_bot.viewmodels.AuthViewModel
+import com.example.chat_bot.viewmodels.ViewModelFactory
 
 sealed class BottomNavItem(
     val route: String,
@@ -33,11 +38,27 @@ sealed class BottomNavItem(
 
 @Composable
 fun MainNavigation() {
+    val context = LocalContext.current
+    val authViewModel: AuthViewModel = viewModel(factory = ViewModelFactory(context))
+    val authState by authViewModel.authState.collectAsState()
+    
     val navController = rememberNavController()
     var showBottomBar by remember { mutableStateOf(false) }
     
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
+    
+    // Protección de navegación: redirigir a login si no autenticado
+    LaunchedEffect(authState, currentRoute) {
+        if (authState is AuthState.Unauthenticated && 
+            currentRoute != Screen.Login.route && 
+            currentRoute != Screen.Register.route &&
+            currentRoute != Screen.Splash.route) {
+            navController.navigate(Screen.Login.route) {
+                popUpTo(0) { inclusive = true }
+            }
+        }
+    }
     
     // Determinar si mostrar bottom bar
     showBottomBar = when (currentRoute) {

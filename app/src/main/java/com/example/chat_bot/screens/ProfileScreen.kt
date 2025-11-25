@@ -13,21 +13,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chat_bot.R
+import com.example.chat_bot.data.auth.AuthState
 import com.example.chat_bot.data.models.UserLevel
 import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
+import com.example.chat_bot.viewmodels.ProfileViewModel
+import com.example.chat_bot.viewmodels.ViewModelFactory
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(
     onLogout: () -> Unit,
     onNavigateToAchievements: () -> Unit = {},
-    username: String = "Usuario Estudiante",
-    email: String = "usuario@tec.mx",
     totalXP: Int = 245,
     currentStreak: Int = 7,
     completedModules: Int = 3,
@@ -36,7 +39,23 @@ fun ProfileScreen(
     unlockedAchievements: Int = 12,
     totalAchievements: Int = 25
 ) {
+    val context = LocalContext.current
+    val viewModel: ProfileViewModel = viewModel(factory = ViewModelFactory(context))
+    
+    // Estados observables
+    val authState by viewModel.authState.collectAsState()
+    val userName by viewModel.userName.collectAsState()
+    val userEmail by viewModel.userEmail.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+    
     var showLogoutDialog by remember { mutableStateOf(false) }
+    
+    // Observar cambio de estado de autenticación
+    LaunchedEffect(authState) {
+        if (authState is AuthState.Unauthenticated) {
+            onLogout()
+        }
+    }
     
     Scaffold(
         topBar = {
@@ -84,14 +103,14 @@ fun ProfileScreen(
                     Spacer(modifier = Modifier.height(16.dp))
                     
                     Text(
-                        text = username,
+                        text = userName,
                         style = MaterialTheme.typography.headlineSmall,
                         color = Color.White,
                         fontWeight = FontWeight.Bold
                     )
                     
                     Text(
-                        text = email,
+                        text = userEmail,
                         style = MaterialTheme.typography.bodyMedium,
                         color = Color.White.copy(alpha = 0.9f)
                     )
@@ -314,7 +333,59 @@ fun ProfileScreen(
             Spacer(modifier = Modifier.height(32.dp))
         }
     }
-    // TODO: Agregar diálogo de logout cuando se solucione la estructura
+    
+    // Diálogo de confirmación de logout
+    if (showLogoutDialog) {
+        AlertDialog(
+            onDismissRequest = { showLogoutDialog = false },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.ExitToApp,
+                    contentDescription = null,
+                    tint = RojoError
+                )
+            },
+            title = {
+                Text(
+                    text = "Cerrar Sesión",
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                Text("¿Estás seguro de que deseas cerrar sesión?")
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showLogoutDialog = false
+                        viewModel.signOut()
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = RojoError
+                    ),
+                    enabled = !isLoading
+                ) {
+                    if (isLoading) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(20.dp),
+                            color = Color.White,
+                            strokeWidth = 2.dp
+                        )
+                    } else {
+                        Text("Cerrar Sesión")
+                    }
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = { showLogoutDialog = false },
+                    enabled = !isLoading
+                ) {
+                    Text("Cancelar")
+                }
+            }
+        )
+    }
 }
 
 @Composable
