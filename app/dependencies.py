@@ -3,29 +3,34 @@ from fastapi.security import OAuth2PasswordBearer
 from firebase_admin import auth, credentials
 import firebase_admin
 
+import os
+import json
+
 from .database import SessionLocal # Importamos nuestra SessionLocal
 # --- Dependencia para la Sesión de BD ---
-def get_db():
-    """
-    Esta fun crea una sesion de base de datos por cada petición
-    y se asegura de cerrarla al terminar.
-    """
-    db = SessionLocal()
 
-    try:
-        yield db # "yield" entrega la sesioj a la dun del endpoint
-    finally:
-        db.close() # Esto se ejecuta al final, cerrando la sesión
-# --------------------------------------
-#es necesario el archivo de credenciales de firebase
+# 1. Buscamos si existe la variable de entorno con el JSON completo (produccion/Nube)
+firebase_creds_json = os.getenv("FIREBASE_CREDENTIALS_JSON")
+
 try:
-    cred = credentials.Certificate("firebase-service-account.json")
-    firebase_admin.initialize_app(cred)
-except ValueError:
-    pass # Evita que se queje si se recarga y ya estaba inicializado
-except FileNotFoundError:
-    print("ADVERTENCIA: No se encontro 'firebase-service-account.json'. La autenticacion fallara.")
-    pass
+    if firebase_creds_json:
+        # Si estamos en la nube, cargamos el JSON desde la variable
+        cred_dict = json.loads(firebase_creds_json)
+        cred = credentials.Certificate(cred_dict)
+    else:
+        # Si estamos en local, buscamos el archivo
+        cred = credentials.Certificate("firebase-service-account.json")
+        
+    # Inicializamos la app (verificamos si ya existe para no reiniciarla)
+    try:
+        firebase_admin.get_app()
+    except ValueError:
+        firebase_admin.initialize_app(cred)
+
+except Exception as e:
+    print(f"ADVERTENCIA CRIT: No se pudo cargar credenciales de Firebase. Error: {e}")
+    # No lanzamos error aqi para que la app arranque, 
+    # pero los endpoints protegidos fallaran si esto no funciona.
 
 # Esto le dice a FastAPI "busca un token en la cabecera 'Authorization'"
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
