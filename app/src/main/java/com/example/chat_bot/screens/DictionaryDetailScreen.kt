@@ -1,8 +1,12 @@
 package com.example.chat_bot.screens
 
 import android.net.Uri
+import androidx.compose.animation.*
+import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -13,6 +17,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -23,6 +28,7 @@ import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.PlayerView
 import androidx.navigation.NavController
+import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.AzulTec
 import com.example.chat_bot.ui.theme.BlancoTec
 import com.example.chat_bot.ui.theme.VerdeExito
@@ -100,12 +106,23 @@ fun DictionaryDetailScreen(
             )
         }
     ) { paddingValues ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues)
-                .background(Color(0xFFF8F9FA))
+        var isVisible by remember { mutableStateOf(false) }
+        
+        LaunchedEffect(Unit) {
+            isVisible = true
+        }
+        
+        AnimatedVisibility(
+            visible = isVisible,
+            enter = fadeIn() + slideInVertically(initialOffsetY = { it / 4 })
         ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues)
+                    .verticalScroll(rememberScrollState())
+                    .background(Color(0xFFF8F9FA))
+            ) {
             // Video Player
             Card(
                 modifier = Modifier
@@ -126,29 +143,37 @@ fun DictionaryDetailScreen(
                         modifier = Modifier.fillMaxSize()
                     )
                     
-                    // Play/Pause Button Overlay
-                    IconButton(
-                        onClick = {
-                            if (isPlaying) {
-                                exoPlayer.pause()
-                            } else {
-                                exoPlayer.play()
-                            }
-                            isPlaying = !isPlaying
-                        },
-                        modifier = Modifier
-                            .align(Alignment.Center)
-                            .size(64.dp)
-                            .background(
-                                AzulTec.copy(alpha = 0.7f),
-                                shape = RoundedCornerShape(32.dp)
-                            )
+                    // Play/Pause Button Overlay con animación
+                    Box(
+                        modifier = Modifier.align(Alignment.Center)
                     ) {
-                        Icon(
-                            imageVector = if (isPlaying) Icons.Default.Pause else Icons.Default.PlayArrow,
-                            contentDescription = if (isPlaying) "Pausar" else "Reproducir",
-                            tint = BlancoTec,
-                            modifier = Modifier.size(32.dp)
+                        BouncingIcon(
+                            modifier = Modifier.size(64.dp),
+                            content = {
+                                IconButton(
+                                    onClick = {
+                                        if (isPlaying) {
+                                            exoPlayer.pause()
+                                        } else {
+                                            exoPlayer.play()
+                                        }
+                                        isPlaying = !isPlaying
+                                    },
+                                    modifier = Modifier
+                                        .size(64.dp)
+                                        .background(
+                                            AzulTec.copy(alpha = 0.8f),
+                                            shape = RoundedCornerShape(32.dp)
+                                        )
+                                ) {
+                                    Icon(
+                                        imageVector = if (isPlaying) Icons.Default.Pause else Icons.Default.PlayArrow,
+                                        contentDescription = if (isPlaying) "Pausar" else "Reproducir",
+                                        tint = BlancoTec,
+                                        modifier = Modifier.size(32.dp)
+                                    )
+                                }
+                            }
                         )
                     }
                 }
@@ -171,27 +196,38 @@ fun DictionaryDetailScreen(
             
             Spacer(modifier = Modifier.height(16.dp))
             
-            // Definition Card
+            // Definition Card con gradiente profesional
             if (signDetail.definition.isNotEmpty()) {
-                Card(
+                GradientCard(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 16.dp),
-                    shape = RoundedCornerShape(12.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color.White)
-                ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(
-                            text = "Definición",
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold,
-                            color = AzulTec
+                    gradient = Brush.linearGradient(
+                        colors = listOf(
+                            Color.White,
+                            AzulTec.copy(alpha = 0.03f)
                         )
-                        Spacer(modifier = Modifier.height(8.dp))
+                    )
+                ) {
+                    Column(modifier = Modifier.padding(20.dp)) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            PulsingDot(color = AzulTec, size = 8.dp)
+                            Text(
+                                text = "Definición",
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Bold,
+                                color = AzulTec
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(12.dp))
                         Text(
                             text = signDetail.definition,
                             style = MaterialTheme.typography.bodyMedium,
-                            color = Color.DarkGray
+                            color = Color.DarkGray,
+                            lineHeight = MaterialTheme.typography.bodyMedium.lineHeight
                         )
                     }
                 }
@@ -279,6 +315,7 @@ fun DictionaryDetailScreen(
                         }
                     }
                 }
+            }
             }
         }
     }

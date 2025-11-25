@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import com.example.chat_bot.R
 import com.example.chat_bot.data.models.LeaderboardEntry
 import com.example.chat_bot.data.models.LeaderboardResponse
+import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)

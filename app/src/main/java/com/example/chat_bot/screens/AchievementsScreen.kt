@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import com.example.chat_bot.data.models.Achievement
 import com.example.chat_bot.data.models.AchievementCategory
 import com.example.chat_bot.data.models.Achievements
+import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -128,14 +129,14 @@ fun AchievementsScreen(
                         
                         Spacer(modifier = Modifier.height(8.dp))
                         
-                        LinearProgressIndicator(
-                            progress = { unlockedCount.toFloat() / totalCount.toFloat() },
+                        AnimatedProgressBar(
+                            progress = unlockedCount.toFloat() / totalCount.toFloat(),
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .height(12.dp)
-                                .clip(RoundedCornerShape(6.dp)),
-                            color = VerdeExito,
-                            trackColor = GrisClaro
+                                .height(12.dp),
+                            backgroundColor = GrisClaro,
+                            progressColor = VerdeExito,
+                            animationDuration = 1500
                         )
                     }
                 }
@@ -258,7 +259,7 @@ private fun AchievementCard(
                 .padding(16.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // Icon
+            // Icon con animación
             Box(
                 modifier = Modifier
                     .size(60.dp)
@@ -273,9 +274,14 @@ private fun AchievementCard(
                 contentAlignment = Alignment.Center
             ) {
                 if (achievement.isUnlocked) {
-                    Text(
-                        text = achievement.icon,
-                        fontSize = 32.sp
+                    BouncingIcon(
+                        modifier = Modifier.size(60.dp),
+                        content = {
+                            Text(
+                                text = achievement.icon,
+                                fontSize = 32.sp
+                            )
+                        }
                     )
                 } else {
                     Icon(
