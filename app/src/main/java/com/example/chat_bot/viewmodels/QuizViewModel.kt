@@ -7,6 +7,7 @@ import com.example.chat_bot.data.auth.TokenManager
 import com.example.chat_bot.data.models.QuizResponse
 import com.example.chat_bot.data.models.QuizQuestionResponse
 import com.example.chat_bot.data.models.QuizAttemptRequest
+import com.example.chat_bot.ui.components.SnackbarController
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -71,10 +72,14 @@ class QuizViewModel(
                     _currentQuestionIndex.value = 0
                     _userAnswers.value = mutableMapOf()
                 } else {
-                    _errorMessage.value = "Error al cargar quiz"
+                    val errorMsg = "Error al cargar quiz"
+                    _errorMessage.value = errorMsg
+                    SnackbarController.showError(errorMsg)
                 }
             } catch (e: Exception) {
-                _errorMessage.value = "Error: ${e.message}"
+                val errorMsg = "Error: ${e.message}"
+                _errorMessage.value = errorMsg
+                SnackbarController.showError(errorMsg)
             } finally {
                 _isLoading.value = false
             }
@@ -148,11 +153,16 @@ class QuizViewModel(
                 if (response.isSuccessful && response.body() != null) {
                     val result = response.body()!!
                     _score.value = (result.score.toFloat() / result.total.toFloat()) * 100f
+                    SnackbarController.showSuccess("Quiz completado: ${result.score}/${result.total}")
                 } else {
-                    _errorMessage.value = "Error al enviar quiz"
+                    val errorMsg = "Error al enviar quiz"
+                    _errorMessage.value = errorMsg
+                    SnackbarController.showError(errorMsg)
                 }
             } catch (e: Exception) {
-                _errorMessage.value = "Error: ${e.message}"
+                val errorMsg = "Error: ${e.message}"
+                _errorMessage.value = errorMsg
+                SnackbarController.showError(errorMsg)
             } finally {
                 _isLoading.value = false
             }

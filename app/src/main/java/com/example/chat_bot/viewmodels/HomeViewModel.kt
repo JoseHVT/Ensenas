@@ -7,6 +7,7 @@ import com.example.chat_bot.data.auth.TokenManager
 import com.example.chat_bot.data.models.StatsResponse
 import com.example.chat_bot.data.models.UserLevel
 import com.example.chat_bot.data.models.DailyGoal
+import com.example.chat_bot.ui.components.SnackbarController
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

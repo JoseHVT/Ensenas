@@ -21,6 +21,7 @@ import androidx.navigation.NavType
 import com.example.chat_bot.data.auth.AuthState
 import com.example.chat_bot.screens.*
 import com.example.chat_bot.screens.DifficultyLevel
+import com.example.chat_bot.ui.components.ObserveSnackbarMessages
 import com.example.chat_bot.ui.theme.EnsenasTheme
 import com.example.chat_bot.viewmodels.AuthViewModel
 import com.example.chat_bot.viewmodels.ViewModelFactory
@@ -43,7 +44,11 @@ fun MainNavigation() {
     val authState by authViewModel.authState.collectAsState()
     
     val navController = rememberNavController()
+    val snackbarHostState = remember { SnackbarHostState() }
     var showBottomBar by remember { mutableStateOf(false) }
+    
+    // Observar mensajes de Snackbar
+    ObserveSnackbarMessages(snackbarHostState)
     
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
@@ -71,6 +76,9 @@ fun MainNavigation() {
     
     EnsenasTheme {
         Scaffold(
+            snackbarHost = {
+                SnackbarHost(hostState = snackbarHostState)
+            },
             bottomBar = {
                 if (showBottomBar) {
                     NavigationBar {

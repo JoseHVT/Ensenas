@@ -17,12 +17,17 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.chat_bot.data.models.QuizQuestionResponse
 import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
+import com.example.chat_bot.viewmodels.QuizViewModel
+import com.example.chat_bot.viewmodels.ViewModelFactory
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
@@ -71,55 +76,95 @@ fun QuizScreen(
     onQuizComplete: (score: Int, xp: Int) -> Unit,
     onExit: () -> Unit
 ) {
-    // TODO: Conectar con backend GET /quizzes/{quizId}
-    // Por ahora usamos datos de prueba
-    val questions = remember {
-        listOf(
+    val context = LocalContext.current
+    val viewModel: QuizViewModel = viewModel(factory = ViewModelFactory(context))
+    
+    // Observar estados del ViewModel
+    val quiz by viewModel.quiz.collectAsState()
+    val questions by viewModel.questions.collectAsState()
+    val userAnswers by viewModel.userAnswers.collectAsState()
+    val currentQuestionIndex by viewModel.currentQuestionIndex.collectAsState()
+    val timeRemaining by viewModel.timeRemaining.collectAsState()
+    val score by viewModel.score.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+    val errorMessage by viewModel.errorMessage.collectAsState()
+    
+    // Cargar quiz al iniciar
+    LaunchedEffect(quizId) {
+        viewModel.loadQuiz(quizId)
+    }
+    
+    // Mapear QuizQuestionResponse a QuizQuestion para compatibilidad con UI existente
+    val uiQuestions = remember(questions) {
+        questions.mapIndexed { index, q ->
             QuizQuestion(
-                id = 1,
-                prompt = "¿Qué significa esta seña?",
-                options = listOf("Hola", "Adiós", "Gracias", "Por favor"),
-                correctAnswer = "Hola",
-                videoUrl = "hola.mp4",
-                type = QuizType.MULTIPLE_CHOICE_VIDEO
-            ),
-            QuizQuestion(
-                id = 2,
-                prompt = "Selecciona la seña para: 'Gracias'",
-                options = listOf("Video 1", "Video 2", "Video 3", "Video 4"),
-                correctAnswer = "Video 2",
-                type = QuizType.GESTURE_RECOGNITION
-            ),
-            QuizQuestion(
-                id = 3,
-                prompt = "¿Cómo se dice 'Familia' en LSM?",
-                options = listOf("Video A", "Video B", "Video C", "Video D"),
-                correctAnswer = "Video B",
-                type = QuizType.TRANSLATION
-            ),
-            QuizQuestion(
-                id = 4,
-                prompt = "¿Qué número es este?",
-                options = listOf("5", "10", "15", "20"),
-                correctAnswer = "10",
-                videoUrl = "numero_10.mp4",
-                type = QuizType.SPEED_ROUND
-            ),
-            QuizQuestion(
-                id = 5,
-                prompt = "Selecciona el color 'Azul'",
-                options = listOf("Rojo", "Azul", "Verde", "Amarillo"),
-                correctAnswer = "Azul",
-                type = QuizType.MULTIPLE_CHOICE_VIDEO
+                id = q.id,
+                prompt = q.prompt,
+                options = q.options?.values?.toList() ?: listOf("Opción A", "Opción B", "Opción C", "Opción D"),
+                correctAnswer = q.answer ?: "",
+                videoUrl = null,
+                type = when (quiz?.type) {
+                    "multiple_choice" -> QuizType.MULTIPLE_CHOICE_VIDEO
+                    "complete" -> QuizType.TRANSLATION
+                    "pair" -> QuizType.GESTURE_RECOGNITION
+                    else -> QuizType.MULTIPLE_CHOICE_VIDEO
+                }
             )
-        )
+        }
     }
 
     var quizState by remember {
         mutableStateOf(
             QuizState(
-                totalQuestions = questions.size
+                totalQuestions = uiQuestions.size
             )
+        )
+    }
+    
+    // Actualizar totalQuestions cuando se carguen las preguntas
+    LaunchedEffect(uiQuestions.size) {
+        if (uiQuestions.isNotEmpty()) {
+            quizState = quizState.copy(totalQuestions = uiQuestions.size)
+        }
+    }
+    
+    // Sincronizar currentQuestionIndex del ViewModel con quizState
+    LaunchedEffect(currentQuestionIndex) {
+        quizState = quizState.copy(currentQuestionIndex = currentQuestionIndex)
+    }
+    
+    // Helper function: handleAnswer
+    fun handleAnswerLocal(
+        answer: String,
+        isCorrect: Boolean
+    ) {
+        val newLives = if (isCorrect) quizState.lives else (quizState.lives - 1).coerceAtLeast(0)
+        val newScore = if (isCorrect) quizState.score + 1 else quizState.score
+        val xpForThisAnswer = if (isCorrect) 10 else 0
+        val newXP = quizState.earnedXP + xpForThisAnswer
+        
+        quizState = quizState.copy(
+            selectedAnswer = answer,
+            isAnswerCorrect = isCorrect,
+            lives = newLives,
+            score = newScore,
+            earnedXP = newXP
+        )
+    }
+    
+    // Helper function: checkQuizComplete
+    fun checkQuizCompleteLocal() {
+        val isPerfect = quizState.score == uiQuestions.size && quizState.lives == 3
+        val bonusXP = when {
+            isPerfect -> 100
+            quizState.lives == 3 -> 50
+            else -> 0
+        }
+        
+        quizState = quizState.copy(
+            isQuizComplete = true,
+            isPerfect = isPerfect,
+            earnedXP = quizState.earnedXP + bonusXP
         )
     }
 
@@ -127,17 +172,17 @@ fun QuizScreen(
     var showExitDialog by remember { mutableStateOf(false) }
 
     // Timer para Speed Round
-    LaunchedEffect(quizState.currentQuestionIndex) {
-        if (questions[quizState.currentQuestionIndex].type == QuizType.SPEED_ROUND) {
+    LaunchedEffect(quizState.currentQuestionIndex, uiQuestions.size) {
+        if (uiQuestions.isNotEmpty() && 
+            quizState.currentQuestionIndex < uiQuestions.size &&
+            uiQuestions[quizState.currentQuestionIndex].type == QuizType.SPEED_ROUND) {
             while (quizState.timeRemaining > 0 && quizState.selectedAnswer == null) {
                 delay(1000)
                 quizState = quizState.copy(timeRemaining = quizState.timeRemaining - 1)
             }
             if (quizState.timeRemaining == 0 && quizState.selectedAnswer == null) {
                 // Tiempo agotado, contar como incorrecto
-                handleAnswer("", false, questions, quizState) { newState ->
-                    quizState = newState
-                }
+                handleAnswerLocal("", false)
             }
         }
     }
@@ -147,7 +192,7 @@ fun QuizScreen(
             TopAppBar(
                 title = {
                     Text(
-                        "Quiz - Pregunta ${quizState.currentQuestionIndex + 1}/${questions.size}",
+                        "Quiz - Pregunta ${quizState.currentQuestionIndex + 1}/${uiQuestions.size}",
                         fontWeight = FontWeight.Bold
                     )
                 },
@@ -193,16 +238,82 @@ fun QuizScreen(
                 )
                 .padding(paddingValues)
         ) {
-            if (quizState.isQuizComplete) {
-                QuizResultsScreen(
-                    score = quizState.score,
-                    totalQuestions = quizState.totalQuestions,
-                    earnedXP = quizState.earnedXP,
-                    isPerfect = quizState.isPerfect,
-                    onContinue = { onQuizComplete(quizState.score, quizState.earnedXP) },
-                    onReviewMistakes = { /* TODO */ }
-                )
-            } else {
+            when {
+                isLoading -> {
+                    // Loading state
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.spacedBy(16.dp)
+                        ) {
+                            CircularProgressIndicator(color = AzulTec)
+                            Text(
+                                text = "Cargando quiz...",
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = Color.Gray
+                            )
+                        }
+                    }
+                }
+                errorMessage != null -> {
+                    // Error state
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.spacedBy(16.dp),
+                            modifier = Modifier.padding(32.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Warning,
+                                contentDescription = "Error",
+                                tint = Color.Red,
+                                modifier = Modifier.size(64.dp)
+                            )
+                            Text(
+                                text = errorMessage ?: "Error desconocido",
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = Color.Red,
+                                textAlign = TextAlign.Center
+                            )
+                            Button(
+                                onClick = { viewModel.loadQuiz(quizId) },
+                                colors = ButtonDefaults.buttonColors(containerColor = AzulTec)
+                            ) {
+                                Text("Reintentar")
+                            }
+                        }
+                    }
+                }
+                uiQuestions.isEmpty() -> {
+                    // Empty state
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "No hay preguntas disponibles",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = Color.Gray
+                        )
+                    }
+                }
+                quizState.isQuizComplete -> {
+                    QuizResultsScreen(
+                        score = quizState.score,
+                        totalQuestions = quizState.totalQuestions,
+                        earnedXP = quizState.earnedXP,
+                        isPerfect = quizState.isPerfect,
+                        onContinue = { onQuizComplete(quizState.score, quizState.earnedXP) },
+                        onReviewMistakes = { /* TODO */ }
+                    )
+                }
+                else -> {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -212,7 +323,9 @@ fun QuizScreen(
                     // Progress bar profesional
                     Column {
                         AnimatedProgressBar(
-                            progress = (quizState.currentQuestionIndex + 1).toFloat() / questions.size,
+                            progress = if (uiQuestions.isNotEmpty()) {
+                                (quizState.currentQuestionIndex + 1).toFloat() / uiQuestions.size
+                            } else 0f,
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(8.dp),
@@ -273,32 +386,37 @@ fun QuizScreen(
 
                     // Question Content
                     QuestionContent(
-                        question = questions[quizState.currentQuestionIndex],
+                        question = uiQuestions.getOrNull(quizState.currentQuestionIndex) ?: return@Column,
                         selectedAnswer = quizState.selectedAnswer,
                         isAnswerCorrect = quizState.isAnswerCorrect,
                         timeRemaining = quizState.timeRemaining,
                         onAnswerSelected = { answer ->
-                            if (quizState.selectedAnswer == null) {
-                                val isCorrect = answer == questions[quizState.currentQuestionIndex].correctAnswer
-                                handleAnswer(answer, isCorrect, questions, quizState) { newState ->
-                                    quizState = newState
+                            if (quizState.selectedAnswer == null && uiQuestions.isNotEmpty()) {
+                                val currentQuestion = uiQuestions[quizState.currentQuestionIndex]
+                                val isCorrect = answer == currentQuestion.correctAnswer
+                                
+                                // Registrar respuesta en el ViewModel
+                                val questionId = currentQuestion.id
+                                val answerId = currentQuestion.options.indexOf(answer)
+                                viewModel.answerQuestion(questionId, answerId)
+                                
+                                handleAnswerLocal(answer, isCorrect)
                                     
-                                    // Auto-advance after 1.5 seconds
-                                    coroutineScope.launch {
-                                        delay(1500)
-                                        if (newState.currentQuestionIndex < questions.size - 1) {
-                                            quizState = newState.copy(
-                                                currentQuestionIndex = newState.currentQuestionIndex + 1,
-                                                selectedAnswer = null,
-                                                isAnswerCorrect = null,
-                                                timeRemaining = 30
-                                            )
-                                        } else {
-                                            // Quiz complete
-                                            checkQuizComplete(newState, questions) { finalState ->
-                                                quizState = finalState
-                                            }
-                                        }
+                                // Auto-advance after 1.5 seconds
+                                coroutineScope.launch {
+                                    delay(1500)
+                                    if (quizState.currentQuestionIndex < uiQuestions.size - 1) {
+                                        viewModel.nextQuestion() // Actualizar índice en ViewModel
+                                        quizState = quizState.copy(
+                                            currentQuestionIndex = quizState.currentQuestionIndex + 1,
+                                            selectedAnswer = null,
+                                            isAnswerCorrect = null,
+                                            timeRemaining = 30
+                                        )
+                                    } else {
+                                        // Quiz complete - enviar al backend
+                                        viewModel.submitQuiz()
+                                        checkQuizCompleteLocal()
                                     }
                                 }
                             }
@@ -312,9 +430,10 @@ fun QuizScreen(
                         XPRewardInfo()
                     }
                 }
-            }
-        }
-    }
+            } // Cierre del else
+        } // Cierre del when
+    } // Cierre del Box
+    } // Cierre del Scaffold
 
     // Exit Dialog
     if (showExitDialog) {
@@ -349,7 +468,7 @@ fun QuizScreen(
 // ============================================
 
 @Composable
-private fun QuestionContent(
+fun QuestionContent(
     question: QuizQuestion,
     selectedAnswer: String?,
     isAnswerCorrect: Boolean?,
@@ -552,7 +671,7 @@ private fun VideoPlayerPlaceholder(videoUrl: String) {
 // ============================================
 
 @Composable
-private fun SpeedRoundTimer(timeRemaining: Int) {
+fun SpeedRoundTimer(timeRemaining: Int) {
     val progress = timeRemaining / 30f
     val color = when {
         timeRemaining > 20 -> VerdeExito
@@ -627,7 +746,7 @@ private fun SpeedRoundTimer(timeRemaining: Int) {
 // ============================================
 
 @Composable
-private fun XPRewardInfo() {
+fun XPRewardInfo() {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
@@ -675,7 +794,7 @@ private fun XPRewardInfo() {
 // ============================================
 
 @Composable
-private fun QuizResultsScreen(
+fun QuizResultsScreen(
     score: Int,
     totalQuestions: Int,
     earnedXP: Int,
@@ -880,7 +999,7 @@ private fun PerfectQuizCelebration() {
 // HELPER FUNCTIONS
 // ============================================
 
-private fun handleAnswer(
+fun handleAnswer(
     answer: String,
     isCorrect: Boolean,
     questions: List<QuizQuestion>,
@@ -903,7 +1022,7 @@ private fun handleAnswer(
     )
 }
 
-private fun checkQuizComplete(
+fun checkQuizComplete(
     currentState: QuizState,
     questions: List<QuizQuestion>,
     onStateUpdate: (QuizState) -> Unit
