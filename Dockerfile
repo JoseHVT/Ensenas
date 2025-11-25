@@ -4,6 +4,15 @@ FROM python:3.10-slim
 # 2. Establecemos el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
+# --- NUEVO BLOQUE OBLIGATORIO PARA MYSQL ---
+# Instalamos las herramientas de sistema necesarias para compilar mysqlclient
+RUN apt-get update && apt-get install -y \
+    pkg-config \
+    gcc \
+    default-libmysqlclient-dev \
+    && rm -rf /var/lib/apt/lists/*
+# -------------------------------------------
+    
 # 3. Copiamos el archivo de requerimientos primero por los beneficios de cache de docker
 COPY requirements.txt .
 
