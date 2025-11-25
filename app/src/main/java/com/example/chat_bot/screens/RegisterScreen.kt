@@ -4,6 +4,8 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.animation.*
+import androidx.compose.animation.core.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -20,7 +22,9 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.chat_bot.R
+import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
+import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,6 +40,12 @@ fun RegisterScreen(
     var confirmPasswordVisible by remember { mutableStateOf(false) }
     var isLoading by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
+    var isVisible by remember { mutableStateOf(false) }
+    
+    LaunchedEffect(Unit) {
+        delay(100)
+        isVisible = true
+    }
     
     Scaffold(
         topBar = {
@@ -62,11 +72,21 @@ fun RegisterScreen(
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.borrego_celebration),
-                contentDescription = "Borrego celebrando",
-                modifier = Modifier.size(100.dp)
-            )
+            AnimatedVisibility(
+                visible = isVisible,
+                enter = fadeIn() + scaleIn(
+                    animationSpec = spring(
+                        dampingRatio = Spring.DampingRatioMediumBouncy,
+                        stiffness = Spring.StiffnessLow
+                    )
+                )
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.borrego_celebration),
+                    contentDescription = "Borrego celebrando",
+                    modifier = Modifier.size(100.dp)
+                )
+            }
             
             Spacer(modifier = Modifier.height(16.dp))
             
@@ -87,84 +107,149 @@ fun RegisterScreen(
             
             Spacer(modifier = Modifier.height(24.dp))
             
-            OutlinedTextField(
-                value = name,
-                onValueChange = { name = it; errorMessage = null },
-                label = { Text("Nombre completo") },
-                leadingIcon = { Icon(Icons.Default.Person, null) },
-                singleLine = true,
-                modifier = Modifier.fillMaxWidth(),
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = AzulTec,
-                    focusedLabelColor = AzulTec
-                )
-            )
-            
-            Spacer(modifier = Modifier.height(16.dp))
-            
-            OutlinedTextField(
-                value = email,
-                onValueChange = { email = it; errorMessage = null },
-                label = { Text("Correo electrónico") },
-                leadingIcon = { Icon(Icons.Default.Email, null) },
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-                singleLine = true,
-                modifier = Modifier.fillMaxWidth(),
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = AzulTec,
-                    focusedLabelColor = AzulTec
-                )
-            )
-            
-            Spacer(modifier = Modifier.height(16.dp))
-            
-            OutlinedTextField(
-                value = password,
-                onValueChange = { password = it; errorMessage = null },
-                label = { Text("Contraseña") },
-                leadingIcon = { Icon(Icons.Default.Lock, null) },
-                trailingIcon = {
-                    IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                        Icon(
-                            if (passwordVisible) Icons.Default.Visibility else Icons.Default.VisibilityOff,
-                            null
+            AnimatedVisibility(
+                visible = isVisible,
+                enter = fadeIn() + slideInVertically(initialOffsetY = { it / 2 })
+            ) {
+                Column {
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(containerColor = Color.White),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                        shape = RoundedCornerShape(16.dp)
+                    ) {
+                        OutlinedTextField(
+                            value = name,
+                            onValueChange = { name = it; errorMessage = null },
+                            label = { Text("Nombre completo") },
+                            leadingIcon = { 
+                                Icon(
+                                    Icons.Default.Person, 
+                                    null,
+                                    tint = AzulTec
+                                ) 
+                            },
+                            singleLine = true,
+                            modifier = Modifier.fillMaxWidth(),
+                            colors = OutlinedTextFieldDefaults.colors(
+                                focusedBorderColor = AzulTec,
+                                focusedLabelColor = AzulTec,
+                                unfocusedBorderColor = Color.Transparent
+                            )
                         )
                     }
-                },
-                visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                singleLine = true,
-                modifier = Modifier.fillMaxWidth(),
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = AzulTec,
-                    focusedLabelColor = AzulTec
-                )
-            )
             
             Spacer(modifier = Modifier.height(16.dp))
             
-            OutlinedTextField(
-                value = confirmPassword,
-                onValueChange = { confirmPassword = it; errorMessage = null },
-                label = { Text("Confirmar contraseña") },
-                leadingIcon = { Icon(Icons.Default.Lock, null) },
-                trailingIcon = {
-                    IconButton(onClick = { confirmPasswordVisible = !confirmPasswordVisible }) {
-                        Icon(
-                            if (confirmPasswordVisible) Icons.Default.Visibility else Icons.Default.VisibilityOff,
-                            null
-                        )
-                    }
-                },
-                visualTransformation = if (confirmPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password, imeAction = ImeAction.Done),
-                singleLine = true,
+            Card(
                 modifier = Modifier.fillMaxWidth(),
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = AzulTec,
-                    focusedLabelColor = AzulTec
+                colors = CardDefaults.cardColors(containerColor = Color.White),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                OutlinedTextField(
+                    value = email,
+                    onValueChange = { email = it; errorMessage = null },
+                    label = { Text("Correo electrónico") },
+                    leadingIcon = { 
+                        Icon(
+                            Icons.Default.Email, 
+                            null,
+                            tint = AzulTec
+                        ) 
+                    },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = AzulTec,
+                        focusedLabelColor = AzulTec,
+                        unfocusedBorderColor = Color.Transparent
+                    )
                 )
-            )
+            }
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(containerColor = Color.White),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                OutlinedTextField(
+                    value = password,
+                    onValueChange = { password = it; errorMessage = null },
+                    label = { Text("Contraseña") },
+                    leadingIcon = { 
+                        Icon(
+                            Icons.Default.Lock, 
+                            null,
+                            tint = AzulTec
+                        ) 
+                    },
+                    trailingIcon = {
+                        IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                            Icon(
+                                if (passwordVisible) Icons.Default.Visibility else Icons.Default.VisibilityOff,
+                                null,
+                                tint = AzulTec
+                            )
+                        }
+                    },
+                    visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = AzulTec,
+                        focusedLabelColor = AzulTec,
+                        unfocusedBorderColor = Color.Transparent
+                    )
+                )
+            }
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(containerColor = Color.White),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                OutlinedTextField(
+                    value = confirmPassword,
+                    onValueChange = { confirmPassword = it; errorMessage = null },
+                    label = { Text("Confirmar contraseña") },
+                    leadingIcon = { 
+                        Icon(
+                            Icons.Default.Lock, 
+                            null,
+                            tint = AzulTec
+                        ) 
+                    },
+                    trailingIcon = {
+                        IconButton(onClick = { confirmPasswordVisible = !confirmPasswordVisible }) {
+                            Icon(
+                                if (confirmPasswordVisible) Icons.Default.Visibility else Icons.Default.VisibilityOff,
+                                null,
+                                tint = AzulTec
+                            )
+                        }
+                    },
+                    visualTransformation = if (confirmPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password, imeAction = ImeAction.Done),
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = AzulTec,
+                        focusedLabelColor = AzulTec,
+                        unfocusedBorderColor = Color.Transparent
+                    )
+                )
+            }
+                }
+            }
             
             if (errorMessage != null) {
                 Spacer(modifier = Modifier.height(8.dp))

@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.chat_bot.R
 import com.example.chat_bot.data.models.UserLevel
+import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -96,28 +97,40 @@ fun ProfileScreen(
                     )
                     
                     if (userLevel != null) {
-                        Spacer(modifier = Modifier.height(8.dp))
+                        Spacer(modifier = Modifier.height(16.dp))
                         
-                        Surface(
-                            color = AmarilloOro.copy(alpha = 0.2f),
-                            shape = RoundedCornerShape(20.dp)
+                        // Circular progress para nivel
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(16.dp)
                         ) {
-                            Row(
-                                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(8.dp)
-                            ) {
-                                Icon(
-                                    Icons.Default.EmojiEvents,
-                                    contentDescription = null,
-                                    tint = AmarilloOro,
-                                    modifier = Modifier.size(20.dp)
+                            AnimatedCircularProgress(
+                                progress = userLevel.progress,
+                                modifier = Modifier,
+                                size = 60.dp,
+                                strokeWidth = 6.dp,
+                                backgroundColor = Color.White.copy(alpha = 0.2f),
+                                progressColor = AmarilloOro,
+                                showPercentage = false,
+                                animationDuration = 1000
+                            )
+                            
+                            Column {
+                                Text(
+                                    text = "Nivel ${userLevel.level}",
+                                    style = MaterialTheme.typography.titleMedium,
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold
                                 )
                                 Text(
-                                    text = "Nivel ${userLevel.level} • ${UserLevel.getLevelTitle(userLevel.level)}",
-                                    style = MaterialTheme.typography.labelMedium,
-                                    color = AzulTec,
-                                    fontWeight = FontWeight.SemiBold
+                                    text = UserLevel.getLevelTitle(userLevel.level),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = Color.White.copy(alpha = 0.9f)
+                                )
+                                Text(
+                                    text = "${userLevel.currentXP}/${userLevel.requiredXP} XP",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = AmarilloOro
                                 )
                             }
                         }
@@ -173,52 +186,73 @@ fun ProfileScreen(
                 
                 Spacer(modifier = Modifier.height(16.dp))
                 
-                // Achievements summary card
+                // Achievements summary card con animación
                 Card(
                     onClick = onNavigateToAchievements,
                     modifier = Modifier.fillMaxWidth(),
                     colors = CardDefaults.cardColors(
                         containerColor = Color.White
                     ),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                     shape = RoundedCornerShape(16.dp)
                 ) {
-                    Row(
+                    Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(16.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.SpaceBetween
+                            .padding(16.dp)
                     ) {
                         Row(
+                            modifier = Modifier.fillMaxWidth(),
                             verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(12.dp)
+                            horizontalArrangement = Arrangement.SpaceBetween
                         ) {
-                            Icon(
-                                Icons.Default.Stars,
-                                contentDescription = null,
-                                tint = AmarilloOro,
-                                modifier = Modifier.size(32.dp)
-                            )
-                            Column {
-                                Text(
-                                    text = "Logros Desbloqueados",
-                                    style = MaterialTheme.typography.labelMedium,
-                                    color = GrisMedio
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(12.dp)
+                            ) {
+                                BouncingIcon(
+                                    modifier = Modifier,
+                                    content = {
+                                        Icon(
+                                            Icons.Default.Stars,
+                                            contentDescription = null,
+                                            tint = AmarilloOro,
+                                            modifier = Modifier.size(32.dp)
+                                        )
+                                    }
                                 )
-                                Text(
-                                    text = "$unlockedAchievements / $totalAchievements",
-                                    style = MaterialTheme.typography.titleMedium,
-                                    fontWeight = FontWeight.Bold,
-                                    color = AzulTec
-                                )
+                                Column {
+                                    Text(
+                                        text = "Logros Desbloqueados",
+                                        style = MaterialTheme.typography.labelMedium,
+                                        color = GrisMedio
+                                    )
+                                    Text(
+                                        text = "$unlockedAchievements / $totalAchievements",
+                                        style = MaterialTheme.typography.titleMedium,
+                                        fontWeight = FontWeight.Bold,
+                                        color = AzulTec
+                                    )
+                                }
                             }
+                            
+                            Icon(
+                                Icons.Default.ChevronRight,
+                                contentDescription = null,
+                                tint = GrisOscuro.copy(alpha = 0.4f)
+                            )
                         }
                         
-                        Icon(
-                            Icons.Default.ChevronRight,
-                            contentDescription = null,
-                            tint = GrisOscuro.copy(alpha = 0.4f)
+                        Spacer(modifier = Modifier.height(12.dp))
+                        
+                        // Barra de progreso de logros
+                        AnimatedProgressBar(
+                            progress = unlockedAchievements.toFloat() / totalAchievements.toFloat(),
+                            modifier = Modifier.fillMaxWidth(),
+                            backgroundColor = GrisClaro,
+                            progressColor = AmarilloOro,
+                            height = 8.dp,
+                            animationDuration = 1000
                         )
                     }
                 }
