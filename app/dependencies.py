@@ -9,6 +9,17 @@ import json
 from .database import SessionLocal # Importamos nuestra SessionLocal
 # --- Dependencia para la Sesión de BD ---
 
+def get_db():
+    """
+    Esta funcion es una dependencia de FastAPI que nos
+    proporciona una sesion de base de datos por request.
+    """
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
 # 1. Buscamos si existe la variable de entorno con el JSON completo (produccion/Nube)
 firebase_creds_json = os.getenv("FIREBASE_CREDENTIALS_JSON")
 
