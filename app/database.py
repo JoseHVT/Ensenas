@@ -12,8 +12,14 @@ from sqlalchemy.orm import sessionmaker
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./enseñas.db")
 
 #validamos que el driver sea compatible con el motor
-if DATABASE_URL.startswith("mysql://"):
-    DATABASE_URL = DATABASE_URL.replace("mysql://", "mysql+pymysql://")
+if DATABASE_URL and DATABASE_URL.startswith("mysql"):
+    #reemplazo el driver ppor pymysql
+    if "mysql://" in DATABASE_URL:
+        DATABASE_URL = DATABASE_URL.replace("mysql://", "mysql+pymysql://")
+    
+    #limpiamos el parametrod e aiven, creo que es el error
+    if "?ssl-mode=REQUIRED" in DATABASE_URL:
+        DATABASE_URL = DATABASE_URL.replace("?ssl-mode=REQUIRED", "")
 
 # Crea motor de de db
 
@@ -28,7 +34,8 @@ else:
     #mysql
     #pool_recycle para evitar errores de conexion por timeout
     engine = create_engine(
-      DATABASE_URL, pool_recycle=3600
+      DATABASE_URL,
+      pool_recycle=3600
     )
 
 #sesion oara comunicarse con db
