@@ -1,0 +1,18 @@
+# Ignorar el entorno virtual porque crea el propio
+venv/
+
+# Ignorar base de datos local
+*.db
+*.sqlite
+
+# Ignorar archivos de cache
+__pycache__/
+*.pyc
+
+# Config de git
+.git/
+.gitignore
+
+# Ignorar archivos de configuración local
+.env
+

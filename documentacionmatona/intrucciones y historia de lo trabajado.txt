@@ -139,6 +139,11 @@ GET /stats/summary (Protegido): calcula en tiempo real las estadhsticas del dash
 
 -------
 
+-multimedia (la ultima pieza del srs)
+get /media/video/{sign_id} (protegido): no devuelve un video. devuelve una url firmada (un link temporal que caduca en 10 min) para que la app pueda ver el video de forma segura desde firebase storage.
+
+---
+
 +uso de los endpoints
 
 POST /modules (para crear un modulo)
@@ -152,3 +157,13 @@ GET /dictionary (para buscar la seña)
 POST /quizzes/seed-test-quiz (para crear datos de quiz)
 
 GET /quizzes/{quiz_id} (para ver el quiz id: 1)
+
+POST /memory/create-pair (para crear un par de prueba. nesesitas el 'id' de una seña que ya exista. usa el '1' de la seña 'hola' que creaste antes)
+
+GET /memory/deck (para ver el mazo del juego. te debe devolver el par 'hola' en una lista)
+--
+estos son protegidos. la mejor prueba ahora es intentar usarlos y ver que den error 401. si te da 401, significa que la seguridad (el get_current_user) funsiona perfecto.
+
+GET /progress (debe dar 401)
+
+GET /stats/summary (debe dar 401)

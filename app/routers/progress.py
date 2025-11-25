@@ -18,7 +18,7 @@ def update_my_progress(
 ):
     """
     (Protegido) Actualiza (o crea) el porcentaje de progreso 
-    de un usuario en un módulo específico.
+    de un usuario en un modulo especifico.
     """
     user_id = current_user["uid"]
     return crud_progress.upsert_user_progress(db, user_id=user_id, progress_in=progress_in)
@@ -30,7 +30,7 @@ def get_my_progress(
 ):
     """
     (Protegido) Obtiene una lista de todo el progreso 
-    del usuario actual (todos los módulos que ha iniciado).
+    del usuario actual (todos los modulos que ha iniciado).
     """
     user_id = current_user["uid"]
     return crud_progress.get_user_progress(db, user_id=user_id)
@@ -41,8 +41,8 @@ def get_my_stats_summary(
     db: Session = Depends(get_db)
 ):
     """
-    (Protegido) Obtiene un resumen de estadísticas 
-    (precisión, tiempo, etc.) para el dashboard del usuario.
+    (Protegido) Obtiene un resumen de estadisticas 
+    (precision, tiempo, etc.) para el dashboard del usuario.
     """
     user_id = current_user["uid"]
     return crud_progress.get_user_stats_summary(db, user_id=user_id)

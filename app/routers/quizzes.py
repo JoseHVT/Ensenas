@@ -83,7 +83,7 @@ def seed_test_quiz(db: Session = Depends(get_db)):
 
     """
 
-    # 1. Busca el Modulo 1 (creado en la prueba anterior)
+    # 1. Busca el Modulo 1 
     test_module = db.query(models.Module).filter(models.Module.id == 1).first()
 
     if not test_module:
@@ -97,12 +97,12 @@ def seed_test_quiz(db: Session = Depends(get_db)):
     if existing_quiz:
         return {"message": "El quiz de prueba ya existe.", "quiz_id": existing_quiz.id}
 
-    # 3. Crea el Quiz y sus Preguntas (¡la magia de SQLAlchemy!)
+    # 3. Crea el Quiz y sus Preguntas 
     new_quiz = models.Quiz(
         title="Quiz de Saludos (Prueba)",
         type="multiple_choice",
         module_id=test_module.id, # Lo asociamos al mo4dulo 1
-        questions=[  # Podemos crear las preguntas "hijo" directamente
+        questions=[  #  crear las preguntas "hijo" directamente
             models.QuizQuestion(
                 prompt="¿Que seña significa 'Hola'?",
                 options={"a": "video_a.mp4", "b": "video_hola.mp4", "c": "video_c.mp4"},
@@ -116,7 +116,7 @@ def seed_test_quiz(db: Session = Depends(get_db)):
         ]
     )
 
-    # 4. Añadimos el "padre" (Quiz) y SQLAlchemy se encarga de los "hijos" (Preguntas)
+    # 4. Añadimos el quizz y SQLAlchemy se encarga de las pregunts
     db.add(new_quiz)
     db.commit()
     db.refresh(new_quiz)

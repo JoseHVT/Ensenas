@@ -17,13 +17,13 @@ def search_dictionary(
     db: Session = Depends(get_db),
     skip: int = 0,
     limit: int = 20,
-    # 'Query' nos permite añadir documentación y validación a los parámetros de la URL
+    # 'Query' nos permite añadir documentacion y validacion a los parametros de la URL
     query: Optional[str] = Query(None, min_length=1, description="Texto a buscar por prefijo"),
-    category: Optional[str] = Query(None, description="Filtrar por categoría exacta")
+    category: Optional[str] = Query(None, description="Filtrar por categoria exacta")
 ):
     """
     Busca señas en el diccionario.
-    Permite filtrar por texto (prefijo) y categoría, con paginación.
+    Permite filtrar por texto (prefijo) y categoria, con paginacion.
     """
     return crud_dictionary.get_signs(
         db=db, 

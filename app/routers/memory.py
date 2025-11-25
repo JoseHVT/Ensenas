@@ -30,7 +30,7 @@ def submit_memory_run(
     db: Session = Depends(get_db)
 ):
     """
-    Guarda el resultado (intentos, duración, etc.) de una partida.
+    Guarda el resultado (intentos, duracion, etc) de una partida.
     Requiere autenticacin.
     """
     user_id = current_user["uid"]
@@ -50,7 +50,7 @@ def create_a_sign_pair(
 ):
     """
     TEMP Crea un par palabra-seña para el juego.
-    Asegrate de haber creado una Seña (con POST /dictionary) primero.
+    se debe haber creado una Seña (con POST /dictionary) primero.
     """
     pair = crud_memory.create_sign_pair(db, sign_id=sign_id, word=word)
     if not pair:

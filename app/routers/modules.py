@@ -20,7 +20,7 @@ def read_modules(
     limit: int = 100
 ):
     """
-    Obtiene una lista de todos los mmdulos.
+    Obtiene una lista de todos los mmdulos
     """
     return crud_modules.get_modules(db, skip=skip, limit=limit)
 
@@ -36,6 +36,6 @@ def create_new_module(
 ):
     """
     Crea un nuevo modulo.
-    (OJO: Por ahora no esta protegido, ¡es solo para probar!)
+    prb
     """
     return crud_modules.create_module(db=db, module=module)

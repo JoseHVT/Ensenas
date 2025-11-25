@@ -17,7 +17,7 @@ def upsert_user_progress(db: Session, user_id: str, progress_in: schemas.UserMod
         last_activity=datetime.now() # Aseguramos que se actualice al insertar/actualizar
     )
     
-    # merge() hace la magia:
+    # merge() se encarga del UPSERT:
     # Si la Primary Key (user_id, module_id) existe, la actualiza.
     # Si no existe, la inserta.
     merged_progress = db.merge(db_progress)
@@ -27,16 +27,16 @@ def upsert_user_progress(db: Session, user_id: str, progress_in: schemas.UserMod
 
 
 def get_user_progress(db: Session, user_id: str):
-    """Obtiene todo el progreso (por módulo) del usuario actual."""
+    """Obtiene todo el progreso (por modulo) del usuario actual."""
     return db.query(models.UserModuleProgress).filter(models.UserModuleProgress.user_id == user_id).all()
 
 
 def get_user_stats_summary(db: Session, user_id: str) -> schemas.StatsSummary:
     """
-    Calcula las estadísticas resumidas para el dashboard del usuario.
+    Calcula las estadisticas resumidas para el dashboard del usuario.
     """
     
-    # 1. Calcular precisión global y tiempo total de quizzes
+    # 1. Calcular precision global y tiempo total de quizzes
     quiz_stats = db.query(
         func.sum(models.QuizAttempt.score).label("total_score"),
         func.sum(models.QuizAttempt.total).label("total_questions"),
@@ -48,7 +48,7 @@ def get_user_stats_summary(db: Session, user_id: str) -> schemas.StatsSummary:
         func.sum(models.MemoryRun.duration_ms).label("total_memory_time")
     ).filter(models.MemoryRun.user_id == user_id).scalar() or 0
 
-    # 3. Calcular precisión
+    # 3. Calcular precision
     total_score = quiz_stats.total_score or 0
     total_questions = quiz_stats.total_questions
     
@@ -59,13 +59,13 @@ def get_user_stats_summary(db: Session, user_id: str) -> schemas.StatsSummary:
     # 4. Calcular tiempo total
     total_duration_ms = (quiz_stats.total_quiz_time or 0) + memory_time
 
-    # 5. Calcular señas dominadas (ej: módulos completados al 100%)
+    # 5. Calcular senas dominadas (ej: modulos completados al 100%)
     senas_dominadas = db.query(models.UserModuleProgress).filter(
         models.UserModuleProgress.user_id == user_id,
         models.UserModuleProgress.percent == 100
     ).count()
 
-    # (Lógica de "racha" es más compleja, requiere tracking diario. 
+    # (LLogica de "racha" es mas compleja, requiere tracking diario. 
     # La dejamos en 0 por ahora como placeholder).
     
     return schemas.StatsSummary(
