@@ -124,4 +124,11 @@ class HomeViewModel(
     fun clearError() {
         _errorMessage.value = null
     }
+    
+    /**
+     * Recarga las estadísticas del usuario (para pull-to-refresh)
+     */
+    fun refreshStats() {
+        loadUserData()
+    }
 }

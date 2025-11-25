@@ -31,10 +31,6 @@ import com.example.chat_bot.viewmodels.ViewModelFactory
 fun ProfileScreen(
     onLogout: () -> Unit,
     onNavigateToAchievements: () -> Unit = {},
-    totalXP: Int = 245,
-    currentStreak: Int = 7,
-    completedModules: Int = 3,
-    completedLessons: Int = 29,
     userLevel: UserLevel? = null,
     unlockedAchievements: Int = 12,
     totalAchievements: Int = 25
@@ -47,6 +43,16 @@ fun ProfileScreen(
     val userName by viewModel.userName.collectAsState()
     val userEmail by viewModel.userEmail.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
+    
+    // Estadísticas del ViewModel
+    val modulesCompleted by viewModel.modulesCompleted.collectAsState()
+    val totalProgress by viewModel.totalProgress.collectAsState()
+    val currentStreak by viewModel.currentStreak.collectAsState()
+    val signsLearned by viewModel.signsLearned.collectAsState()
+    
+    // Calcular XP y lecciones basadas en estadísticas
+    val totalXP = signsLearned * 10 // Aproximación: 10 XP por seña
+    val completedLessons = modulesCompleted * 10 // Aproximación: 10 lecciones por módulo
     
     var showLogoutDialog by remember { mutableStateOf(false) }
     
@@ -189,7 +195,7 @@ fun ProfileScreen(
                 ) {
                     StatisticCard(
                         icon = Icons.Default.School,
-                        value = "$completedModules",
+                        value = "$modulesCompleted",
                         label = "Módulos",
                         color = AzulInfo,
                         modifier = Modifier.weight(1f)
