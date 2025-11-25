@@ -27,6 +27,7 @@ import com.example.chat_bot.R
 import com.example.chat_bot.data.models.DailyGoal
 import com.example.chat_bot.data.models.UserLevel
 import com.example.chat_bot.ui.components.pressAnimation
+import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
 import kotlinx.coroutines.delay
 
@@ -343,39 +344,6 @@ private fun AnimatedBorregoIcon() {
 }
 
 @Composable
-private fun PulsingFireIcon() {
-    val infiniteTransition = rememberInfiniteTransition(label = "fire")
-    val alpha by infiniteTransition.animateFloat(
-        initialValue = 0.7f,
-        targetValue = 1f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(800, easing = FastOutSlowInEasing),
-            repeatMode = RepeatMode.Reverse
-        ),
-        label = "alpha"
-    )
-    
-    val rotation by infiniteTransition.animateFloat(
-        initialValue = -5f,
-        targetValue = 5f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(1000, easing = FastOutSlowInEasing),
-            repeatMode = RepeatMode.Reverse
-        ),
-        label = "rotation"
-    )
-    
-    Icon(
-        imageVector = Icons.Default.LocalFireDepartment,
-        contentDescription = "Racha",
-        tint = RojoError.copy(alpha = alpha),
-        modifier = Modifier
-            .size(32.dp)
-            .graphicsLayer { rotationZ = rotation }
-    )
-}
-
-@Composable
 private fun DayCircle(day: String, isCompleted: Boolean, isCurrent: Boolean) {
     val backgroundColor = when {
         isCurrent -> VerdeExito
@@ -425,8 +393,31 @@ private fun StreakCalendar(currentStreak: Int) {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center
             ) {
-                PulsingFireIcon()
-                Spacer(modifier = Modifier.width(8.dp))
+                Box(
+                    modifier = Modifier
+                        .size(48.dp)
+                        .background(RojoError.copy(alpha = 0.1f), CircleShape),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.LocalFireDepartment,
+                        contentDescription = "Racha",
+                        tint = RojoError,
+                        modifier = Modifier.size(28.dp)
+                    )
+                    // Pulsing dot indicator en la esquina
+                    Box(
+                        modifier = Modifier
+                            .align(Alignment.TopEnd)
+                            .padding(4.dp)
+                    ) {
+                        PulsingDot(
+                            color = VerdeExito,
+                            size = 10.dp
+                        )
+                    }
+                }
+                Spacer(modifier = Modifier.width(12.dp))
                 Text(
                     text = "$currentStreak día${if (currentStreak != 1) "s" else ""} de racha",
                     style = MaterialTheme.typography.titleLarge,
@@ -481,7 +472,7 @@ private fun UserLevelCard(userLevel: UserLevel) {
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Column {
+                Column(modifier = Modifier.weight(1f)) {
                     Text(
                         text = UserLevel.getLevelTitle(userLevel.level),
                         style = MaterialTheme.typography.labelMedium,
@@ -495,23 +486,17 @@ private fun UserLevelCard(userLevel: UserLevel) {
                     )
                 }
                 
-                Surface(
-                    color = AzulTec.copy(alpha = 0.15f),
-                    shape = CircleShape,
-                    modifier = Modifier.size(60.dp)
-                ) {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            text = "${userLevel.level}",
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Bold,
-                            color = AzulTec
-                        )
-                    }
-                }
+                // Usar AnimatedCircularProgress profesional
+                AnimatedCircularProgress(
+                    progress = animatedProgress,
+                    modifier = Modifier,
+                    size = 80.dp,
+                    strokeWidth = 8.dp,
+                    backgroundColor = GrisClaro.copy(alpha = 0.3f),
+                    progressColor = AzulTec,
+                    showPercentage = false,
+                    animationDuration = 1000
+                )
             }
             
             Spacer(modifier = Modifier.height(16.dp))
@@ -524,28 +509,15 @@ private fun UserLevelCard(userLevel: UserLevel) {
             
             Spacer(modifier = Modifier.height(8.dp))
             
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(12.dp)
-                    .clip(RoundedCornerShape(6.dp))
-                    .background(GrisClaro)
-            ) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxHeight()
-                        .fillMaxWidth(animateFloatAsState(animatedProgress, label = "level").value)
-                        .background(
-                            Brush.horizontalGradient(
-                                colors = listOf(
-                                    AzulTec,
-                                    AzulTec.copy(alpha = 0.7f)
-                                )
-                            ),
-                            RoundedCornerShape(6.dp)
-                        )
-                )
-            }
+            // Usar AnimatedProgressBar profesional
+            AnimatedProgressBar(
+                progress = animatedProgress,
+                modifier = Modifier.fillMaxWidth(),
+                backgroundColor = GrisClaro,
+                progressColor = AzulTec,
+                height = 12.dp,
+                animationDuration = 1000
+            )
         }
     }
 }
@@ -616,28 +588,15 @@ private fun XPProgressCard(currentXP: Int, dailyGoal: Int) {
             
             Spacer(modifier = Modifier.height(16.dp))
             
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(12.dp)
-                    .clip(RoundedCornerShape(6.dp))
-                    .background(GrisClaro)
-            ) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxHeight()
-                        .fillMaxWidth(animateFloatAsState(animatedProgress, label = "xp").value)
-                        .background(
-                            Brush.horizontalGradient(
-                                colors = listOf(
-                                    VerdeExito,
-                                    VerdeExito.copy(alpha = 0.8f)
-                                )
-                            ),
-                            RoundedCornerShape(6.dp)
-                        )
-                )
-            }
+            // Usar componente profesional AnimatedProgressBar
+            AnimatedProgressBar(
+                progress = animatedProgress,
+                modifier = Modifier.fillMaxWidth(),
+                backgroundColor = GrisClaro,
+                progressColor = VerdeExito,
+                height = 12.dp,
+                animationDuration = 800
+            )
         }
     }
 }
@@ -648,16 +607,25 @@ private fun DailyLessonCard(
     progress: Float,
     onClick: () -> Unit
 ) {
+    // Usar GradientCard profesional
     Card(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = AzulTec),
+        colors = CardDefaults.cardColors(containerColor = Color.Transparent),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
         shape = RoundedCornerShape(20.dp)
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .background(
+                    Brush.horizontalGradient(
+                        colors = listOf(
+                            AzulTec,
+                            AzulTec.copy(alpha = 0.85f)
+                        )
+                    )
+                )
                 .padding(20.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -845,12 +813,27 @@ private fun MiniQuickAccessCard(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Icon(
-                imageVector = icon,
-                contentDescription = null,
-                tint = color,
-                modifier = Modifier.size(32.dp)
-            )
+            // Aplicar BouncingIcon solo a Logros y Trofeos
+            if (title == "Logros" || icon == Icons.Default.EmojiEvents) {
+                BouncingIcon(
+                    modifier = Modifier,
+                    content = {
+                        Icon(
+                            imageVector = icon,
+                            contentDescription = null,
+                            tint = color,
+                            modifier = Modifier.size(32.dp)
+                        )
+                    }
+                )
+            } else {
+                Icon(
+                    imageVector = icon,
+                    contentDescription = null,
+                    tint = color,
+                    modifier = Modifier.size(32.dp)
+                )
+            }
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = title,
