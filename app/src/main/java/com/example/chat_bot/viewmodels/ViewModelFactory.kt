@@ -32,6 +32,17 @@ class ViewModelFactory(
                     tokenManager = TokenManager(context.applicationContext)
                 ) as T
             }
+            modelClass.isAssignableFrom(QuizViewModel::class.java) -> {
+                QuizViewModel(
+                    tokenManager = TokenManager(context.applicationContext)
+                ) as T
+            }
+            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
+                ProfileViewModel(
+                    authRepository = AuthRepository(),
+                    tokenManager = TokenManager(context.applicationContext)
+                ) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }
     }

@@ -22,12 +22,17 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
+import com.example.chat_bot.viewmodels.ModulesViewModel
+import com.example.chat_bot.viewmodels.ModuleWithProgress
+import com.example.chat_bot.viewmodels.ViewModelFactory
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.PI
@@ -87,97 +92,29 @@ enum class ModuleCategory(
 fun ModulesScreen(
     onModuleClick: (Int) -> Unit
 ) {
-    val modules = remember {
-        listOf(
+    val context = LocalContext.current
+    val viewModel: ModulesViewModel = viewModel(factory = ViewModelFactory(context))
+    
+    // Estados observables del ViewModel
+    val backendModules by viewModel.modules.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+    val errorMessage by viewModel.errorMessage.collectAsState()
+    
+    // Convertir ModuleWithProgress a LearningModule para compatibilidad con UI
+    val modules = remember(backendModules) {
+        backendModules.map { module ->
             LearningModule(
-                id = 1,
-                title = "Abecedario",
-                category = ModuleCategory.BASICO,
-                lessonsCount = 26,
-                completedCount = 20,
-                isLocked = false,
-                icon = Icons.Default.Star,
-                description = "Aprende las 26 letras de LSM",
-                level = 1
-            ),
-            LearningModule(
-                id = 2,
-                title = "Números",
-                category = ModuleCategory.BASICO,
-                lessonsCount = 20,
-                completedCount = 9,
-                isLocked = false,
-                icon = Icons.Default.Add,
-                description = "Cuenta del 0 al 100 en señas",
-                level = 2
-            ),
-            LearningModule(
-                id = 3,
-                title = "Colores",
-                category = ModuleCategory.BASICO,
-                lessonsCount = 13,
-                completedCount = 0,
-                isLocked = false,
-                icon = Icons.Default.Info,
-                description = "Colores básicos y sus variantes",
-                level = 3
-            ),
-            LearningModule(
-                id = 4,
-                title = "Animales",
-                category = ModuleCategory.INTERMEDIO,
-                lessonsCount = 27,
-                completedCount = 0,
-                isLocked = false,
-                icon = Icons.Default.Face,
-                description = "Animales domésticos y salvajes",
-                level = 4
-            ),
-            LearningModule(
-                id = 5,
-                title = "Comida",
-                category = ModuleCategory.INTERMEDIO,
-                lessonsCount = 30,
-                completedCount = 0,
-                isLocked = true,
-                icon = Icons.Default.Favorite,
-                description = "Alimentos y bebidas comunes",
-                level = 5
-            ),
-            LearningModule(
-                id = 6,
-                title = "Familia",
-                category = ModuleCategory.INTERMEDIO,
-                lessonsCount = 15,
-                completedCount = 0,
-                isLocked = true,
-                icon = Icons.Default.Face,
-                description = "Miembros de la familia",
-                level = 6
-            ),
-            LearningModule(
-                id = 7,
-                title = "Hogar",
-                category = ModuleCategory.AVANZADO,
-                lessonsCount = 25,
-                completedCount = 0,
-                isLocked = true,
-                icon = Icons.Default.Home,
-                description = "Objetos y espacios del hogar",
-                level = 7
-            ),
-            LearningModule(
-                id = 8,
-                title = "Frutas",
-                category = ModuleCategory.BASICO,
-                lessonsCount = 22,
-                completedCount = 0,
-                isLocked = true,
-                icon = Icons.Default.Favorite,
-                description = "Frutas tropicales y comunes",
-                level = 8
+                id = module.id,
+                title = module.title,
+                category = getCategoryForModule(module.sortOrder),
+                lessonsCount = module.totalCount,
+                completedCount = module.completedCount,
+                isLocked = module.isLocked,
+                icon = getIconForModule(module.code),
+                description = module.description,
+                level = module.sortOrder
             )
-        )
+        }
     }
 
     // Encontrar el módulo actual (primer módulo no completado)
@@ -847,5 +784,37 @@ private fun FinalTrophySection() {
                 textAlign = TextAlign.Center
             )
         }
+    }
+}
+
+// ============================================
+// HELPER FUNCTIONS
+// ============================================
+
+/**
+ * Retorna la categoría según el orden del módulo
+ */
+private fun getCategoryForModule(sortOrder: Int): ModuleCategory {
+    return when (sortOrder) {
+        in 1..3 -> ModuleCategory.BASICO
+        in 4..6 -> ModuleCategory.INTERMEDIO
+        else -> ModuleCategory.AVANZADO
+    }
+}
+
+/**
+ * Retorna el ícono según el código del módulo
+ */
+private fun getIconForModule(code: String): ImageVector {
+    return when (code) {
+        "abecedario" -> Icons.Default.Star
+        "numeros" -> Icons.Default.Add
+        "colores" -> Icons.Default.Info
+        "animales" -> Icons.Default.Face
+        "comida" -> Icons.Default.Favorite
+        "familia" -> Icons.Default.Face
+        "hogar" -> Icons.Default.Home
+        "frutas" -> Icons.Default.Favorite
+        else -> Icons.Default.Star
     }
 }
