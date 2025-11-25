@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.animation.*
+import androidx.compose.animation.core.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.MoreVert
@@ -16,8 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.chat_bot.ui.components.ChatInput
-import com.example.chat_bot.ui.components.MessageBubble
+import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
 import com.example.chat_bot.viewmodels.ChatViewModel
 import kotlinx.coroutines.launch
@@ -59,21 +60,26 @@ fun ChatBotScreen(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        // Avatar del bot
-                        Surface(
-                            color = AzulClaro,
-                            shape = androidx.compose.foundation.shape.RoundedCornerShape(20.dp),
-                            modifier = Modifier.size(40.dp)
-                        ) {
-                            Box(
-                                contentAlignment = Alignment.Center
-                            ) {
-                                Text(
-                                    text = "🐏",
-                                    fontSize = 24.sp
-                                )
+                        // Avatar del bot con animación
+                        BouncingIcon(
+                            modifier = Modifier.size(40.dp),
+                            content = {
+                                Surface(
+                                    color = AzulClaro,
+                                    shape = androidx.compose.foundation.shape.RoundedCornerShape(20.dp),
+                                    modifier = Modifier.size(40.dp)
+                                ) {
+                                    Box(
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Text(
+                                            text = "🐏",
+                                            fontSize = 24.sp
+                                        )
+                                    }
+                                }
                             }
-                        }
+                        )
                         
                         // Nombre y estado
                         Column {
@@ -83,11 +89,21 @@ fun ChatBotScreen(
                                 fontWeight = FontWeight.Bold,
                                 color = NegroTexto
                             )
-                            Text(
-                                text = if (isTyping) "escribiendo..." else "En línea",
-                                fontSize = 12.sp,
-                                color = if (isTyping) AzulTec else VerdeExito
-                            )
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                            ) {
+                                if (isTyping) {
+                                    PulsingDot(color = AzulTec, size = 8.dp)
+                                } else {
+                                    PulsingDot(color = VerdeExito, size = 8.dp)
+                                }
+                                Text(
+                                    text = if (isTyping) "escribiendo..." else "En línea",
+                                    fontSize = 12.sp,
+                                    color = if (isTyping) AzulTec else VerdeExito
+                                )
+                            }
                         }
                     }
                 },
@@ -179,12 +195,30 @@ fun ChatBotScreen(
                     items = messages,
                     key = { it.id }
                 ) { message ->
-                    MessageBubble(
-                        message = message,
-                        onQuickReplyClick = { reply ->
-                            viewModel.handleQuickReply(reply)
-                        }
-                    )
+                    var isVisible by remember { mutableStateOf(false) }
+                    
+                    LaunchedEffect(Unit) {
+                        isVisible = true
+                    }
+                    
+                    AnimatedVisibility(
+                        visible = isVisible,
+                        enter = fadeIn(animationSpec = tween(300)) + 
+                                slideInVertically(
+                                    initialOffsetY = { it / 3 },
+                                    animationSpec = spring(
+                                        dampingRatio = Spring.DampingRatioMediumBouncy,
+                                        stiffness = Spring.StiffnessLow
+                                    )
+                                )
+                    ) {
+                        MessageBubble(
+                            message = message,
+                            onQuickReplyClick = { reply ->
+                                viewModel.handleQuickReply(reply)
+                            }
+                        )
+                    }
                 }
             }
         }

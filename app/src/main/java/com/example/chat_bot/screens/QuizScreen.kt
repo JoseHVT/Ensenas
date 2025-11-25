@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -208,37 +209,63 @@ fun QuizScreen(
                         .padding(16.dp),
                     verticalArrangement = Arrangement.SpaceBetween
                 ) {
-                    // Progress bar
+                    // Progress bar profesional
                     Column {
-                        LinearProgressIndicator(
-                            progress = { (quizState.currentQuestionIndex + 1).toFloat() / questions.size },
+                        AnimatedProgressBar(
+                            progress = (quizState.currentQuestionIndex + 1).toFloat() / questions.size,
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .height(8.dp)
-                                .clip(RoundedCornerShape(4.dp)),
-                            color = VerdeExito,
-                            trackColor = Color(0xFFE5E7EB)
+                                .height(8.dp),
+                            backgroundColor = Color(0xFFE5E7EB),
+                            progressColor = VerdeExito
                         )
 
                         Spacer(modifier = Modifier.height(16.dp))
 
-                        // Score display
+                        // Score display con animaciones
                         Row(
                             modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Text(
-                                text = "Puntuación: ${quizState.score}/${quizState.totalQuestions}",
-                                style = MaterialTheme.typography.bodyMedium,
-                                fontWeight = FontWeight.Bold,
-                                color = AzulTec
-                            )
-                            Text(
-                                text = "+${quizState.earnedXP} XP",
-                                style = MaterialTheme.typography.bodyMedium,
-                                fontWeight = FontWeight.Bold,
-                                color = Color(0xFFFFC800)
-                            )
+                            Row(
+                                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                BouncingIcon(
+                                    modifier = Modifier.size(24.dp),
+                                    content = {
+                                        Icon(
+                                            imageVector = Icons.Default.Star,
+                                            contentDescription = "Puntuación",
+                                            tint = AzulTec,
+                                            modifier = Modifier.size(24.dp)
+                                        )
+                                    }
+                                )
+                                Text(
+                                    text = "${quizState.score}/${quizState.totalQuestions}",
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    fontWeight = FontWeight.Bold,
+                                    color = AzulTec
+                                )
+                            }
+                            Row(
+                                horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = "+${quizState.earnedXP}",
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    fontWeight = FontWeight.Bold,
+                                    color = AmarilloOro
+                                )
+                                Text(
+                                    text = "XP",
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = AmarilloOro.copy(alpha = 0.8f)
+                                )
+                            }
                         }
                     }
 
@@ -450,19 +477,23 @@ private fun AnswerOptionCard(
                 modifier = Modifier.weight(1f)
             )
 
-            if (isSelected || showCorrectAnswer) {
-                Icon(
-                    imageVector = when {
-                        isCorrect == true || showCorrectAnswer -> Icons.Default.CheckCircle
-                        else -> Icons.Default.Clear
-                    },
-                    contentDescription = null,
-                    tint = when {
-                        isCorrect == true || showCorrectAnswer -> VerdeExito
-                        else -> Color(0xFFFF4B4B)
-                    },
-                    modifier = Modifier.size(32.dp)
-                )
+            // Icono con animación profesional
+            when {
+                isCorrect == true || showCorrectAnswer -> {
+                    AnimatedCheckmark(
+                        isVisible = true,
+                        size = 32.dp,
+                        color = VerdeExito
+                    )
+                }
+                isCorrect == false -> {
+                    Icon(
+                        imageVector = Icons.Default.Clear,
+                        contentDescription = null,
+                        tint = Color(0xFFFF4B4B),
+                        modifier = Modifier.size(32.dp)
+                    )
+                }
             }
         }
     }
@@ -525,57 +556,69 @@ private fun SpeedRoundTimer(timeRemaining: Int) {
     val progress = timeRemaining / 30f
     val color = when {
         timeRemaining > 20 -> VerdeExito
-        timeRemaining > 10 -> Color(0xFFFFC800)
+        timeRemaining > 10 -> AmarilloOro
         else -> Color(0xFFFF4B4B)
     }
 
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.1f)),
-        shape = RoundedCornerShape(12.dp),
-        border = BorderStroke(2.dp, color)
+        shape = RoundedCornerShape(16.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp),
+                .padding(20.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                Icon(
-                    imageVector = Icons.Default.Add,
-                    contentDescription = "Timer",
-                    tint = color,
-                    modifier = Modifier.size(24.dp)
-                )
-                Text(
-                    text = "RONDA RÁPIDA",
-                    style = MaterialTheme.typography.labelLarge,
-                    color = color,
-                    fontWeight = FontWeight.Bold
-                )
+                // Timer circular profesional
+                Box(
+                    modifier = Modifier.size(60.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    AnimatedCircularProgress(
+                        progress = progress,
+                        modifier = Modifier.size(60.dp),
+                        size = 60.dp,
+                        strokeWidth = 6.dp,
+                        backgroundColor = color.copy(alpha = 0.2f),
+                        progressColor = color,
+                        showPercentage = false
+                    )
+                    Text(
+                        text = "$timeRemaining",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = color
+                    )
+                }
+                
+                Column {
+                    Text(
+                        text = "RONDA RÁPIDA",
+                        style = MaterialTheme.typography.labelLarge,
+                        color = color,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        text = "¡Responde rápido!",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = color.copy(alpha = 0.7f)
+                    )
+                }
             }
             
-            Text(
-                text = "${timeRemaining}s",
-                style = MaterialTheme.typography.headlineMedium,
+            PulsingDot(
                 color = color,
-                fontWeight = FontWeight.Bold
+                size = 12.dp
             )
         }
-        
-        LinearProgressIndicator(
-            progress = { progress },
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(4.dp),
-            color = color,
-            trackColor = Color.Transparent
-        )
     }
 }
 
@@ -588,35 +631,39 @@ private fun XPRewardInfo() {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = Color(0xFFFFC800).copy(alpha = 0.1f)
+            containerColor = AmarilloOro.copy(alpha = 0.1f)
         ),
         shape = RoundedCornerShape(12.dp),
-        border = BorderStroke(1.dp, Color(0xFFFFC800))
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Row(
-            modifier = Modifier.padding(12.dp),
+            modifier = Modifier.padding(16.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                imageVector = Icons.Default.Star,
-                contentDescription = "XP",
-                tint = Color(0xFFFFC800),
-                modifier = Modifier.size(24.dp)
+            BouncingIcon(
+                modifier = Modifier.size(28.dp),
+                content = {
+                    Icon(
+                        imageVector = Icons.Default.Star,
+                        contentDescription = "XP",
+                        tint = AmarilloOro,
+                        modifier = Modifier.size(28.dp)
+                    )
+                }
             )
             Column {
                 Text(
                     text = "Recompensas XP",
-                    style = MaterialTheme.typography.labelSmall,
+                    style = MaterialTheme.typography.labelMedium,
                     color = Color(0xFF6B7280),
-                    fontSize = 10.sp
+                    fontWeight = FontWeight.Medium
                 )
                 Text(
                     text = "+10 XP por respuesta correcta | +50 XP por quiz perfecto",
                     style = MaterialTheme.typography.bodySmall,
-                    color = Color(0xFFFFC800),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 11.sp
+                    color = AmarilloOro,
+                    fontWeight = FontWeight.Bold
                 )
             }
         }
