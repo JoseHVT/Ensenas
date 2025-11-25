@@ -26,6 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -369,12 +370,17 @@ private fun ModuleLevelNode(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier.size(120.dp)
             ) {
-                // Progress Ring
+                // Progress Ring usando componente profesional
                 if (!module.isLocked && progress > 0) {
-                    CircularProgressRing(
+                    AnimatedCircularProgress(
                         progress = progress,
-                        color = module.category.color,
-                        modifier = Modifier.size(120.dp)
+                        modifier = Modifier.size(120.dp),
+                        size = 120.dp,
+                        strokeWidth = 8.dp,
+                        backgroundColor = Color(0xFFE5E7EB),
+                        progressColor = module.category.color,
+                        showPercentage = false,
+                        animationDuration = 1000
                     )
                 }
 
@@ -417,12 +423,12 @@ private fun ModuleLevelNode(
                                 modifier = Modifier.size(40.dp)
                             )
                         } else if (isCompleted) {
-                            // Check icon
-                            Icon(
-                                imageVector = Icons.Default.Done,
-                                contentDescription = "Completado",
-                                tint = Color.White,
-                                modifier = Modifier.size(48.dp)
+                            // Animated checkmark para completados
+                            AnimatedCheckmark(
+                                isVisible = true,
+                                modifier = Modifier,
+                                color = Color.White,
+                                size = 48.dp
                             )
                         } else {
                             // Module icon
@@ -444,17 +450,31 @@ private fun ModuleLevelNode(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Module Info Card
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(
-                    containerColor = if (isCurrent) Color.White else Color.White.copy(alpha = 0.7f)
-                ),
-                elevation = CardDefaults.cardElevation(
-                    defaultElevation = if (isCurrent) 8.dp else 2.dp
-                ),
-                shape = RoundedCornerShape(16.dp)
-            ) {
+            // Module Info Card con gradiente profesional si es actual
+            if (isCurrent && !module.isLocked) {
+                // Usar GradientCard para módulo actual
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(
+                        containerColor = Color.Transparent
+                    ),
+                    elevation = CardDefaults.cardElevation(
+                        defaultElevation = 8.dp
+                    ),
+                    shape = RoundedCornerShape(16.dp)
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                Brush.linearGradient(
+                                    colors = listOf(
+                                        Color.White,
+                                        module.category.color.copy(alpha = 0.05f)
+                                    )
+                                )
+                            )
+                    ) {
                 Column(
                     modifier = Modifier.padding(16.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
@@ -541,15 +561,14 @@ private fun ModuleLevelNode(
 
                         Spacer(modifier = Modifier.height(8.dp))
 
-                        // Progress bar
-                        LinearProgressIndicator(
-                            progress = { progress },
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(8.dp)
-                                .clip(RoundedCornerShape(4.dp)),
-                            color = module.category.color,
-                            trackColor = Color(0xFFE5E7EB)
+                        // Usar AnimatedProgressBar profesional
+                        AnimatedProgressBar(
+                            progress = progress,
+                            modifier = Modifier.fillMaxWidth(),
+                            backgroundColor = Color(0xFFE5E7EB),
+                            progressColor = module.category.color,
+                            height = 8.dp,
+                            animationDuration = 1000
                         )
 
                         if (isCurrent) {
@@ -575,6 +594,118 @@ private fun ModuleLevelNode(
                                     modifier = Modifier.size(20.dp)
                                 )
                             }
+                        }
+                    }
+                }
+                    }
+                }
+            } else {
+                // Card normal para módulos no actuales
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(
+                        containerColor = Color.White.copy(alpha = 0.7f)
+                    ),
+                    elevation = CardDefaults.cardElevation(
+                        defaultElevation = 2.dp
+                    ),
+                    shape = RoundedCornerShape(16.dp)
+                ) {
+                    Column(
+                        modifier = Modifier.padding(16.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        // Category Badge
+                        Surface(
+                            color = module.category.color.copy(alpha = 0.15f),
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
+                            Text(
+                                text = module.category.displayName.uppercase(),
+                                modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
+                                style = MaterialTheme.typography.labelSmall,
+                                color = module.category.color,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 10.sp
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.height(8.dp))
+
+                        // Title
+                        Text(
+                            text = module.title,
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold,
+                            color = if (module.isLocked) Color(0xFF9CA3AF) else AzulTec,
+                            textAlign = TextAlign.Center
+                        )
+
+                        Spacer(modifier = Modifier.height(4.dp))
+
+                        // Description
+                        Text(
+                            text = module.description,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = Color(0xFF6B7280),
+                            textAlign = TextAlign.Center
+                        )
+
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        // Progress Info
+                        if (module.isLocked) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.Center
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Lock,
+                                    contentDescription = null,
+                                    tint = Color(0xFF9CA3AF),
+                                    modifier = Modifier.size(16.dp)
+                                )
+                                Spacer(modifier = Modifier.width(6.dp))
+                                Text(
+                                    text = "Completa el nivel anterior",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = Color(0xFF9CA3AF),
+                                    fontSize = 12.sp
+                                )
+                            }
+                        } else {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = "${module.completedCount}/${module.lessonsCount} lecciones",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = Color(0xFF6B7280),
+                                    fontSize = 12.sp
+                                )
+                                
+                                Text(
+                                    text = "${(progress * 100).toInt()}%",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = module.category.color,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 14.sp
+                                )
+                            }
+
+                            Spacer(modifier = Modifier.height(8.dp))
+
+                            // Usar AnimatedProgressBar profesional
+                            AnimatedProgressBar(
+                                progress = progress,
+                                modifier = Modifier.fillMaxWidth(),
+                                backgroundColor = Color(0xFFE5E7EB),
+                                progressColor = module.category.color,
+                                height = 8.dp,
+                                animationDuration = 1000
+                            )
                         }
                     }
                 }
@@ -626,58 +757,6 @@ private fun ProgressPath(
 }
 
 // ============================================
-// CIRCULAR PROGRESS RING
-// ============================================
-
-@Composable
-private fun CircularProgressRing(
-    progress: Float,
-    color: Color,
-    modifier: Modifier = Modifier
-) {
-    val animatedProgress by animateFloatAsState(
-        targetValue = progress,
-        animationSpec = tween(
-            durationMillis = 1000,
-            easing = FastOutSlowInEasing
-        ),
-        label = "progress"
-    )
-
-    Canvas(modifier = modifier) {
-        val strokeWidth = 8.dp.toPx()
-        val radius = (size.minDimension - strokeWidth) / 2
-        val centerX = size.width / 2
-        val centerY = size.height / 2
-
-        // Background circle
-        drawCircle(
-            color = Color(0xFFE5E7EB),
-            radius = radius,
-            center = androidx.compose.ui.geometry.Offset(centerX, centerY),
-            style = androidx.compose.ui.graphics.drawscope.Stroke(width = strokeWidth)
-        )
-
-        // Progress arc
-        drawArc(
-            color = color,
-            startAngle = -90f,
-            sweepAngle = 360f * animatedProgress,
-            useCenter = false,
-            topLeft = androidx.compose.ui.geometry.Offset(
-                centerX - radius,
-                centerY - radius
-            ),
-            size = androidx.compose.ui.geometry.Size(radius * 2, radius * 2),
-            style = androidx.compose.ui.graphics.drawscope.Stroke(
-                width = strokeWidth,
-                cap = androidx.compose.ui.graphics.StrokeCap.Round
-            )
-        )
-    }
-}
-
-// ============================================
 // PULSING RING ANIMATION
 // ============================================
 
@@ -723,18 +802,6 @@ private fun PulsingRing(color: Color) {
 
 @Composable
 private fun FinalTrophySection() {
-    val infiniteTransition = rememberInfiniteTransition(label = "trophy")
-    
-    val rotation by infiniteTransition.animateFloat(
-        initialValue = -10f,
-        targetValue = 10f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(1000, easing = FastOutSlowInEasing),
-            repeatMode = RepeatMode.Reverse
-        ),
-        label = "rotation"
-    )
-
     Card(
         modifier = Modifier
             .width(280.dp)
@@ -749,13 +816,17 @@ private fun FinalTrophySection() {
             modifier = Modifier.padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Icon(
-                imageVector = Icons.Default.Star,
-                contentDescription = "Trophy",
-                tint = Color(0xFFFFC800),
-                modifier = Modifier
-                    .size(64.dp)
-                    .rotate(rotation)
+            // Usar BouncingIcon para el trofeo
+            BouncingIcon(
+                modifier = Modifier,
+                content = {
+                    Icon(
+                        imageVector = Icons.Default.Star,
+                        contentDescription = "Trophy",
+                        tint = Color(0xFFFFC800),
+                        modifier = Modifier.size(64.dp)
+                    )
+                }
             )
             
             Spacer(modifier = Modifier.height(16.dp))
