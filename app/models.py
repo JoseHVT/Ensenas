@@ -19,6 +19,10 @@ class User(Base):
     # El nombre 
     name = Column(String(120), nullable=True)
 
+    # Sistema de XP y Niveles
+    total_xp = Column(INT, default=0, nullable=False)
+    current_level = Column(INT, default=1, nullable=False)
+
     # La fecha en que se creeo, manejada por la base de datos 
     created_at = Column(TIMESTAMP(timezone=True), 
                         server_default=func.now())
@@ -141,3 +145,36 @@ class MemoryRun(Base):
 
     user = relationship("User", back_populates="memory_runs")
     module = relationship("Module", back_populates="memory_runs")
+
+class DailyActivity(Base):
+    """
+    Registra la actividad diaria del usuario para calcular rachas.
+    Se crea un registro cada día que el usuario complete alguna actividad.
+    """
+    __tablename__ = "daily_activities"
+    id = Column(INT, primary_key=True, autoincrement=True)
+    user_id = Column(String(128), ForeignKey("users.uid"), nullable=False, index=True)
+    activity_date = Column(TIMESTAMP(timezone=True), nullable=False, index=True)
+    # Contador de actividades completadas en el día
+    quizzes_completed = Column(INT, default=0)
+    lessons_completed = Column(INT, default=0)
+    memory_games_completed = Column(INT, default=0)
+    xp_earned = Column(INT, default=0)
+    created_at = Column(TIMESTAMP(timezone=True), server_default=func.now())
+    
+    user = relationship("User")
+
+class XPTransaction(Base):
+    """
+    Registra cada ganancia de XP del usuario para auditoría y análisis.
+    """
+    __tablename__ = "xp_transactions"
+    id = Column(INT, primary_key=True, autoincrement=True)
+    user_id = Column(String(128), ForeignKey("users.uid"), nullable=False, index=True)
+    amount = Column(INT, nullable=False)  # Cantidad de XP ganado
+    source = Column(String(50), nullable=False)  # 'quiz', 'memory_game', 'lesson', 'streak_bonus', 'achievement'
+    source_id = Column(INT, nullable=True)  # ID del quiz, memory game, etc.
+    description = Column(String(255), nullable=True)  # Descripción adicional
+    created_at = Column(TIMESTAMP(timezone=True), server_default=func.now(), index=True)
+    
+    user = relationship("User")

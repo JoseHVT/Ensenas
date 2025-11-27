@@ -244,31 +244,22 @@ private fun BotVideoMessageBubble(
                 Spacer(modifier = Modifier.height(8.dp))
             }
             
-            // Video Player Placeholder (TODO: Integrate ExoPlayer)
-            Surface(
-                color = NegroFondo,
-                shape = RoundedCornerShape(12.dp),
-                modifier = Modifier
-                    .size(width = 250.dp, height = 140.dp)
-                    .bounceIn(delay = 200)
-            ) {
-                Box(
-                    contentAlignment = Alignment.Center
+            // Video Player con ExoPlayer
+            message.videoUrl?.let { videoUrl ->
+                Surface(
+                    color = NegroFondo,
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier
+                        .width(250.dp)
+                        .height(140.dp)
+                        .bounceIn(delay = 200)
                 ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text(
-                            text = "▶️",
-                            fontSize = 40.sp
-                        )
-                        Spacer(modifier = Modifier.height(8.dp))
-                        Text(
-                            text = "Video: ${message.videoUrl?.split("/")?.lastOrNull() ?: "Seña"}",
-                            color = Blanco,
-                            fontSize = 12.sp
-                        )
-                    }
+                    LSMVideoPlayerCompact(
+                        videoUrl = videoUrl,
+                        modifier = Modifier.fillMaxSize(),
+                        autoPlay = false,
+                        muted = false
+                    )
                 }
             }
             

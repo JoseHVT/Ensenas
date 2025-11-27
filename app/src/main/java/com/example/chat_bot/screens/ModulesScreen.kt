@@ -321,9 +321,21 @@ private fun ModuleLevelNode(
                     )
                 }
 
+                // Animación de escala para módulos desbloqueados
+                val nodeScale by animateFloatAsState(
+                    targetValue = if (!module.isLocked) 1f else 0.9f,
+                    animationSpec = spring(
+                        dampingRatio = Spring.DampingRatioMediumBouncy,
+                        stiffness = Spring.StiffnessLow
+                    ),
+                    label = "nodeScale"
+                )
+                
                 // Main Circle
                 Surface(
-                    modifier = Modifier.size(100.dp),
+                    modifier = Modifier
+                        .size(100.dp)
+                        .scale(nodeScale),
                     shape = CircleShape,
                     color = when {
                         module.isLocked -> Color(0xFFE5E7EB)
@@ -331,7 +343,11 @@ private fun ModuleLevelNode(
                         isCurrent -> Color.White
                         else -> Color.White
                     },
-                    shadowElevation = if (isCurrent) 12.dp else 6.dp,
+                    shadowElevation = when {
+                        isCurrent -> 16.dp
+                        !module.isLocked -> 8.dp
+                        else -> 2.dp
+                    },
                     border = if (isCurrent) BorderStroke(4.dp, module.category.color) else null
                 ) {
                     Box(
@@ -342,7 +358,8 @@ private fun ModuleLevelNode(
                                 if (!module.isLocked && !isCompleted) {
                                     Brush.radialGradient(
                                         colors = listOf(
-                                            module.category.color.copy(alpha = 0.1f),
+                                            module.category.color.copy(alpha = 0.15f),
+                                            module.category.color.copy(alpha = 0.05f),
                                             Color.Transparent
                                         )
                                     )
@@ -352,28 +369,63 @@ private fun ModuleLevelNode(
                             )
                     ) {
                         if (module.isLocked) {
-                            // Locked icon
+                            // Locked icon con shake animation
+                            val shakeOffset by rememberInfiniteTransition(label = "shake").animateFloat(
+                                initialValue = -2f,
+                                targetValue = 2f,
+                                animationSpec = infiniteRepeatable(
+                                    animation = tween(100, easing = LinearEasing),
+                                    repeatMode = RepeatMode.Reverse
+                                ),
+                                label = "lockShake"
+                            )
+                            
                             Icon(
                                 imageVector = Icons.Default.Lock,
                                 contentDescription = "Bloqueado",
                                 tint = Color(0xFF9CA3AF),
-                                modifier = Modifier.size(40.dp)
+                                modifier = Modifier
+                                    .size(40.dp)
+                                    .offset(x = shakeOffset.dp)
                             )
                         } else if (isCompleted) {
-                            // Animated checkmark para completados
-                            AnimatedCheckmark(
-                                isVisible = true,
-                                modifier = Modifier,
-                                color = Color.White,
-                                size = 48.dp
+                            // Animated checkmark para completados con rotation
+                            val checkRotation by animateFloatAsState(
+                                targetValue = 360f,
+                                animationSpec = tween(
+                                    durationMillis = 600,
+                                    easing = FastOutSlowInEasing
+                                ),
+                                label = "checkRotation"
                             )
+                            
+                            Box(modifier = Modifier.rotate(checkRotation)) {
+                                AnimatedCheckmark(
+                                    isVisible = true,
+                                    modifier = Modifier,
+                                    color = Color.White,
+                                    size = 48.dp
+                                )
+                            }
                         } else {
-                            // Module icon
+                            // Module icon con breathing animation
+                            val iconScale by rememberInfiniteTransition(label = "iconBreath").animateFloat(
+                                initialValue = 1f,
+                                targetValue = if (isCurrent) 1.1f else 1f,
+                                animationSpec = infiniteRepeatable(
+                                    animation = tween(1500, easing = FastOutSlowInEasing),
+                                    repeatMode = RepeatMode.Reverse
+                                ),
+                                label = "iconScale"
+                            )
+                            
                             Icon(
                                 imageVector = module.icon,
                                 contentDescription = module.title,
                                 tint = module.category.color,
-                                modifier = Modifier.size(48.dp)
+                                modifier = Modifier
+                                    .size(48.dp)
+                                    .scale(iconScale)
                             )
                         }
                     }
@@ -382,6 +434,14 @@ private fun ModuleLevelNode(
                 // Current indicator (pulsing ring)
                 if (isCurrent && !module.isLocked) {
                     PulsingRing(color = module.category.color)
+                }
+                
+                // Celebration effect cuando está completado
+                if (isCompleted) {
+                    CompletionCelebration(
+                        show = true,
+                        color = module.category.color
+                    )
                 }
             }
 
@@ -652,7 +712,7 @@ private fun ModuleLevelNode(
 }
 
 // ============================================
-// PROGRESS PATH COMPONENT
+// PROGRESS PATH COMPONENT - Mejorado con efectos
 // ============================================
 
 @Composable
@@ -662,39 +722,144 @@ private fun ProgressPath(
     category: ModuleCategory,
     modifier: Modifier = Modifier
 ) {
+    val infiniteTransition = rememberInfiniteTransition(label = "pathShimmer")
+    
+    // Efecto de shimmer para paths en progreso
+    val shimmerAlpha by infiniteTransition.animateFloat(
+        initialValue = 0.3f,
+        targetValue = 0.7f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1500, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "shimmer"
+    )
+    
     Box(
-        modifier = modifier.width(4.dp),
+        modifier = modifier.width(8.dp),
         contentAlignment = Alignment.Center
     ) {
-        // Background line
+        // Background line con sombra sutil
         Box(
             modifier = Modifier
                 .fillMaxHeight()
-                .width(4.dp)
+                .width(6.dp)
                 .background(
                     color = Color(0xFFE5E7EB),
-                    shape = RoundedCornerShape(2.dp)
+                    shape = RoundedCornerShape(3.dp)
                 )
         )
 
-        // Progress line
+        // Progress line animada con gradiente
         if (progress > 0) {
+            val animatedProgress by animateFloatAsState(
+                targetValue = progress,
+                animationSpec = tween(
+                    durationMillis = 800,
+                    easing = FastOutSlowInEasing
+                ),
+                label = "pathProgress"
+            )
+            
             Box(
                 modifier = Modifier
-                    .fillMaxHeight(progress)
-                    .width(4.dp)
+                    .fillMaxHeight(animatedProgress)
+                    .width(6.dp)
                     .align(Alignment.TopCenter)
                     .background(
                         brush = category.gradient,
-                        shape = RoundedCornerShape(2.dp)
+                        shape = RoundedCornerShape(3.dp)
                     )
+            )
+            
+            // Shimmer overlay en paths activos (no completados)
+            if (!isCompleted && progress < 1f) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxHeight(animatedProgress)
+                        .width(6.dp)
+                        .align(Alignment.TopCenter)
+                        .alpha(shimmerAlpha)
+                        .background(
+                            brush = Brush.verticalGradient(
+                                colors = listOf(
+                                    Color.White.copy(alpha = 0.3f),
+                                    Color.Transparent
+                                )
+                            ),
+                            shape = RoundedCornerShape(3.dp)
+                        )
+                )
+            }
+            
+            // Partículas flotantes en paths completados
+            if (isCompleted) {
+                FloatingParticles(
+                    color = category.color,
+                    modifier = Modifier.fillMaxHeight()
+                )
+            }
+        }
+    }
+}
+
+// ============================================
+// FLOATING PARTICLES - Para paths completados
+// ============================================
+
+@Composable
+private fun FloatingParticles(
+    color: Color,
+    modifier: Modifier = Modifier
+) {
+    val infiniteTransition = rememberInfiniteTransition(label = "particles")
+    
+    // 3 partículas con diferentes delays
+    repeat(3) { index ->
+        val offsetY by infiniteTransition.animateFloat(
+            initialValue = 0f,
+            targetValue = 100f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(
+                    durationMillis = 2000 + (index * 300),
+                    easing = LinearEasing,
+                    delayMillis = index * 400
+                ),
+                repeatMode = RepeatMode.Restart
+            ),
+            label = "particle_$index"
+        )
+        
+        val alpha by infiniteTransition.animateFloat(
+            initialValue = 0.8f,
+            targetValue = 0f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(
+                    durationMillis = 2000 + (index * 300),
+                    easing = LinearEasing,
+                    delayMillis = index * 400
+                ),
+                repeatMode = RepeatMode.Restart
+            ),
+            label = "particle_alpha_$index"
+        )
+        
+        Box(
+            modifier = modifier
+                .offset(y = offsetY.dp)
+                .alpha(alpha)
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(4.dp)
+                    .background(color, CircleShape)
             )
         }
     }
 }
 
 // ============================================
-// PULSING RING ANIMATION
+// PULSING RING ANIMATION - Mejorado
 // ============================================
 
 @Composable
@@ -703,19 +868,19 @@ private fun PulsingRing(color: Color) {
     
     val scale by infiniteTransition.animateFloat(
         initialValue = 1f,
-        targetValue = 1.3f,
+        targetValue = 1.4f,
         animationSpec = infiniteRepeatable(
-            animation = tween(1000, easing = FastOutSlowInEasing),
+            animation = tween(1200, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Reverse
         ),
         label = "scale"
     )
     
     val alpha by infiniteTransition.animateFloat(
-        initialValue = 0.6f,
+        initialValue = 0.7f,
         targetValue = 0f,
         animationSpec = infiniteRepeatable(
-            animation = tween(1000, easing = FastOutSlowInEasing),
+            animation = tween(1200, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Reverse
         ),
         label = "alpha"
@@ -727,62 +892,233 @@ private fun PulsingRing(color: Color) {
             .scale(scale)
             .alpha(alpha)
             .background(
-                color = color.copy(alpha = 0.3f),
+                brush = Brush.radialGradient(
+                    colors = listOf(
+                        color.copy(alpha = 0.5f),
+                        color.copy(alpha = 0.1f),
+                        Color.Transparent
+                    )
+                ),
                 shape = CircleShape
             )
     )
 }
 
 // ============================================
-// FINAL TROPHY SECTION
+// COMPLETION CELEBRATION - Confetti effect
+// ============================================
+
+@Composable
+private fun CompletionCelebration(
+    show: Boolean,
+    color: Color,
+    modifier: Modifier = Modifier
+) {
+    if (!show) return
+    
+    val infiniteTransition = rememberInfiniteTransition(label = "celebration")
+    
+    // Generar partículas de confeti
+    repeat(8) { index ->
+        val angle = (360f / 8f) * index
+        val distance by infiniteTransition.animateFloat(
+            initialValue = 0f,
+            targetValue = 80f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(
+                    durationMillis = 1500,
+                    easing = FastOutSlowInEasing
+                ),
+                repeatMode = RepeatMode.Restart
+            ),
+            label = "confetti_distance_$index"
+        )
+        
+        val alpha by infiniteTransition.animateFloat(
+            initialValue = 1f,
+            targetValue = 0f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(
+                    durationMillis = 1500,
+                    easing = LinearEasing
+                ),
+                repeatMode = RepeatMode.Restart
+            ),
+            label = "confetti_alpha_$index"
+        )
+        
+        val rotation by infiniteTransition.animateFloat(
+            initialValue = 0f,
+            targetValue = 720f,
+            animationSpec = infiniteRepeatable(
+                animation = tween(
+                    durationMillis = 1500,
+                    easing = LinearEasing
+                ),
+                repeatMode = RepeatMode.Restart
+            ),
+            label = "confetti_rotation_$index"
+        )
+        
+        val radians = Math.toRadians(angle.toDouble())
+        val offsetX = (distance * kotlin.math.cos(radians)).toFloat()
+        val offsetY = (distance * kotlin.math.sin(radians)).toFloat()
+        
+        Box(
+            modifier = modifier
+                .offset(x = offsetX.dp, y = offsetY.dp)
+                .rotate(rotation)
+                .alpha(alpha)
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(8.dp, 12.dp)
+                    .background(
+                        brush = Brush.linearGradient(
+                            colors = listOf(color, color.copy(alpha = 0.6f))
+                        ),
+                        shape = RoundedCornerShape(2.dp)
+                    )
+            )
+        }
+    }
+}
+
+// ============================================
+// FINAL TROPHY SECTION - Mejorado
 // ============================================
 
 @Composable
 private fun FinalTrophySection() {
+    val infiniteTransition = rememberInfiniteTransition(label = "trophy")
+    
+    val glow by infiniteTransition.animateFloat(
+        initialValue = 0.6f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1500, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "glow"
+    )
+    
     Card(
         modifier = Modifier
             .width(280.dp)
             .padding(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color(0xFFFFC800).copy(alpha = 0.1f)
+            containerColor = Color.Transparent
         ),
         shape = RoundedCornerShape(20.dp),
-        border = BorderStroke(2.dp, Color(0xFFFFC800))
+        border = BorderStroke(3.dp, Color(0xFFFFC800).copy(alpha = glow))
     ) {
-        Column(
-            modifier = Modifier.padding(24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(
+                    brush = Brush.linearGradient(
+                        colors = listOf(
+                            Color(0xFFFFC800).copy(alpha = 0.15f),
+                            Color(0xFFFFD700).copy(alpha = 0.05f)
+                        )
+                    )
+                )
         ) {
-            // Usar BouncingIcon para el trofeo
-            BouncingIcon(
-                modifier = Modifier,
-                content = {
-                    Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "Trophy",
-                        tint = Color(0xFFFFC800),
-                        modifier = Modifier.size(64.dp)
+            Column(
+                modifier = Modifier.padding(24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                // Trofeo con partículas brillantes
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier.size(80.dp)
+                ) {
+                    // Partículas de brillo
+                    repeat(6) { index ->
+                        val angle = (360f / 6f) * index
+                        val distance by infiniteTransition.animateFloat(
+                            initialValue = 20f,
+                            targetValue = 35f,
+                            animationSpec = infiniteRepeatable(
+                                animation = tween(
+                                    durationMillis = 2000,
+                                    delayMillis = index * 200
+                                ),
+                                repeatMode = RepeatMode.Reverse
+                            ),
+                            label = "sparkle_$index"
+                        )
+                        
+                        val sparkleAlpha by infiniteTransition.animateFloat(
+                            initialValue = 0.3f,
+                            targetValue = 1f,
+                            animationSpec = infiniteRepeatable(
+                                animation = tween(
+                                    durationMillis = 1000,
+                                    delayMillis = index * 200
+                                ),
+                                repeatMode = RepeatMode.Reverse
+                            ),
+                            label = "sparkle_alpha_$index"
+                        )
+                        
+                        val radians = Math.toRadians(angle.toDouble())
+                        val offsetX = (distance * kotlin.math.cos(radians)).toFloat()
+                        val offsetY = (distance * kotlin.math.sin(radians)).toFloat()
+                        
+                        Box(
+                            modifier = Modifier
+                                .offset(x = offsetX.dp, y = offsetY.dp)
+                                .alpha(sparkleAlpha)
+                                .size(6.dp)
+                                .background(Color(0xFFFFC800), CircleShape)
+                        )
+                    }
+                    
+                    // Trofeo con bounce
+                    BouncingIcon(
+                        modifier = Modifier,
+                        content = {
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "Trophy",
+                                tint = Color(0xFFFFC800),
+                                modifier = Modifier.size(64.dp)
+                            )
+                        }
                     )
                 }
-            )
-            
-            Spacer(modifier = Modifier.height(16.dp))
-            
-            Text(
-                text = "¡Meta Final!",
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold,
-                color = Color(0xFFFFC800)
-            )
-            
-            Spacer(modifier = Modifier.height(8.dp))
-            
-            Text(
-                text = "Completa todos los módulos para dominar LSM",
-                style = MaterialTheme.typography.bodyMedium,
-                color = Color(0xFF6B7280),
-                textAlign = TextAlign.Center
-            )
+                
+                Spacer(modifier = Modifier.height(16.dp))
+                
+                Text(
+                    text = "¡Meta Final!",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFFFFC800)
+                )
+                
+                Spacer(modifier = Modifier.height(8.dp))
+                
+                Text(
+                    text = "Completa todos los módulos para dominar LSM",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = Color(0xFF6B7280),
+                    textAlign = TextAlign.Center
+                )
+                
+                Spacer(modifier = Modifier.height(16.dp))
+                
+                // Barra de progreso general animada
+                AnimatedProgressBar(
+                    progress = 0.75f, // Esto debería ser dinámico según el progreso real
+                    modifier = Modifier.fillMaxWidth(),
+                    backgroundColor = Color(0xFFE5E7EB),
+                    progressColor = Color(0xFFFFC800),
+                    height = 10.dp,
+                    animationDuration = 1500
+                )
+            }
         }
     }
 }

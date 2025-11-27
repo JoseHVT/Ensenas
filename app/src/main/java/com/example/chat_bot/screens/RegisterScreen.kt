@@ -47,6 +47,7 @@ fun RegisterScreen(
         isVisible = true
     }
     
+    Box(modifier = Modifier.fillMaxSize()) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -291,5 +292,12 @@ fun RegisterScreen(
                 }
             }
         }
+    }
+    
+    // Loading overlay durante registro
+    LoadingOverlay(
+        isLoading = isLoading,
+        message = "Creando cuenta..."
+    )
     }
 }

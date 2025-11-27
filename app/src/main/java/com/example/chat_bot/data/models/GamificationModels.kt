@@ -417,3 +417,86 @@ data class AchievementNotification(
     val timestamp: Long = System.currentTimeMillis(),
     var isShown: Boolean = false
 )
+
+/**
+ * Streak Info - Información de racha del usuario
+ */
+data class StreakInfo(
+    @SerializedName("current_streak") val currentStreak: Int,
+    @SerializedName("longest_streak") val longestStreak: Int,
+    @SerializedName("last_activity_date") val lastActivityDate: String?,
+    @SerializedName("weekly_calendar") val weeklyCalendar: List<Boolean>, // 7 días
+    @SerializedName("total_active_days") val totalActiveDays: Int
+)
+
+/**
+ * Daily Activity - Actividad diaria del usuario
+ */
+data class DailyActivity(
+    val id: Int,
+    @SerializedName("user_id") val userId: String,
+    @SerializedName("activity_date") val activityDate: String,
+    @SerializedName("quizzes_completed") val quizzesCompleted: Int,
+    @SerializedName("lessons_completed") val lessonsCompleted: Int,
+    @SerializedName("memory_games_completed") val memoryGamesCompleted: Int,
+    @SerializedName("xp_earned") val xpEarned: Int,
+    @SerializedName("created_at") val createdAt: String
+)
+
+/**
+ * Streak Update Request
+ */
+data class StreakUpdateRequest(
+    @SerializedName("activity_type") val activityType: String, // "quiz", "lesson", "memory_game"
+    @SerializedName("xp_earned") val xpEarned: Int = 0
+)
+
+/**
+ * XP Transaction Response - Historial de XP ganado
+ */
+data class XPTransactionResponse(
+    val id: Int,
+    @SerializedName("user_id") val userId: String,
+    val amount: Int,
+    val source: String, // "quiz", "memory_game", "lesson", "streak_bonus", "achievement"
+    @SerializedName("source_id") val sourceId: Int?,
+    val description: String?,
+    @SerializedName("created_at") val createdAt: String
+)
+
+/**
+ * User Level Info Response - Información de nivel del usuario
+ */
+data class UserLevelInfoResponse(
+    @SerializedName("total_xp") val totalXp: Int,
+    @SerializedName("current_level") val currentLevel: Int,
+    @SerializedName("level_title") val levelTitle: String,
+    @SerializedName("xp_for_current_level") val xpForCurrentLevel: Int,
+    @SerializedName("xp_for_next_level") val xpForNextLevel: Int,
+    @SerializedName("current_level_xp") val currentLevelXp: Int,
+    @SerializedName("required_xp") val requiredXp: Int,
+    val progress: Float
+)
+
+/**
+ * XP Award Request - Request para otorgar XP
+ */
+data class XPAwardRequest(
+    val amount: Int,
+    val source: String,
+    @SerializedName("source_id") val sourceId: Int? = null,
+    val description: String? = null
+)
+
+/**
+ * XP Award Response - Response al otorgar XP
+ */
+data class XPAwardResponse(
+    @SerializedName("xp_awarded") val xpAwarded: Int,
+    @SerializedName("total_xp") val totalXp: Int,
+    @SerializedName("previous_level") val previousLevel: Int,
+    @SerializedName("current_level") val currentLevel: Int,
+    @SerializedName("level_up") val levelUp: Boolean,
+    @SerializedName("level_info") val levelInfo: UserLevelInfoResponse
+)
+

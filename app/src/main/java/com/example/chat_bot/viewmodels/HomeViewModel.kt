@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.chat_bot.data.api.RetrofitInstance
 import com.example.chat_bot.data.auth.TokenManager
 import com.example.chat_bot.data.models.StatsResponse
+import com.example.chat_bot.viewmodels.AuthViewModel
 import com.example.chat_bot.data.models.UserLevel
 import com.example.chat_bot.data.models.DailyGoal
 import com.example.chat_bot.ui.components.SnackbarController
@@ -18,7 +19,8 @@ import kotlinx.coroutines.launch
  * ViewModel para HomeScreen - Maneja estadísticas del usuario
  */
 class HomeViewModel(
-    private val tokenManager: TokenManager
+    private val tokenManager: TokenManager,
+    private val authViewModel: AuthViewModel
 ) : ViewModel() {
     
     // Estado de carga

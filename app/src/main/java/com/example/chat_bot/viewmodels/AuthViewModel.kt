@@ -6,6 +6,7 @@ import com.example.chat_bot.data.auth.AuthRepository
 import com.example.chat_bot.data.auth.AuthState
 import com.example.chat_bot.data.auth.TokenManager
 import com.google.firebase.auth.FirebaseUser
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -163,10 +164,17 @@ class AuthViewModel(
      */
     fun signOut() {
         viewModelScope.launch {
-            authRepository.signOut()
-            tokenManager.clearAll()
-            _currentUser.value = null
-            _authState.value = AuthState.Unauthenticated
+            try {
+                authRepository.signOut()
+            } catch (e: Exception) {
+                // Log error but continue with local cleanup
+                android.util.Log.w("AuthViewModel", "Error during signOut: ${e.message}")
+            } finally {
+                // Always clear local data regardless of backend success
+                tokenManager.clearAll()
+                _currentUser.value = null
+                _authState.value = AuthState.Unauthenticated
+            }
         }
     }
     
@@ -195,6 +203,31 @@ class AuthViewModel(
      */
     fun clearError() {
         _errorMessage.value = null
+    }
+    
+    /**
+     * Obtiene el ID del usuario actual desde TokenManager
+     * @return Flow con el userId o null si no hay sesión activa
+     */
+    fun getCurrentUserId(): Flow<String?> {
+        return tokenManager.getUserId()
+    }
+    
+    /**
+     * Obtiene el token de autenticación actual
+     * @return Flow con el token o null si no hay sesión activa
+     */
+    fun getCurrentToken(): Flow<String?> {
+        return tokenManager.getAuthToken()
+    }
+    
+    /**
+     * Obtiene el ID del usuario de forma síncrona desde FirebaseAuth
+     * Útil para casos donde se necesita el userId inmediatamente
+     * @return userId o null si no hay usuario autenticado
+     */
+    fun getCurrentUserIdSync(): String? {
+        return _currentUser.value?.uid
     }
     
     /**

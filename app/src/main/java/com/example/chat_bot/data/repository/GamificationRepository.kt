@@ -31,6 +31,9 @@ class GamificationRepository(
     private val _dailyGoal = MutableStateFlow<DailyGoal?>(null)
     val dailyGoal: StateFlow<DailyGoal?> = _dailyGoal.asStateFlow()
     
+    private val _leaderboard = MutableStateFlow<LeaderboardResponse?>(null)
+    val leaderboard: StateFlow<LeaderboardResponse?> = _leaderboard.asStateFlow()
+    
     // Cache local
     private var cachedStats: StatsResponse? = null
     private var cachedProgress: List<UserProgressResponse> = emptyList()
@@ -44,31 +47,79 @@ class GamificationRepository(
      */
     suspend fun initializeGamificationData(token: String): Result<Unit> {
         return try {
-            // TODO: Descomentar cuando el backend esté listo
-            // val statsResponse = apiService.getStats("Bearer $token")
-            // val progressResponse = apiService.getProgress("Bearer $token")
+            // Obtener estadísticas del usuario desde backend
+            val statsResponse = apiService.getUserStats("Bearer $token")
+            val progressResponse = apiService.getUserProgress("Bearer $token")
+            val levelResponse = apiService.getUserLevelInfo("Bearer $token")
+            val streakResponse = apiService.getStreakInfo("Bearer $token")
             
-            // MOCK DATA temporal
-            totalXP = 245 // Mock XP inicial
-            totalLessonsCompleted = 29
-            perfectQuizzes = 5
-            quizzesWithFullHearts = 3
+            // Procesar estadísticas si están disponibles
+            if (statsResponse.isSuccessful && statsResponse.body() != null) {
+                cachedStats = statsResponse.body()
+                // StatsResponse tiene: precisionGlobal, tiempoTotalMs, rachaActual, senasDominadas
+                // Los contadores de lecciones/quizzes se deducen de otras fuentes
+                totalLessonsCompleted = 0 // TODO: Obtener de DailyActivity
+                perfectQuizzes = 0 // TODO: Obtener de quiz attempts
+                quizzesWithFullHearts = 0 // TODO: Obtener de quiz attempts
+            } else {
+                // Fallback a valores por defecto
+                totalLessonsCompleted = 0
+                perfectQuizzes = 0
+                quizzesWithFullHearts = 0
+            }
             
-            // Calcular nivel
-            _userLevel.value = UserLevel.calculateLevel(totalXP)
+            // Procesar progreso de módulos
+            if (progressResponse.isSuccessful && progressResponse.body() != null) {
+                cachedProgress = progressResponse.body() ?: emptyList()
+            }
             
-            // Calcular racha (mock)
-            _currentStreak.value = 7
+            // Obtener nivel y XP del usuario
+            if (levelResponse.isSuccessful && levelResponse.body() != null) {
+                val levelInfo = levelResponse.body()!!
+                totalXP = levelInfo.totalXp
+                _userLevel.value = UserLevel(
+                    level = levelInfo.currentLevel,
+                    currentXP = levelInfo.currentLevelXp,
+                    requiredXP = levelInfo.requiredXp,
+                    progress = levelInfo.progress
+                )
+            } else {
+                // Fallback: calcular nivel desde XP mock
+                totalXP = 0
+                _userLevel.value = UserLevel.calculateLevel(totalXP)
+            }
             
-            // Calcular achievements
+            // Obtener información de racha
+            if (streakResponse.isSuccessful && streakResponse.body() != null) {
+                val streakInfo = streakResponse.body()!!
+                _currentStreak.value = streakInfo.currentStreak
+            } else {
+                _currentStreak.value = 0
+            }
+            
+            // Actualizar achievements basado en datos reales
             updateAchievements()
             
-            // Daily goal
-            val todayXP = 0 // TODO: Calcular XP ganado hoy desde backend
+            // Calcular daily goal desde transacciones de XP
+            val xpTransactionsResponse = apiService.getXPTransactions("Bearer $token")
+            var todayXP = 0
+            if (xpTransactionsResponse.isSuccessful && xpTransactionsResponse.body() != null) {
+                val today = java.time.LocalDate.now().toString()
+                todayXP = xpTransactionsResponse.body()!!
+                    .filter { it.createdAt.startsWith(today) }
+                    .sumOf { it.amount }
+            }
             _dailyGoal.value = DailyGoal.fromXP(todayXP, 50)
             
             Result.success(Unit)
         } catch (e: Exception) {
+            // En caso de error, usar datos por defecto para no bloquear la app
+            totalXP = 0
+            totalLessonsCompleted = 0
+            _userLevel.value = UserLevel.calculateLevel(0)
+            _currentStreak.value = 0
+            _dailyGoal.value = DailyGoal.fromXP(0, 50)
+            
             Result.failure(e)
         }
     }
@@ -76,52 +127,104 @@ class GamificationRepository(
     /**
      * Agregar XP al usuario
      */
-    suspend fun addXP(xpAmount: Int, token: String) {
-        totalXP += xpAmount
-        
-        // Actualizar nivel
-        val oldLevel = _userLevel.value?.level ?: 1
-        val newLevel = UserLevel.calculateLevel(totalXP)
-        _userLevel.value = newLevel
-        
-        // Si subió de nivel, crear notificación
-        if (newLevel.level > oldLevel) {
-            // TODO: Mostrar celebración de subida de nivel
-        }
-        
-        // Actualizar daily goal
-        val currentGoal = _dailyGoal.value
-        if (currentGoal != null) {
-            _dailyGoal.value = DailyGoal.fromXP(
-                currentGoal.currentXP + xpAmount,
-                currentGoal.targetXP
+    suspend fun addXP(xpAmount: Int, source: String, sourceId: Int?, token: String): Result<Unit> {
+        return try {
+            // Llamar al backend para award XP
+            val request = XPAwardRequest(
+                amount = xpAmount,
+                source = source,
+                sourceId = sourceId,
+                description = "XP ganado desde $source"
             )
+            
+            val response = apiService.awardXP("Bearer $token", request)
+            
+            if (response.isSuccessful && response.body() != null) {
+                val awardResponse = response.body()!!
+                
+                // Actualizar XP total local
+                totalXP = awardResponse.totalXp
+                
+                // Actualizar nivel
+                val oldLevel = _userLevel.value?.level ?: 1
+                val newLevel = UserLevel.calculateLevel(totalXP)
+                _userLevel.value = newLevel
+                
+                // Si subió de nivel, crear notificación
+                if (newLevel.level > oldLevel) {
+                    // Disparar celebración de nivel (manejado por UI)
+                    android.util.Log.d("GamificationRepo", "¡Nivel subido! ${oldLevel} → ${newLevel.level}")
+                }
+                
+                // Actualizar daily goal
+                val currentGoal = _dailyGoal.value
+                if (currentGoal != null) {
+                    _dailyGoal.value = DailyGoal.fromXP(
+                        currentGoal.currentXP + xpAmount,
+                        currentGoal.targetXP
+                    )
+                }
+                
+                // Check achievements que dependen de XP
+                updateAchievements()
+                
+                Result.success(Unit)
+            } else {
+                // Fallback local si el backend falla
+                totalXP += xpAmount
+                val newLevel = UserLevel.calculateLevel(totalXP)
+                _userLevel.value = newLevel
+                
+                Result.failure(Exception("Error al guardar XP en backend: ${response.code()}"))
+            }
+        } catch (e: Exception) {
+            // En caso de error de red, actualizar localmente
+            totalXP += xpAmount
+            _userLevel.value = UserLevel.calculateLevel(totalXP)
+            
+            Result.failure(e)
         }
-        
-        // Check achievements que dependen de XP
-        updateAchievements()
     }
     
     /**
      * Actualizar racha
      */
-    suspend fun updateStreak(token: String) {
-        val today = LocalDate.now().format(DateTimeFormatter.ISO_DATE)
-        
-        // TODO: Descomentar cuando el backend esté listo
-        // val progressResponse = apiService.getProgress("Bearer $token")
-        // if (progressResponse.isSuccessful && progressResponse.body() != null) {
-        //     cachedProgress = progressResponse.body()!!
-        //     val lastActivityDate = cachedProgress.maxByOrNull { it.lastActivity }?.lastActivity
-        //     
-        //     if (lastActivityDate != null) {
-        //         val newStreak = calculateStreakFromDate(lastActivityDate)
-        //         _currentStreak.value = newStreak
-        //     }
-        // }
-        
-        // MOCK DATA temporal - mantener racha actual
-        _currentStreak.value = _currentStreak.value
+    suspend fun updateStreak(token: String): Result<Int> {
+        return try {
+            // Llamar al backend para actualizar la racha del día actual
+            val updateRequest = StreakUpdateRequest(
+                activityType = "quiz", // Por defecto, quiz
+                xpEarned = 0
+            )
+            
+            val updateResponse = apiService.updateStreak("Bearer $token", updateRequest)
+            
+            if (updateResponse.isSuccessful && updateResponse.body() != null) {
+                // Obtener info actualizada de racha
+                val streakInfoResponse = apiService.getStreakInfo("Bearer $token")
+                
+                if (streakInfoResponse.isSuccessful && streakInfoResponse.body() != null) {
+                    val streakInfo = streakInfoResponse.body()!!
+                    val newStreak = streakInfo.currentStreak
+                    val oldStreak = _currentStreak.value
+                    
+                    _currentStreak.value = newStreak
+                    
+                    // Si la racha aumentó, check achievements
+                    if (newStreak > oldStreak) {
+                        checkStreakAchievements(newStreak)
+                    }
+                    
+                    return Result.success(newStreak)
+                }
+            }
+            
+            // Si falla, mantener racha actual
+            Result.success(_currentStreak.value)
+        } catch (e: Exception) {
+            // En caso de error, no modificar la racha
+            Result.failure(e)
+        }
     }
     
     /**
@@ -264,17 +367,26 @@ class GamificationRepository(
     
     /**
      * Obtener leaderboard
+     * TODO: Implementar endpoint de leaderboard en backend (PRIORIDAD 1 - Task 3)
+     * Endpoint esperado: GET /leaderboard/{type} (weekly, monthly, all-time)
      */
     suspend fun getLeaderboard(
-        type: String, // "weekly", "all_time", "friends"
+        type: String, // "weekly", "monthly", "all_time"
         token: String
     ): Result<LeaderboardResponse> {
         return try {
-            // TODO: Implementar endpoint de leaderboard en backend
-            // Por ahora retorna mock data
+            // TODO: Descomentar cuando el backend esté listo
+            // val response = apiService.getLeaderboard("Bearer $token", type)
+            // if (response.isSuccessful && response.body() != null) {
+            //     val leaderboardData = response.body()!!
+            //     _leaderboard.value = leaderboardData
+            //     return Result.success(leaderboardData)
+            // }
+            
+            // MOCK DATA temporal - Simulación de leaderboard
             val mockEntries = listOf(
                 LeaderboardEntry(
-                    userId = "1",
+                    userId = "mock_user_1",
                     username = "Estudiante Pro",
                     totalXP = 2450,
                     weeklyXP = 350,
@@ -282,7 +394,7 @@ class GamificationRepository(
                     rank = 1
                 ),
                 LeaderboardEntry(
-                    userId = "2",
+                    userId = "mock_user_2",
                     username = "LSM Maestro",
                     totalXP = 2100,
                     weeklyXP = 280,
@@ -290,7 +402,7 @@ class GamificationRepository(
                     rank = 2
                 ),
                 LeaderboardEntry(
-                    userId = "3",
+                    userId = "current_user", // Placeholder para usuario actual
                     username = "Usuario Estudiante",
                     totalXP = totalXP,
                     weeklyXP = 150,
@@ -299,15 +411,17 @@ class GamificationRepository(
                 )
             )
             
-            Result.success(
-                LeaderboardResponse(
-                    leaderboardType = type,
-                    entries = mockEntries,
-                    userRank = 15,
-                    totalUsers = 247
-                )
+            val mockResponse = LeaderboardResponse(
+                leaderboardType = type,
+                entries = mockEntries,
+                userRank = 15,
+                totalUsers = 247
             )
+            
+            _leaderboard.value = mockResponse
+            Result.success(mockResponse)
         } catch (e: Exception) {
+            android.util.Log.e("GamificationRepo", "Error fetching leaderboard: ${e.message}")
             Result.failure(e)
         }
     }

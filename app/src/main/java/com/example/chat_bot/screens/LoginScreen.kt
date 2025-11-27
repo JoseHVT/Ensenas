@@ -30,6 +30,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chat_bot.R
+import com.example.chat_bot.ui.components.LoadingOverlay
 import com.example.chat_bot.ui.theme.*
 import com.example.chat_bot.viewmodels.AuthViewModel
 import com.example.chat_bot.viewmodels.ViewModelFactory
@@ -311,5 +312,11 @@ fun LoginScreen(
                 }
             }
         }
+        
+        // Loading overlay durante autenticación
+        LoadingOverlay(
+            isLoading = authState is AuthState.Loading,
+            message = "Iniciando sesión..."
+        )
     }
 }

@@ -5,6 +5,8 @@ from sqlalchemy.orm import Session
 from typing import List
 
 from ..crud import quizzes as crud_quizzes
+from ..crud import xp as crud_xp
+from ..crud import progress as crud_progress
 from .. import schemas
 from ..dependencies import get_db, get_current_user
 
@@ -47,12 +49,43 @@ def submit_quiz_attempt(
     """
     Recibe las respuestas de un usuario, calcula su calificacion y guarda el intento.
     Requiere autenticacion.
+    
+    Automáticamente otorga XP y actualiza la racha del usuario.
     """
     user_id = current_user["uid"]
     result = crud_quizzes.create_quiz_attempt(db, attempt=attempt, user_id=user_id)
     
     if not result:
         raise HTTPException(status_code=404, detail="Quiz no encontrado")
+    
+    # Calcular y otorgar XP
+    xp_earned = crud_xp.calculate_xp_for_quiz(
+        score=result.score,
+        total=result.total,
+        duration_ms=result.duration_ms
+    )
+    
+    if xp_earned > 0:
+        try:
+            crud_xp.award_xp(
+                db,
+                user_id=user_id,
+                amount=xp_earned,
+                source="quiz",
+                source_id=attempt.quiz_id,
+                description=f"Quiz completado: {result.score}/{result.total}"
+            )
+            
+            # Actualizar actividad diaria para racha
+            crud_progress.update_daily_activity(
+                db,
+                user_id=user_id,
+                activity_type="quiz",
+                xp_earned=xp_earned
+            )
+        except Exception as e:
+            # Log error pero no fallar el quiz
+            print(f"Error awarding XP: {e}")
         
     return result
 

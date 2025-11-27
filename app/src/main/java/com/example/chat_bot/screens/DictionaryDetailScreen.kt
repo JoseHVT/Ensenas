@@ -23,15 +23,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.media3.common.MediaItem
-import androidx.media3.common.Player
-import androidx.media3.exoplayer.ExoPlayer
-import androidx.media3.ui.PlayerView
 import androidx.navigation.NavController
 import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.AzulTec
 import com.example.chat_bot.ui.theme.BlancoTec
 import com.example.chat_bot.ui.theme.VerdeExito
+import kotlinx.coroutines.launch
 
 data class SignDetail(
     val word: String,
@@ -49,6 +46,8 @@ fun DictionaryDetailScreen(
     signWord: String
 ) {
     val context = LocalContext.current
+    val snackbarHostState = remember { SnackbarHostState() }
+    val coroutineScope = rememberCoroutineScope()
     
     // Mock data - esto se reemplazará con datos del backend
     val signDetail = remember {
@@ -66,25 +65,13 @@ fun DictionaryDetailScreen(
         )
     }
     
-    // ExoPlayer setup
-    val exoPlayer = remember {
-        ExoPlayer.Builder(context).build().apply {
-            val videoUri = Uri.parse("android.resource://${context.packageName}/raw/${signDetail.videoPath}")
-            setMediaItem(MediaItem.fromUri(videoUri))
-            prepare()
-            repeatMode = Player.REPEAT_MODE_ONE // Loop el video
-        }
-    }
-    
-    var isPlaying by remember { mutableStateOf(false) }
-    
-    DisposableEffect(Unit) {
-        onDispose {
-            exoPlayer.release()
-        }
-    }
+    // Construir URI del video desde resources
+    val videoUri = "android.resource://${context.packageName}/raw/${signDetail.videoPath}"
     
     Scaffold(
+        snackbarHost = {
+            SnackbarHost(hostState = snackbarHostState)
+        },
         topBar = {
             TopAppBar(
                 title = { 
@@ -123,7 +110,7 @@ fun DictionaryDetailScreen(
                     .verticalScroll(rememberScrollState())
                     .background(Color(0xFFF8F9FA))
             ) {
-            // Video Player
+            // Video Player con LSMVideoPlayer
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -132,51 +119,22 @@ fun DictionaryDetailScreen(
                 shape = RoundedCornerShape(16.dp),
                 elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
             ) {
-                Box(modifier = Modifier.fillMaxSize()) {
-                    AndroidView(
-                        factory = { ctx ->
-                            PlayerView(ctx).apply {
-                                player = exoPlayer
-                                useController = false // Usamos controles personalizados
-                            }
-                        },
-                        modifier = Modifier.fillMaxSize()
-                    )
-                    
-                    // Play/Pause Button Overlay con animación
-                    Box(
-                        modifier = Modifier.align(Alignment.Center)
-                    ) {
-                        BouncingIcon(
-                            modifier = Modifier.size(64.dp),
-                            content = {
-                                IconButton(
-                                    onClick = {
-                                        if (isPlaying) {
-                                            exoPlayer.pause()
-                                        } else {
-                                            exoPlayer.play()
-                                        }
-                                        isPlaying = !isPlaying
-                                    },
-                                    modifier = Modifier
-                                        .size(64.dp)
-                                        .background(
-                                            AzulTec.copy(alpha = 0.8f),
-                                            shape = RoundedCornerShape(32.dp)
-                                        )
-                                ) {
-                                    Icon(
-                                        imageVector = if (isPlaying) Icons.Default.Pause else Icons.Default.PlayArrow,
-                                        contentDescription = if (isPlaying) "Pausar" else "Reproducir",
-                                        tint = BlancoTec,
-                                        modifier = Modifier.size(32.dp)
-                                    )
-                                }
-                            }
-                        )
+                LSMVideoPlayer(
+                    videoUrl = videoUri,
+                    autoPlay = false,
+                    loop = true,
+                    showControls = true,
+                    modifier = Modifier.fillMaxSize(),
+                    onError = { errorMsg ->
+                        coroutineScope.launch {
+                            snackbarHostState.showSnackbar(
+                                message = "Error al reproducir video: $errorMsg",
+                                duration = SnackbarDuration.Short
+                            )
+                        }
+                        android.util.Log.e("DictionaryDetail", "Error video: $errorMsg")
                     }
-                }
+                )
             }
             
             // Category Badge

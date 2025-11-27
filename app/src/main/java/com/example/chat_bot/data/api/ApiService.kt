@@ -95,4 +95,37 @@ interface ApiService {
     suspend fun getUserStats(
         @Header("Authorization") token: String
     ): Response<StatsResponse>
+    
+    // ===== STREAK ENDPOINTS =====
+    
+    @GET("streak")
+    suspend fun getStreakInfo(
+        @Header("Authorization") token: String
+    ): Response<StreakInfo>
+    
+    @POST("streak/update")
+    suspend fun updateStreak(
+        @Header("Authorization") token: String,
+        @Body update: StreakUpdateRequest
+    ): Response<DailyActivity>
+    
+    // ===== XP AND LEVELS ENDPOINTS =====
+    
+    @GET("xp/level")
+    suspend fun getUserLevelInfo(
+        @Header("Authorization") token: String
+    ): Response<UserLevelInfoResponse>
+    
+    @POST("xp/award")
+    suspend fun awardXP(
+        @Header("Authorization") token: String,
+        @Body request: XPAwardRequest
+    ): Response<XPAwardResponse>
+    
+    @GET("xp/transactions")
+    suspend fun getXPTransactions(
+        @Header("Authorization") token: String,
+        @Query("skip") skip: Int = 0,
+        @Query("limit") limit: Int = 50
+    ): Response<List<XPTransactionResponse>>
 }

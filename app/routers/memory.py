@@ -3,6 +3,8 @@ from sqlalchemy.orm import Session
 from typing import List
 
 from ..crud import memory as crud_memory
+from ..crud import xp as crud_xp
+from ..crud import progress as crud_progress
 from .. import schemas
 from ..dependencies import get_db, get_current_user
 
@@ -32,9 +34,41 @@ def submit_memory_run(
     """
     Guarda el resultado (intentos, duración, etc.) de una partida.
     Requiere autenticacin.
+    
+    Automáticamente otorga XP y actualiza la racha del usuario.
     """
     user_id = current_user["uid"]
-    return crud_memory.create_memory_run(db, run=run_data, user_id=user_id)
+    result = crud_memory.create_memory_run(db, run=run_data, user_id=user_id)
+    
+    # Calcular y otorgar XP
+    xp_earned = crud_xp.calculate_xp_for_memory_game(
+        matches=result.matches,
+        attempts=result.attempts
+    )
+    
+    if xp_earned > 0:
+        try:
+            crud_xp.award_xp(
+                db,
+                user_id=user_id,
+                amount=xp_earned,
+                source="memory_game",
+                source_id=result.id,
+                description=f"Memory Game: {result.matches} pares en {result.attempts} intentos"
+            )
+            
+            # Actualizar actividad diaria para racha
+            crud_progress.update_daily_activity(
+                db,
+                user_id=user_id,
+                activity_type="memory_game",
+                xp_earned=xp_earned
+            )
+        except Exception as e:
+            # Log error pero no fallar el memory game
+            print(f"Error awarding XP: {e}")
+    
+    return result
 
 
 # --- Endpoint Temporal para crear pares  ---

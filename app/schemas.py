@@ -176,4 +176,81 @@ class StatsSummary(BaseModel):
     racha_actual: int = 0
     senas_dominadas: int = 0
 
+# --- Esquemas de Racha Diaria ---
+
+class DailyActivityBase(BaseModel):
+    quizzes_completed: int = 0
+    lessons_completed: int = 0
+    memory_games_completed: int = 0
+    xp_earned: int = 0
+
+class DailyActivityCreate(DailyActivityBase):
+    pass
+
+class DailyActivity(DailyActivityBase):
+    id: int
+    user_id: str
+    activity_date: datetime
+    created_at: datetime
     
+    class Config:
+        from_attributes = True
+
+class StreakInfo(BaseModel):
+    """Información completa de la racha del usuario"""
+    current_streak: int
+    longest_streak: int
+    last_activity_date: Optional[datetime] = None
+    weekly_calendar: List[bool]  # 7 días, True si hubo actividad
+    total_active_days: int
+
+class StreakUpdate(BaseModel):
+    """Payload para actualizar la actividad del día"""
+    activity_type: str  # 'quiz', 'lesson', 'memory_game'
+    xp_earned: int = 0
+
+# --- Esquemas de XP y Niveles ---
+
+class XPTransactionBase(BaseModel):
+    amount: int
+    source: str  # 'quiz', 'memory_game', 'lesson', 'streak_bonus', 'achievement'
+    source_id: Optional[int] = None
+    description: Optional[str] = None
+
+class XPTransactionCreate(XPTransactionBase):
+    pass
+
+class XPTransaction(XPTransactionBase):
+    id: int
+    user_id: str
+    created_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+class UserLevelInfo(BaseModel):
+    """Información de nivel del usuario"""
+    total_xp: int
+    current_level: int
+    level_title: str
+    xp_for_current_level: int  # XP necesario que ya pasó
+    xp_for_next_level: int     # XP necesario para siguiente nivel
+    current_level_xp: int      # XP actual en el nivel
+    required_xp: int           # XP requerido para subir
+    progress: float            # Progreso 0.0 - 1.0
+
+class XPAwardRequest(BaseModel):
+    """Request para otorgar XP al usuario"""
+    amount: int
+    source: str
+    source_id: Optional[int] = None
+    description: Optional[str] = None
+
+class XPAwardResponse(BaseModel):
+    """Response al otorgar XP"""
+    xp_awarded: int
+    total_xp: int
+    previous_level: int
+    current_level: int
+    level_up: bool  # True si subió de nivel
+    level_info: UserLevelInfo

@@ -28,6 +28,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chat_bot.R
 import com.example.chat_bot.data.models.DailyGoal
 import com.example.chat_bot.data.models.UserLevel
+import com.example.chat_bot.ui.components.LoadingOverlay
+import com.example.chat_bot.ui.components.SimpleLoadingOverlay
 import com.example.chat_bot.ui.components.pressAnimation
 import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
@@ -41,10 +43,12 @@ fun HomeScreen(
     onNavigateToDictionary: () -> Unit,
     onNavigateToAchievements: () -> Unit = {},
     onNavigateToLeaderboard: () -> Unit = {},
-    onNavigateToChatBot: () -> Unit = {}
+    onNavigateToChatBot: () -> Unit = {},
+    onNavigateToMemoryGame: (moduleId: Int) -> Unit = {}
 ) {
     val context = LocalContext.current
     val viewModel: HomeViewModel = viewModel(factory = ViewModelFactory(context))
+    val haptic = rememberHapticFeedback()
     
     // Estados observables del ViewModel
     val userLevel by viewModel.userLevel.collectAsState()
@@ -270,7 +274,7 @@ fun HomeScreen(
                     title = "Estadísticas",
                     icon = Icons.Default.Analytics,
                     color = AzulInfo,
-                    onClick = { /* TODO: Navigate to stats */ },
+                    onClick = onNavigateToLeaderboard,
                     modifier = Modifier.weight(1f)
                 )
             }
@@ -285,14 +289,14 @@ fun HomeScreen(
                     title = "Juegos",
                     icon = Icons.Default.SportsEsports,
                     color = RojoError.copy(alpha = 0.8f),
-                    onClick = { /* TODO */ },
+                    onClick = { onNavigateToMemoryGame(0) }, // moduleId 0 para modo libre
                     modifier = Modifier.weight(1f)
                 )
                 MiniQuickAccessCard(
                     title = "Logros",
                     icon = Icons.Default.EmojiEvents,
                     color = AmarilloAdvertencia,
-                    onClick = { /* TODO */ },
+                    onClick = onNavigateToAchievements,
                     modifier = Modifier.weight(1f)
                 )
             }
@@ -328,6 +332,9 @@ fun HomeScreen(
             )
         }
     }
+    
+    // Loading overlay durante carga de estadísticas
+    SimpleLoadingOverlay(isLoading = isLoading)
   }
 }
 
@@ -344,16 +351,106 @@ private fun AnimatedBorregoIcon() {
         label = "scale"
     )
     
+    val rotation by infiniteTransition.animateFloat(
+        initialValue = -5f,
+        targetValue = 5f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1500, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "rotation"
+    )
+    
     Image(
         painter = painterResource(id = R.drawable.borrego_celebration),
         contentDescription = "Borrego",
         modifier = Modifier
             .size(70.dp)
             .scale(scale)
+            .graphicsLayer {
+                rotationZ = rotation
+            }
             .clip(CircleShape)
             .background(Color.White.copy(alpha = 0.2f))
             .padding(8.dp)
     )
+}
+
+// ============================================
+// FLAME ICON WITH PULSING ANIMATION
+// ============================================
+
+@Composable
+private fun FlameIcon(isActive: Boolean) {
+    val infiniteTransition = rememberInfiniteTransition(label = "flame")
+    
+    val scale by infiniteTransition.animateFloat(
+        initialValue = 1f,
+        targetValue = 1.15f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(600, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "flameScale"
+    )
+    
+    val alpha by infiniteTransition.animateFloat(
+        initialValue = 0.8f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(600, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "flameAlpha"
+    )
+    
+    Box(
+        modifier = Modifier
+            .size(48.dp)
+            .background(RojoError.copy(alpha = 0.1f), CircleShape),
+        contentAlignment = Alignment.Center
+    ) {
+        if (isActive) {
+            // Glow effect
+            Box(
+                modifier = Modifier
+                    .size(48.dp)
+                    .scale(scale)
+                    .background(
+                        brush = Brush.radialGradient(
+                            colors = listOf(
+                                RojoError.copy(alpha = 0.3f),
+                                Color.Transparent
+                            )
+                        ),
+                        shape = CircleShape
+                    )
+            )
+        }
+        
+        Icon(
+            imageVector = Icons.Default.LocalFireDepartment,
+            contentDescription = "Racha",
+            tint = if (isActive) RojoError.copy(alpha = alpha) else GrisMedio,
+            modifier = Modifier
+                .size(28.dp)
+                .scale(if (isActive) scale else 1f)
+        )
+        
+        if (isActive) {
+            // Pulsing dot indicator
+            Box(
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(4.dp)
+            ) {
+                PulsingDot(
+                    color = VerdeExito,
+                    size = 10.dp
+                )
+            }
+        }
+    }
 }
 
 @Composable
@@ -392,6 +489,24 @@ private fun DayCircle(day: String, isCompleted: Boolean, isCurrent: Boolean) {
 
 @Composable
 private fun StreakCalendar(currentStreak: Int) {
+    // Animated counter con odometer effect
+    var displayedStreak by remember { mutableIntStateOf(0) }
+    
+    LaunchedEffect(currentStreak) {
+        val startValue = displayedStreak
+        val endValue = currentStreak
+        val duration = 800L
+        val startTime = System.currentTimeMillis()
+        
+        while (displayedStreak < endValue) {
+            val elapsed = System.currentTimeMillis() - startTime
+            val progress = (elapsed.toFloat() / duration).coerceIn(0f, 1f)
+            displayedStreak = (startValue + (endValue - startValue) * progress).toInt()
+            delay(16) // ~60 FPS
+        }
+        displayedStreak = endValue
+    }
+    
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = Color.White),
@@ -406,37 +521,30 @@ private fun StreakCalendar(currentStreak: Int) {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center
             ) {
-                Box(
-                    modifier = Modifier
-                        .size(48.dp)
-                        .background(RojoError.copy(alpha = 0.1f), CircleShape),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.LocalFireDepartment,
-                        contentDescription = "Racha",
-                        tint = RojoError,
-                        modifier = Modifier.size(28.dp)
-                    )
-                    // Pulsing dot indicator en la esquina
-                    Box(
-                        modifier = Modifier
-                            .align(Alignment.TopEnd)
-                            .padding(4.dp)
-                    ) {
-                        PulsingDot(
-                            color = VerdeExito,
-                            size = 10.dp
-                        )
-                    }
-                }
+                // Animated fire icon con pulsación
+                FlameIcon(isActive = currentStreak > 0)
+                
                 Spacer(modifier = Modifier.width(12.dp))
-                Text(
-                    text = "$currentStreak día${if (currentStreak != 1) "s" else ""} de racha",
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold,
-                    color = RojoError
-                )
+                
+                // Animated counter
+                Row(verticalAlignment = Alignment.Bottom) {
+                    AnimatedCounter(
+                        targetValue = displayedStreak,
+                        textStyle = MaterialTheme.typography.titleLarge.copy(
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 28.sp
+                        ),
+                        color = RojoError,
+                        durationMs = 800
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = "día${if (displayedStreak != 1) "s" else ""}",
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = GrisMedio,
+                        modifier = Modifier.padding(bottom = 2.dp)
+                    )
+                }
             }
             
             Spacer(modifier = Modifier.height(16.dp))
@@ -620,13 +728,13 @@ private fun DailyLessonCard(
     progress: Float,
     onClick: () -> Unit
 ) {
-    // Usar GradientCard profesional
-    Card(
+    PressableCard(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = Color.Transparent),
-        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
-        shape = RoundedCornerShape(20.dp)
+        backgroundColor = Color.Transparent,
+        elevation = 8.dp,
+        cornerRadius = 20.dp,
+        pressScale = 0.98f
     ) {
         Row(
             modifier = Modifier
@@ -642,10 +750,17 @@ private fun DailyLessonCard(
                 .padding(20.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
+            // Icono con animación sutil
             Box(
                 modifier = Modifier
                     .size(60.dp)
-                    .background(Color.White.copy(alpha = 0.2f), CircleShape),
+                    .background(Color.White.copy(alpha = 0.2f), CircleShape)
+                    .then(
+                        Modifier.graphicsLayer {
+                            // Pequeña rotación para dinamismo
+                            rotationZ = 5f
+                        }
+                    ),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
@@ -660,7 +775,7 @@ private fun DailyLessonCard(
             
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = "Lección diaria",
+                    text = "📚 Lección diaria",
                     style = MaterialTheme.typography.labelMedium,
                     color = Color.White.copy(alpha = 0.9f),
                     fontWeight = FontWeight.Medium
@@ -674,20 +789,16 @@ private fun DailyLessonCard(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(6.dp)
-                        .clip(RoundedCornerShape(3.dp))
-                        .background(Color.White.copy(alpha = 0.3f))
-                ) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxHeight()
-                            .fillMaxWidth(progress)
-                            .background(VerdeExito, RoundedCornerShape(3.dp))
-                    )
-                }
+                // Usar AnimatedProgressBar para animación fluida
+                AnimatedProgressBar(
+                    progress = progress,
+                    modifier = Modifier.fillMaxWidth(),
+                    gradient = Brush.horizontalGradient(
+                        colors = listOf(VerdeExito, VerdeExitoLight)
+                    ),
+                    trackColor = Color.White.copy(alpha = 0.3f),
+                    animationDurationMs = 800
+                )
             }
             
             Icon(
@@ -763,15 +874,27 @@ private fun WeeklyChallengesCard() {
     ) {
         Column(modifier = Modifier.padding(20.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(
-                    imageVector = Icons.Default.EmojiEvents,
-                    contentDescription = null,
-                    tint = AmarilloAdvertencia,
-                    modifier = Modifier.size(28.dp)
-                )
-                Spacer(modifier = Modifier.width(8.dp))
+                // Icono con animación de rebote
+                Box(
+                    modifier = Modifier
+                        .size(40.dp)
+                        .background(AmarilloAdvertencia.copy(alpha = 0.1f), CircleShape),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.EmojiEvents,
+                        contentDescription = null,
+                        tint = AmarilloAdvertencia,
+                        modifier = Modifier
+                            .size(24.dp)
+                            .graphicsLayer {
+                                rotationZ = -10f
+                            }
+                    )
+                }
+                Spacer(modifier = Modifier.width(12.dp))
                 Text(
-                    text = "Desafíos Semanales",
+                    text = "🎯 Desafíos Semanales",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = AzulTec
@@ -780,6 +903,7 @@ private fun WeeklyChallengesCard() {
             
             Spacer(modifier = Modifier.height(16.dp))
             
+            // Usar StaggeredAnimation para entrada progresiva
             ChallengeItem(
                 text = "Completa 5 lecciones",
                 completed = true,
@@ -812,12 +936,13 @@ private fun MiniQuickAccessCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Card(
+    PressableCard(
         onClick = onClick,
         modifier = modifier.height(100.dp),
-        colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.1f)),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-        shape = RoundedCornerShape(16.dp)
+        backgroundColor = color.copy(alpha = 0.1f),
+        elevation = 2.dp,
+        cornerRadius = 16.dp,
+        pressScale = 0.95f
     ) {
         Column(
             modifier = Modifier
@@ -826,7 +951,7 @@ private fun MiniQuickAccessCard(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // Aplicar BouncingIcon solo a Logros y Trofeos
+            // Animación de rebote para iconos especiales
             if (title == "Logros" || icon == Icons.Default.EmojiEvents) {
                 BouncingIcon(
                     modifier = Modifier,
@@ -844,7 +969,12 @@ private fun MiniQuickAccessCard(
                     imageVector = icon,
                     contentDescription = null,
                     tint = color,
-                    modifier = Modifier.size(32.dp)
+                    modifier = Modifier
+                        .size(32.dp)
+                        .graphicsLayer {
+                            // Sutil rotación para dinamismo
+                            rotationZ = -5f
+                        }
                 )
             }
             Spacer(modifier = Modifier.height(8.dp))

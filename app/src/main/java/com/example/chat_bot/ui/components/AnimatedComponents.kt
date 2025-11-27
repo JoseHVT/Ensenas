@@ -3,6 +3,7 @@ package com.example.chat_bot.ui.components
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.LinearProgressIndicator
@@ -15,6 +16,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
 import com.example.chat_bot.ui.theme.*
 import kotlinx.coroutines.delay
@@ -396,5 +398,71 @@ fun RevealAnimation(
         )
     ) {
         content()
+    }
+}
+
+/**
+ * PressableCard - Card interactivo con animación al presionar
+ * Estilo profesional con feedback táctil inmediato
+ */
+@Composable
+fun PressableCard(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    backgroundColor: Color = androidx.compose.material3.MaterialTheme.colorScheme.surface,
+    elevation: androidx.compose.ui.unit.Dp = 4.dp,
+    cornerRadius: androidx.compose.ui.unit.Dp = 16.dp,
+    pressScale: Float = 0.97f,
+    content: @Composable ColumnScope.() -> Unit
+) {
+    var isPressed by remember { mutableStateOf(false) }
+    val haptic = rememberHapticFeedback()
+    
+    val scale by animateFloatAsState(
+        targetValue = if (isPressed && enabled) pressScale else 1f,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioMediumBouncy,
+            stiffness = Spring.StiffnessHigh
+        ),
+        label = "card_press_scale"
+    )
+    
+    val pressElevation by animateDpAsState(
+        targetValue = if (isPressed && enabled) elevation + 2.dp else elevation,
+        animationSpec = tween(100),
+        label = "card_press_elevation"
+    )
+    
+    androidx.compose.material3.Card(
+        modifier = modifier
+            .graphicsLayer {
+                scaleX = scale
+                scaleY = scale
+            }
+            .pointerInput(enabled) {
+                if (enabled) {
+                    detectTapGestures(
+                        onPress = {
+                            isPressed = true
+                            tryAwaitRelease()
+                            isPressed = false
+                        },
+                        onTap = { 
+                            haptic.light()
+                            onClick()
+                        }
+                    )
+                }
+            },
+        colors = androidx.compose.material3.CardDefaults.cardColors(
+            containerColor = backgroundColor
+        ),
+        elevation = androidx.compose.material3.CardDefaults.cardElevation(
+            defaultElevation = pressElevation
+        ),
+        shape = RoundedCornerShape(cornerRadius)
+    ) {
+        Column(content = content)
     }
 }

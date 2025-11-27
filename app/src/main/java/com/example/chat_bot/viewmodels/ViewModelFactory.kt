@@ -13,34 +13,64 @@ class ViewModelFactory(
     private val context: Context
 ) : ViewModelProvider.Factory {
     
+    // Instancias compartidas
+    private val tokenManager by lazy { TokenManager(context.applicationContext) }
+    private val authRepository by lazy { AuthRepository() }
+    
+    // AuthViewModel compartido entre todos los ViewModels
+    private val authViewModel by lazy { 
+        AuthViewModel(
+            authRepository = authRepository,
+            tokenManager = tokenManager
+        )
+    }
+    
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(AuthViewModel::class.java) -> {
-                AuthViewModel(
-                    authRepository = AuthRepository(),
-                    tokenManager = TokenManager(context.applicationContext)
-                ) as T
+                authViewModel as T
             }
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel(
-                    tokenManager = TokenManager(context.applicationContext)
+                    tokenManager = tokenManager,
+                    authViewModel = authViewModel
                 ) as T
             }
             modelClass.isAssignableFrom(ModulesViewModel::class.java) -> {
                 ModulesViewModel(
-                    tokenManager = TokenManager(context.applicationContext)
+                    tokenManager = tokenManager,
+                    authViewModel = authViewModel
                 ) as T
             }
             modelClass.isAssignableFrom(QuizViewModel::class.java) -> {
                 QuizViewModel(
-                    tokenManager = TokenManager(context.applicationContext)
+                    tokenManager = tokenManager,
+                    authViewModel = authViewModel
                 ) as T
             }
             modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
                 ProfileViewModel(
-                    authRepository = AuthRepository(),
-                    tokenManager = TokenManager(context.applicationContext)
+                    authRepository = authRepository,
+                    tokenManager = tokenManager
+                ) as T
+            }
+            modelClass.isAssignableFrom(AchievementsViewModel::class.java) -> {
+                AchievementsViewModel(
+                    tokenManager = tokenManager,
+                    authViewModel = authViewModel
+                ) as T
+            }
+            modelClass.isAssignableFrom(LeaderboardViewModel::class.java) -> {
+                LeaderboardViewModel(
+                    tokenManager = tokenManager,
+                    authViewModel = authViewModel
+                ) as T
+            }
+            modelClass.isAssignableFrom(MemoryGameViewModel::class.java) -> {
+                MemoryGameViewModel(
+                    tokenManager = tokenManager,
+                    authViewModel = authViewModel
                 ) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")

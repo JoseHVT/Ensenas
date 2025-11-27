@@ -25,6 +25,8 @@ import com.example.chat_bot.ui.components.ObserveSnackbarMessages
 import com.example.chat_bot.ui.theme.EnsenasTheme
 import com.example.chat_bot.viewmodels.AuthViewModel
 import com.example.chat_bot.viewmodels.ViewModelFactory
+import com.example.chat_bot.viewmodels.AchievementsViewModel
+import com.example.chat_bot.viewmodels.LeaderboardViewModel
 
 sealed class BottomNavItem(
     val route: String,
@@ -42,6 +44,15 @@ fun MainNavigation() {
     val context = LocalContext.current
     val authViewModel: AuthViewModel = viewModel(factory = ViewModelFactory(context))
     val authState by authViewModel.authState.collectAsState()
+    
+    // ViewModels adicionales
+    val achievementsViewModel: AchievementsViewModel = viewModel(factory = ViewModelFactory(context))
+    val leaderboardViewModel: LeaderboardViewModel = viewModel(factory = ViewModelFactory(context))
+    
+    // Estados observables
+    val achievements by achievementsViewModel.achievements.collectAsState()
+    val leaderboardData by leaderboardViewModel.leaderboardData.collectAsState()
+    val leaderboardType by leaderboardViewModel.currentType.collectAsState()
     
     val navController = rememberNavController()
     val snackbarHostState = remember { SnackbarHostState() }
@@ -173,6 +184,9 @@ fun MainNavigation() {
                         },
                         onNavigateToChatBot = {
                             navController.navigate(Screen.ChatBot.route)
+                        },
+                        onNavigateToMemoryGame = { moduleId ->
+                            navController.navigate(Screen.MemoryGame.createRoute(moduleId))
                         }
                     )
                 }
@@ -215,6 +229,18 @@ fun MainNavigation() {
                         },
                         onNavigateToAchievements = {
                             navController.navigate(Screen.Achievements.route)
+                        },
+                        onNavigateToNotifications = {
+                            navController.navigate(Screen.NotificationsSettings.route)
+                        },
+                        onNavigateToVideoSettings = {
+                            navController.navigate(Screen.VideoSettings.route)
+                        },
+                        onNavigateToAppearance = {
+                            navController.navigate(Screen.AppearanceSettings.route)
+                        },
+                        onNavigateToPrivacy = {
+                            navController.navigate(Screen.PrivacySettings.route)
                         }
                     )
                 }
@@ -269,7 +295,7 @@ fun MainNavigation() {
                 // Achievements Screen
                 composable(Screen.Achievements.route) {
                     AchievementsScreen(
-                        achievements = emptyList(), // TODO: Get from ViewModel
+                        achievements = achievements,
                         onNavigateBack = {
                             navController.popBackStack()
                         }
@@ -284,16 +310,59 @@ fun MainNavigation() {
                     )
                 ) { backStackEntry ->
                     val type = backStackEntry.arguments?.getString("type") ?: "weekly"
+                    val currentUserId = authViewModel.getCurrentUserIdSync() ?: "guest"
+                    
+                    // Cargar leaderboard del tipo especificado si cambió
+                    LaunchedEffect(type) {
+                        if (type != leaderboardType) {
+                            leaderboardViewModel.loadLeaderboard(type)
+                        }
+                    }
+                    
                     LeaderboardScreen(
-                        leaderboardData = null, // TODO: Get from ViewModel
-                        currentUserId = "1", // TODO: Get from auth
+                        leaderboardData = leaderboardData,
+                        currentUserId = currentUserId,
                         onNavigateBack = {
                             navController.popBackStack()
                         },
                         onTypeChange = { newType ->
+                            leaderboardViewModel.loadLeaderboard(newType)
                             navController.navigate(Screen.Leaderboard.createRoute(newType)) {
                                 popUpTo(Screen.Leaderboard.route) { inclusive = true }
                             }
+                        }
+                    )
+                }
+                
+                // Settings Screens
+                composable(Screen.NotificationsSettings.route) {
+                    com.example.chat_bot.screens.settings.NotificationsSettingsScreen(
+                        onNavigateBack = {
+                            navController.popBackStack()
+                        }
+                    )
+                }
+                
+                composable(Screen.VideoSettings.route) {
+                    com.example.chat_bot.screens.settings.VideoSettingsScreen(
+                        onNavigateBack = {
+                            navController.popBackStack()
+                        }
+                    )
+                }
+                
+                composable(Screen.AppearanceSettings.route) {
+                    com.example.chat_bot.screens.settings.AppearanceSettingsScreen(
+                        onNavigateBack = {
+                            navController.popBackStack()
+                        }
+                    )
+                }
+                
+                composable(Screen.PrivacySettings.route) {
+                    com.example.chat_bot.screens.settings.PrivacySettingsScreen(
+                        onNavigateBack = {
+                            navController.popBackStack()
                         }
                     )
                 }

@@ -21,12 +21,16 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
+import com.example.chat_bot.viewmodels.MemoryGameViewModel
+import com.example.chat_bot.viewmodels.ViewModelFactory
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
@@ -79,15 +83,42 @@ fun MemoryGameScreen(
     onGameComplete: (stars: Int, moves: Int, time: Int) -> Unit,
     onExit: () -> Unit
 ) {
+    val context = LocalContext.current
+    val memoryViewModel: MemoryGameViewModel = viewModel(factory = ViewModelFactory(context))
+    val snackbarHostState = remember { SnackbarHostState() }
+    
     var gameState by remember { mutableStateOf(GameState()) }
     val coroutineScope = rememberCoroutineScope()
     var showExitDialog by remember { mutableStateOf(false) }
     var showDifficultySelector by remember { mutableStateOf(false) }
     var currentDifficulty by remember { mutableStateOf(difficulty) }
+    
+    // Observar deck del ViewModel
+    val deck by memoryViewModel.deck.collectAsState()
+    val isLoading by memoryViewModel.isLoading.collectAsState()
+    val errorMessage by memoryViewModel.errorMessage.collectAsState()
+    
+    // Mostrar errores con Snackbar
+    LaunchedEffect(errorMessage) {
+        errorMessage?.let { message ->
+            snackbarHostState.showSnackbar(
+                message = message,
+                duration = SnackbarDuration.Short
+            )
+            memoryViewModel.clearError()
+        }
+    }
 
-    // Initialize game
+    // Initialize game - Cargar deck desde backend
     LaunchedEffect(currentDifficulty) {
-        gameState = initializeGame(currentDifficulty)
+        memoryViewModel.loadDeck(currentDifficulty.pairs)
+    }
+    
+    // Actualizar gameState cuando llegue el deck
+    LaunchedEffect(deck) {
+        if (deck.isNotEmpty()) {
+            gameState = initializeGameFromDeck(deck, currentDifficulty)
+        }
     }
 
     // Timer
@@ -97,8 +128,23 @@ fun MemoryGameScreen(
             gameState = gameState.copy(timeElapsed = gameState.timeElapsed + 1)
         }
     }
+    
+    // Guardar resultados cuando el juego termina
+    LaunchedEffect(gameState.isGameComplete) {
+        if (gameState.isGameComplete && gameState.matchedPairs > 0) {
+            memoryViewModel.saveGameResults(
+                matches = gameState.matchedPairs,
+                attempts = gameState.moves,
+                durationMs = gameState.timeElapsed * 1000,
+                moduleId = null
+            )
+        }
+    }
 
     Scaffold(
+        snackbarHost = {
+            SnackbarHost(hostState = snackbarHostState)
+        },
         topBar = {
             TopAppBar(
                 title = {
@@ -754,9 +800,64 @@ private fun ResultStat(
 // HELPER FUNCTIONS
 // ============================================
 
+/**
+ * Inicializa el juego con datos del backend
+ */
+private fun initializeGameFromDeck(
+    deck: List<com.example.chat_bot.data.models.SignPairResponse>,
+    difficulty: DifficultyLevel
+): GameState {
+    val pairs = mutableListOf<MemoryCard>()
+    var cardId = 0
+    
+    // Crear dos cartas por cada par del backend
+    deck.forEach { signPair ->
+        val videoUrl = signPair.sign.videoPath
+        val word = signPair.word
+        
+        // Primera carta del par
+        pairs.add(
+            MemoryCard(
+                id = cardId++,
+                pairId = signPair.id,
+                word = word,
+                videoThumbnail = videoUrl
+            )
+        )
+        
+        // Segunda carta del par (misma palabra e ID)
+        pairs.add(
+            MemoryCard(
+                id = cardId++,
+                pairId = signPair.id,
+                word = word,
+                videoThumbnail = videoUrl
+            )
+        )
+    }
+    
+    // Mezclar las cartas aleatoriamente
+    val shuffledCards = pairs.shuffled()
+    
+    return GameState(
+        cards = shuffledCards,
+        flippedCards = emptyList(),
+        matchedPairs = 0,
+        moves = 0,
+        timeElapsed = 0,
+        isGameComplete = false,
+        stars = 0,
+        isProcessing = false
+    )
+}
+
+/**
+ * Inicializa el juego con datos de prueba (fallback)
+ */
 private fun initializeGame(difficulty: DifficultyLevel): GameState {
-    // TODO: Fetch from backend GET /memory/deck?size=${difficulty.pairs}
-    // Por ahora generamos datos de prueba
+    // TODO: Implementar ViewModel para Memory Game y conectar GET /memory/deck?size=${difficulty.pairs}
+    // TODO: Al completar juego, llamar POST /memory/attempt con resultados
+    // Por ahora generamos datos de prueba locales
     
     val words = listOf(
         "Hola", "Adiós", "Gracias", "Por favor", "Sí", "No",
