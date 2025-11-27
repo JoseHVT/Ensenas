@@ -62,7 +62,8 @@ data class QuizState(
     val earnedXP: Int = 0,
     val timeRemaining: Int = 30, // Para Speed Round
     val isQuizComplete: Boolean = false,
-    val isPerfect: Boolean = false
+    val isPerfect: Boolean = false,
+    val incorrectQuestions: List<Int> = emptyList() // Índices de preguntas incorrectas
 )
 
 // ============================================
@@ -78,6 +79,7 @@ fun QuizScreen(
 ) {
     val context = LocalContext.current
     val viewModel: QuizViewModel = viewModel(factory = ViewModelFactory(context))
+    val haptic = rememberHapticFeedback()
     
     // Observar estados del ViewModel
     val quiz by viewModel.quiz.collectAsState()
@@ -143,12 +145,20 @@ fun QuizScreen(
         val xpForThisAnswer = if (isCorrect) 10 else 0
         val newXP = quizState.earnedXP + xpForThisAnswer
         
+        // Rastrear preguntas incorrectas
+        val newIncorrectQuestions = if (!isCorrect) {
+            quizState.incorrectQuestions + quizState.currentQuestionIndex
+        } else {
+            quizState.incorrectQuestions
+        }
+        
         quizState = quizState.copy(
             selectedAnswer = answer,
             isAnswerCorrect = isCorrect,
             lives = newLives,
             score = newScore,
-            earnedXP = newXP
+            earnedXP = newXP,
+            incorrectQuestions = newIncorrectQuestions
         )
     }
     
@@ -309,8 +319,16 @@ fun QuizScreen(
                         totalQuestions = quizState.totalQuestions,
                         earnedXP = quizState.earnedXP,
                         isPerfect = quizState.isPerfect,
+                        incorrectQuestions = quizState.incorrectQuestions,
+                        allQuestions = uiQuestions,
                         onContinue = { onQuizComplete(quizState.score, quizState.earnedXP) },
-                        onReviewMistakes = { /* TODO */ }
+                        onReviewMistakes = {
+                            // Reiniciar quiz mostrando solo las preguntas incorrectas
+                            quizState = QuizState(
+                                totalQuestions = quizState.incorrectQuestions.size,
+                                lives = 3
+                            )
+                        }
                     )
                 }
                 else -> {
@@ -394,6 +412,13 @@ fun QuizScreen(
                             if (quizState.selectedAnswer == null && uiQuestions.isNotEmpty()) {
                                 val currentQuestion = uiQuestions[quizState.currentQuestionIndex]
                                 val isCorrect = answer == currentQuestion.correctAnswer
+                                
+                                // Haptic feedback según respuesta
+                                if (isCorrect) {
+                                    haptic.success()
+                                } else {
+                                    haptic.error()
+                                }
                                 
                                 // Registrar respuesta en el ViewModel
                                 val questionId = currentQuestion.id
@@ -619,11 +644,19 @@ private fun AnswerOptionCard(
 }
 
 // ============================================
-// VIDEO PLAYER PLACEHOLDER
+// VIDEO PLAYER PARA PREGUNTAS MULTIMEDIA
 // ============================================
 
 @Composable
 private fun VideoPlayerPlaceholder(videoUrl: String) {
+    val context = LocalContext.current
+    // Construir URI del video desde resources o URL
+    val videoUri = if (videoUrl.startsWith("http")) {
+        videoUrl
+    } else {
+        "android.resource://${context.packageName}/raw/$videoUrl"
+    }
+    
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -631,38 +664,16 @@ private fun VideoPlayerPlaceholder(videoUrl: String) {
         colors = CardDefaults.cardColors(containerColor = Color(0xFF1F2937)),
         shape = RoundedCornerShape(16.dp)
     ) {
-        Box(
+        LSMVideoPlayer(
+            videoUrl = videoUri,
+            autoPlay = true,
+            loop = true,
+            showControls = true,
             modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                Icon(
-                    imageVector = Icons.Default.PlayArrow,
-                    contentDescription = "Video",
-                    tint = Color.White,
-                    modifier = Modifier
-                        .size(64.dp)
-                        .background(
-                            color = VerdeExito.copy(alpha = 0.3f),
-                            shape = CircleShape
-                        )
-                        .padding(12.dp)
-                )
-                Text(
-                    text = "Video: $videoUrl",
-                    color = Color.White.copy(alpha = 0.7f),
-                    style = MaterialTheme.typography.bodySmall
-                )
-                Text(
-                    text = "Toca para reproducir",
-                    color = Color.White,
-                    style = MaterialTheme.typography.bodyMedium
-                )
+            onError = { errorMsg ->
+                android.util.Log.e("QuizScreen", "Error video: $errorMsg")
             }
-        }
+        )
     }
 }
 
@@ -799,6 +810,8 @@ fun QuizResultsScreen(
     totalQuestions: Int,
     earnedXP: Int,
     isPerfect: Boolean,
+    incorrectQuestions: List<Int>,
+    allQuestions: List<QuizQuestion>,
     onContinue: () -> Unit,
     onReviewMistakes: () -> Unit
 ) {
@@ -809,6 +822,8 @@ fun QuizResultsScreen(
         percentage >= 50 -> 1
         else -> 0
     }
+    
+    val hasIncorrectAnswers = incorrectQuestions.isNotEmpty()
 
     Column(
         modifier = Modifier
@@ -935,7 +950,7 @@ fun QuizResultsScreen(
             )
         }
 
-        if (score < totalQuestions) {
+        if (hasIncorrectAnswers) {
             Spacer(modifier = Modifier.height(12.dp))
             OutlinedButton(
                 onClick = onReviewMistakes,
@@ -945,8 +960,14 @@ fun QuizResultsScreen(
                 shape = RoundedCornerShape(16.dp),
                 border = BorderStroke(2.dp, AzulTec)
             ) {
+                Icon(
+                    imageVector = Icons.Default.Book,
+                    contentDescription = null,
+                    modifier = Modifier.size(20.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
                 Text(
-                    text = "REVISAR ERRORES",
+                    text = "REVISAR ${incorrectQuestions.size} ERROR${if (incorrectQuestions.size > 1) "ES" else ""}",
                     fontWeight = FontWeight.Bold,
                     color = AzulTec,
                     fontSize = 16.sp

@@ -31,6 +31,10 @@ import com.example.chat_bot.viewmodels.ViewModelFactory
 fun ProfileScreen(
     onLogout: () -> Unit,
     onNavigateToAchievements: () -> Unit = {},
+    onNavigateToNotifications: () -> Unit = {},
+    onNavigateToVideoSettings: () -> Unit = {},
+    onNavigateToAppearance: () -> Unit = {},
+    onNavigateToPrivacy: () -> Unit = {},
     userLevel: UserLevel? = null,
     unlockedAchievements: Int = 12,
     totalAchievements: Int = 25
@@ -63,6 +67,7 @@ fun ProfileScreen(
         }
     }
     
+    Box(modifier = Modifier.fillMaxSize()) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -296,34 +301,38 @@ fun ProfileScreen(
                 )
                 
                 ProfileOption(
-                    icon = Icons.Default.Person,
-                    title = "Editar Perfil",
-                    onClick = { /* TODO */ }
-                )
-                
-                ProfileOption(
                     icon = Icons.Default.Notifications,
                     title = "Notificaciones",
-                    onClick = { /* TODO */ }
+                    subtitle = "Recordatorios y alertas",
+                    onClick = onNavigateToNotifications
                 )
                 
                 ProfileOption(
-                    icon = Icons.Default.Language,
-                    title = "Idioma",
-                    subtitle = "Español",
-                    onClick = { /* TODO */ }
+                    icon = Icons.Default.Speed,
+                    title = "Velocidad de Videos",
+                    subtitle = "Ajusta la reproducción",
+                    onClick = onNavigateToVideoSettings
                 )
                 
                 ProfileOption(
-                    icon = Icons.Default.Help,
-                    title = "Ayuda y Soporte",
-                    onClick = { /* TODO */ }
+                    icon = Icons.Default.Palette,
+                    title = "Apariencia",
+                    subtitle = "Modo oscuro y temas",
+                    onClick = onNavigateToAppearance
+                )
+                
+                ProfileOption(
+                    icon = Icons.Default.Security,
+                    title = "Privacidad y Datos",
+                    subtitle = "Control de información",
+                    onClick = onNavigateToPrivacy
                 )
                 
                 ProfileOption(
                     icon = Icons.Default.Info,
                     title = "Acerca de EnSeñas",
-                    onClick = { /* TODO */ }
+                    subtitle = "Versión 1.0-beta",
+                    onClick = { /* Mostrar diálogo About */ }
                 )
                 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -391,6 +400,10 @@ fun ProfileScreen(
                 }
             }
         )
+    }
+    
+    // Loading overlay durante carga de stats y logout
+    SimpleLoadingOverlay(isLoading = isLoading)
     }
 }
 

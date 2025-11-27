@@ -7,6 +7,8 @@ import com.example.chat_bot.data.auth.TokenManager
 import com.example.chat_bot.data.models.QuizResponse
 import com.example.chat_bot.data.models.QuizQuestionResponse
 import com.example.chat_bot.data.models.QuizAttemptRequest
+import com.example.chat_bot.data.repositories.QuizRepository
+import com.example.chat_bot.data.repositories.QuizRepositoryImpl
 import com.example.chat_bot.ui.components.SnackbarController
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,9 +18,12 @@ import kotlinx.coroutines.launch
 
 /**
  * ViewModel para QuizScreen - Maneja quizzes y preguntas
+ * Refactored to use Repository pattern for testability
  */
 class QuizViewModel(
-    private val tokenManager: TokenManager
+    private val tokenManager: TokenManager,
+    private val authViewModel: AuthViewModel,
+    private val quizRepository: QuizRepository = QuizRepositoryImpl(RetrofitInstance.api)
 ) : ViewModel() {
     
     // Estado de carga
@@ -62,7 +67,7 @@ class QuizViewModel(
             _errorMessage.value = null
             
             try {
-                val response = RetrofitInstance.api.getQuizDetails(quizId)
+                val response = quizRepository.getQuizDetails(quizId)
                 
                 if (response.isSuccessful && response.body() != null) {
                     val quizData = response.body()!!
@@ -145,7 +150,7 @@ class QuizViewModel(
                     durationMs = timeSpent * 1000
                 )
                 
-                val response = RetrofitInstance.api.submitQuizAttempt(
+                val response = quizRepository.submitQuizAttempt(
                     token = "Bearer $token",
                     attempt = attemptRequest
                 )
@@ -170,11 +175,29 @@ class QuizViewModel(
     }
     
     /**
-     * Calcula el número de respuestas correctas (mock por ahora)
+     * Calcula el número de respuestas correctas validando contra las preguntas
      */
     private fun calculateCorrectAnswers(): Int {
-        // TODO: Comparar con respuestas correctas del backend
-        return _userAnswers.value.size
+        val questions = _questions.value
+        val userAnswers = _userAnswers.value
+        var correctCount = 0
+        
+        userAnswers.forEach { (questionId, userAnswerId) ->
+            // Buscar la pregunta correspondiente
+            val question = questions.find { it.id == questionId }
+            if (question != null) {
+                // Validar si la respuesta del usuario coincide con la respuesta correcta
+                // La respuesta correcta está en question.answer como String (e.g., "A", "B", "C")
+                val correctAnswerKey = question.answer
+                val userAnswerKey = userAnswerId.toString() // Convertir ID a key
+                
+                if (correctAnswerKey == userAnswerKey) {
+                    correctCount++
+                }
+            }
+        }
+        
+        return correctCount
     }
     
     /**

@@ -5,6 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.chat_bot.data.api.RetrofitInstance
 import com.example.chat_bot.data.auth.TokenManager
 import com.example.chat_bot.data.models.ModuleResponse
+import com.example.chat_bot.data.repository.ModulesRepository
+import com.example.chat_bot.data.repository.ModulesRepositoryImpl
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -29,7 +31,9 @@ data class ModuleWithProgress(
  * ViewModel para ModulesScreen - Maneja la lista de módulos
  */
 class ModulesViewModel(
-    private val tokenManager: TokenManager
+    private val tokenManager: TokenManager,
+    private val authViewModel: AuthViewModel,
+    private val modulesRepository: ModulesRepository = ModulesRepositoryImpl(RetrofitInstance.api)
 ) : ViewModel() {
     
     // Estado de carga
@@ -57,7 +61,7 @@ class ModulesViewModel(
             _errorMessage.value = null
             
             try {
-                val response = RetrofitInstance.api.getModules()
+                val response = modulesRepository.getModules()
                 
                 if (response.isSuccessful && response.body() != null) {
                     val backendModules = response.body()!!
@@ -129,11 +133,26 @@ class ModulesViewModel(
             try {
                 val token = tokenManager.getAuthToken().first()
                 if (token != null) {
-                    // TODO: Llamar endpoint de progreso
-                    // RetrofitInstance.api.updateProgress(...)
+                    // Conectar con endpoint de progreso real
+                    val progressRequest = com.example.chat_bot.data.models.UserProgressRequest(
+                        moduleId = moduleId,
+                        percent = progress
+                    )
+                    
+                    val response = modulesRepository.updateProgress(
+                        token = "Bearer $token",
+                        progress = progressRequest
+                    )
+                    
+                    if (response.isSuccessful && response.body() != null) {
+                        // Actualizar progreso local con respuesta del backend
+                        val updatedProgress = response.body()!!
+                        android.util.Log.d("ModulesViewModel", "Progreso actualizado: módulo $moduleId = $progress%")
+                    }
                 }
             } catch (e: Exception) {
-                // Silent fail - no afecta la UI
+                // Silent fail - no afecta la UI pero log para debugging
+                android.util.Log.e("ModulesViewModel", "Error al actualizar progreso: ${e.message}")
             }
         }
     }
