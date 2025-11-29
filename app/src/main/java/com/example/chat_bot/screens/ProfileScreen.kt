@@ -29,6 +29,7 @@ import com.example.chat_bot.viewmodels.ViewModelFactory
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(
+    authViewModel: com.example.chat_bot.viewmodels.AuthViewModel,
     onLogout: () -> Unit,
     onNavigateToAchievements: () -> Unit = {},
     onNavigateToNotifications: () -> Unit = {},
@@ -40,19 +41,21 @@ fun ProfileScreen(
     totalAchievements: Int = 25
 ) {
     val context = LocalContext.current
-    val viewModel: ProfileViewModel = viewModel(factory = ViewModelFactory(context))
-    
+    val profileViewModel: ProfileViewModel = viewModel(
+        factory = ViewModelFactory(context)
+    )
     // Estados observables
-    val authState by viewModel.authState.collectAsState()
-    val userName by viewModel.userName.collectAsState()
-    val userEmail by viewModel.userEmail.collectAsState()
-    val isLoading by viewModel.isLoading.collectAsState()
+    val authState by authViewModel.authState.collectAsState()
+
+    val userName by profileViewModel.userName.collectAsState()
+    val userEmail by profileViewModel.userEmail.collectAsState()
+    val isLoading by profileViewModel.isLoading.collectAsState()
     
     // Estadísticas del ViewModel
-    val modulesCompleted by viewModel.modulesCompleted.collectAsState()
-    val totalProgress by viewModel.totalProgress.collectAsState()
-    val currentStreak by viewModel.currentStreak.collectAsState()
-    val signsLearned by viewModel.signsLearned.collectAsState()
+    val modulesCompleted by profileViewModel.modulesCompleted.collectAsState()
+    val totalProgress by profileViewModel.totalProgress.collectAsState()
+    val currentStreak by profileViewModel.currentStreak.collectAsState()
+    val signsLearned by profileViewModel.signsLearned.collectAsState()
     
     // Calcular XP y lecciones basadas en estadísticas
     val totalXP = signsLearned * 10 // Aproximación: 10 XP por seña
@@ -341,7 +344,11 @@ fun ProfileScreen(
                     icon = Icons.Default.ExitToApp,
                     title = "Cerrar Sesión",
                     iconTint = RojoError,
-                    onClick = { showLogoutDialog = true }
+                    onClick = {
+                        showLogoutDialog = true
+                        authViewModel.signOut()
+                        onLogout()
+                    }
                 )
             }
             
@@ -373,7 +380,8 @@ fun ProfileScreen(
                 Button(
                     onClick = {
                         showLogoutDialog = false
-                        viewModel.signOut()
+                        authViewModel.signOut()
+                        onLogout()
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = RojoError

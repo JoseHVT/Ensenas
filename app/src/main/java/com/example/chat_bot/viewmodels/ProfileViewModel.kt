@@ -16,9 +16,10 @@ import kotlinx.coroutines.launch
  * ViewModel para ProfileScreen - Maneja perfil de usuario y logout
  */
 class ProfileViewModel(
-    private val authRepository: AuthRepository,
+    private val authViewModel: AuthViewModel,
     private val tokenManager: TokenManager
 ) : ViewModel() {
+
     
     // Estado de autenticación
     private val _authState = MutableStateFlow<AuthState>(AuthState.Authenticated)
@@ -115,16 +116,19 @@ class ProfileViewModel(
         _currentStreak.value = 7
         _signsLearned.value = 127
     }
-    
+
     /**
      * Cierra la sesión del usuario
+     *
+     * "No value passed for parameter authViewModel"
+     * (para asegurar que use AuthViewModel)
      */
     fun signOut() {
         viewModelScope.launch {
             _isLoading.value = true
-            
+
             try {
-                authRepository.signOut()
+                authViewModel.signOut()
                 tokenManager.clearAll()
                 _authState.value = AuthState.Unauthenticated
             } catch (e: Exception) {

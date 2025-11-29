@@ -144,6 +144,7 @@ fun MainNavigation() {
                 
                 composable(Screen.Login.route) {
                     LoginScreen(
+                        viewModel = authViewModel,
                         onNavigateToRegister = {
                             navController.navigate(Screen.Register.route)
                         },
@@ -157,11 +158,12 @@ fun MainNavigation() {
                 
                 composable(Screen.Register.route) {
                     RegisterScreen(
+                        viewModel = authViewModel,
                         onNavigateToLogin = {
                             navController.popBackStack()
                         },
                         onRegisterSuccess = {
-                            navController.navigate(Screen.Home.route) {
+                            navController.navigate(Screen.Login.route) {
                                 popUpTo(Screen.Register.route) { inclusive = true }
                             }
                         }
@@ -222,6 +224,7 @@ fun MainNavigation() {
                 
                 composable(Screen.Profile.route) {
                     ProfileScreen(
+                        authViewModel = authViewModel,
                         onLogout = {
                             navController.navigate(Screen.Login.route) {
                                 popUpTo(0) { inclusive = true }

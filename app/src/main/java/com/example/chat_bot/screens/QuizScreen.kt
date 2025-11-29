@@ -32,6 +32,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
+import com.example.chat_bot.ui.components.rememberHapticFeedback
+import com.example.chat_bot.ui.components.LSMVideoPlayer
 // ============================================
 // DATA MODELS
 // ============================================

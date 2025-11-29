@@ -13,29 +13,39 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 /**
+ * para manejar excepciones de Firebase en el ViewModel
+ */
+import com.google.firebase.FirebaseNetworkException
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+
+
+/**
  * ViewModel que maneja el estado de autenticación de la aplicación
  */
 class AuthViewModel(
     private val authRepository: AuthRepository,
     private val tokenManager: TokenManager
 ) : ViewModel() {
-    
+
     // Estado de autenticación
     private val _authState = MutableStateFlow<AuthState>(AuthState.Loading)
     val authState: StateFlow<AuthState> = _authState.asStateFlow()
-    
+
     // Usuario actual
     private val _currentUser = MutableStateFlow<FirebaseUser?>(null)
     val currentUser: StateFlow<FirebaseUser?> = _currentUser.asStateFlow()
-    
+
     // Mensajes de error
     private val _errorMessage = MutableStateFlow<String?>(null)
     val errorMessage: StateFlow<String?> = _errorMessage.asStateFlow()
-    
+
     init {
         checkAuthState()
     }
-    
+
     /**
      * Verifica el estado de autenticación al iniciar
      */
@@ -59,7 +69,7 @@ class AuthViewModel(
             }
         }
     }
-    
+
     /**
      * Registra un nuevo usuario
      */
@@ -67,14 +77,14 @@ class AuthViewModel(
         viewModelScope.launch {
             _authState.value = AuthState.Loading
             _errorMessage.value = null
-            
+
             val result = authRepository.signUp(email, password, displayName)
-            
+
             result.fold(
                 onSuccess = { user ->
                     _currentUser.value = user
                     _authState.value = AuthState.Authenticated
-                    
+
                     // Guardar token y datos del usuario
                     authRepository.getAuthToken()?.let { token ->
                         tokenManager.saveAuthToken(token)
@@ -92,7 +102,7 @@ class AuthViewModel(
             )
         }
     }
-    
+
     /**
      * Inicia sesión con email y contraseña
      */
@@ -100,14 +110,14 @@ class AuthViewModel(
         viewModelScope.launch {
             _authState.value = AuthState.Loading
             _errorMessage.value = null
-            
+
             val result = authRepository.signIn(email, password)
-            
+
             result.fold(
                 onSuccess = { user ->
                     _currentUser.value = user
                     _authState.value = AuthState.Authenticated
-                    
+
                     // Guardar token y datos del usuario
                     authRepository.getAuthToken()?.let { token ->
                         tokenManager.saveAuthToken(token)
@@ -125,7 +135,7 @@ class AuthViewModel(
             )
         }
     }
-    
+
     /**
      * Inicia sesión con Google
      */
@@ -133,14 +143,14 @@ class AuthViewModel(
         viewModelScope.launch {
             _authState.value = AuthState.Loading
             _errorMessage.value = null
-            
+
             val result = authRepository.signInWithGoogle(idToken)
-            
+
             result.fold(
                 onSuccess = { user ->
                     _currentUser.value = user
                     _authState.value = AuthState.Authenticated
-                    
+
                     // Guardar token y datos del usuario
                     authRepository.getAuthToken()?.let { token ->
                         tokenManager.saveAuthToken(token)
@@ -158,7 +168,7 @@ class AuthViewModel(
             )
         }
     }
-    
+
     /**
      * Cierra la sesión del usuario
      */
@@ -177,16 +187,16 @@ class AuthViewModel(
             }
         }
     }
-    
+
     /**
      * Envía email de recuperación de contraseña
      */
     fun sendPasswordResetEmail(email: String) {
         viewModelScope.launch {
             _errorMessage.value = null
-            
+
             val result = authRepository.sendPasswordResetEmail(email)
-            
+
             result.fold(
                 onSuccess = {
                     _errorMessage.value = "Email de recuperación enviado"
@@ -197,14 +207,14 @@ class AuthViewModel(
             )
         }
     }
-    
+
     /**
      * Limpia el mensaje de error
      */
     fun clearError() {
         _errorMessage.value = null
     }
-    
+
     /**
      * Obtiene el ID del usuario actual desde TokenManager
      * @return Flow con el userId o null si no hay sesión activa
@@ -212,7 +222,7 @@ class AuthViewModel(
     fun getCurrentUserId(): Flow<String?> {
         return tokenManager.getUserId()
     }
-    
+
     /**
      * Obtiene el token de autenticación actual
      * @return Flow con el token o null si no hay sesión activa
@@ -220,7 +230,7 @@ class AuthViewModel(
     fun getCurrentToken(): Flow<String?> {
         return tokenManager.getAuthToken()
     }
-    
+
     /**
      * Obtiene el ID del usuario de forma síncrona desde FirebaseAuth
      * Útil para casos donde se necesita el userId inmediatamente
@@ -229,23 +239,29 @@ class AuthViewModel(
     fun getCurrentUserIdSync(): String? {
         return _currentUser.value?.uid
     }
-    
+
     /**
      * Convierte excepciones de Firebase en mensajes amigables
      */
     private fun getErrorMessage(exception: Throwable): String {
-        return when (exception.message) {
-            "The email address is badly formatted." -> 
-                "El formato del correo electrónico no es válido"
-            "The password is invalid or the user does not have a password." -> 
-                "Contraseña incorrecta"
-            "There is no user record corresponding to this identifier. The user may have been deleted." -> 
-                "No existe una cuenta con este correo"
-            "The email address is already in use by another account." -> 
-                "Este correo ya está registrado"
-            "Password should be at least 6 characters" -> 
-                "La contraseña debe tener al menos 6 caracteres"
-            else -> exception.message ?: "Error desconocido"
+        return when (exception) {
+            is FirebaseAuthInvalidCredentialsException -> "Correo o contraseña incorrectos."
+            is FirebaseAuthUserCollisionException -> "Este correo ya está registrado."
+            is FirebaseAuthInvalidUserException -> "No existe una cuenta con este correo."
+            is FirebaseAuthWeakPasswordException -> "La contraseña debe tener al menos 6 caracteres."
+            is FirebaseNetworkException -> "Error de red. Por favor, comprueba tu conexión a internet."
+            else -> {
+                // Manejo especial para errores que vienen en el mensaje de texto
+                if (exception.message?.contains("CONFIGURATION_NOT_FOUND") == true) {
+                    "El inicio de sesión no está habilitado en el servidor."
+                } else {
+                    exception.message ?: "Ocurrió un error desconocido."
+                }
+            }
         }
     }
+    /*
+     * mapeamos  excepciones a strings
+    */
 }
+

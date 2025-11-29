@@ -38,12 +38,12 @@ import com.example.chat_bot.data.auth.AuthState
 
 @Composable
 fun LoginScreen(
+    viewModel: AuthViewModel,
     onNavigateToRegister: () -> Unit,
     onLoginSuccess: () -> Unit
 ) {
     val context = LocalContext.current
-    val viewModel: AuthViewModel = viewModel(factory = ViewModelFactory(context))
-    
+
     // Estados observables del ViewModel
     val authState by viewModel.authState.collectAsState()
     val errorMessage by viewModel.errorMessage.collectAsState()

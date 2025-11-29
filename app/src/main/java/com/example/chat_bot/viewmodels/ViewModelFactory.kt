@@ -49,9 +49,10 @@ class ViewModelFactory(
                     authViewModel = authViewModel
                 ) as T
             }
+            /// Ahora pasamos el ViewModel, no el Repo
             modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
                 ProfileViewModel(
-                    authRepository = authRepository,
+                    authViewModel = authViewModel,
                     tokenManager = tokenManager
                 ) as T
             }

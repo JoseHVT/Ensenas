@@ -26,19 +26,33 @@ import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.*
 import kotlinx.coroutines.delay
 
+import android.widget.Toast
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.runtime.LaunchedEffect
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.chat_bot.data.auth.AuthState // para toast y el contexto
+import com.example.chat_bot.viewmodels.AuthViewModel
+import com.example.chat_bot.viewmodels.ViewModelFactory
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RegisterScreen(
+    viewModel: AuthViewModel,
     onNavigateToLogin: () -> Unit,
     onRegisterSuccess: () -> Unit
 ) {
+    //conex con viewmodel r
+    val context = LocalContext.current
+    val authState by viewModel.authState.collectAsState()
+    //forms var
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
+
     var passwordVisible by remember { mutableStateOf(false) }
     var confirmPasswordVisible by remember { mutableStateOf(false) }
-    var isLoading by remember { mutableStateOf(false) }
+
     var errorMessage by remember { mutableStateOf<String?>(null) }
     var isVisible by remember { mutableStateOf(false) }
     
@@ -46,7 +60,27 @@ fun RegisterScreen(
         delay(100)
         isVisible = true
     }
-    
+    //toast
+    LaunchedEffect(authState) {
+        // uardamos el estado en una var local "stableState"
+        // Esto permite que Kotlin confie  (Smart Cast)
+        val stableState = authState
+
+        when (stableState) {
+            is AuthState.Authenticated -> {
+                Toast.makeText(context, "¡Cuenta creada exitosamente!", Toast.LENGTH_LONG).show()
+                onRegisterSuccess()
+            }
+            is AuthState.Error -> {
+
+                Toast.makeText(context, stableState.message, Toast.LENGTH_LONG).show()
+            }
+            else -> { /* Nada */ }
+        }
+    }
+    //ver si carga
+    val isLoading = authState is AuthState.Loading
+
     Box(modifier = Modifier.fillMaxSize()) {
     Scaffold(
         topBar = {
@@ -272,10 +306,15 @@ fun RegisterScreen(
                         password.length < 6 -> errorMessage = "La contraseña debe tener al menos 6 caracteres"
                         password != confirmPassword -> errorMessage = "Las contraseñas no coinciden"
                         else -> {
-                            isLoading = true
-                            // Mock: registro exitoso
-                            onRegisterSuccess()
-                        }
+
+                            //para ver que show con el fallo
+                            android.util.Log.d("DEBUG_REGISTRO", "Email limpio: '${email.trim()}'")
+                            // LLAMADA REAL A FIREBASE
+
+                            //el orden era al revez
+
+                            viewModel.signUp(email.trim(), password, name.trim())
+                        }//trim para limpiar espacios en blanco
                     }
                 },
                 modifier = Modifier
