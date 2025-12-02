@@ -12,8 +12,15 @@ object RetrofitInstance {
     
     // Para emulador Android: 10.0.2.2 = localhost de tu PC
     // Para dispositivo físico: usa la IP local de tu PC (ej: 192.168.1.X)
-    private const val BASE_URL = "http://10.0.2.2:8000/"
-    
+
+    //local o nuve
+// Para el resto del equipo, déjalo en 'false'
+    private const val USE_LOCAL_SERVER = false
+
+    private const val URL_PROD = "https://ensenas-api.onrender.com/"
+    private const val URL_LOCAL = "http://10.0.2.2:8000/" // IP especial del emulador
+
+    private val BASE_URL = if (USE_LOCAL_SERVER) URL_LOCAL else URL_PROD
     // AuthRepository para obtener tokens
     private val authRepository = AuthRepository()
     
