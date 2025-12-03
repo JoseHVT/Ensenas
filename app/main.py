@@ -40,7 +40,8 @@ app.include_router(quizzes.router)
 app.include_router(memory.router)
 app.include_router(progress.router)
 app.include_router(media.router)
-
+app.include_router(missions.router)
+app.include_router(lessons.router)
 
 #-----------------------------------------------------------
 
