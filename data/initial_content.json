@@ -1,0 +1,49 @@
+{
+  "modules": [
+    {
+      "title": "Módulo 1: Introducción",
+      "description": "Conceptos básicos y saludos en LSM.",
+      "code": "MOD-01",
+      "sort_order": 1
+    },
+    {
+      "title": "Módulo 2: Familia",
+      "description": "Señas para mamá, papá, hermanos y parientes.",
+      "code": "MOD-02",
+      "sort_order": 2
+    },
+    {
+      "title": "Módulo 3: Colores y Números",
+      "description": "Aprende a contar y describir objetos.",
+      "code": "MOD-03",
+      "sort_order": 3
+    }
+  ],
+  "signs": [
+    {
+      "word": "Hola",
+      "category": "Saludos",
+      "video_path": "videos/saludos/hola.mp4"
+    },
+    {
+      "word": "Buenos Días",
+      "category": "Saludos",
+      "video_path": "videos/saludos/buenos_dias.mp4"
+    },
+    {
+      "word": "Mamá",
+      "category": "Familia",
+      "video_path": "videos/familia/mama.mp4"
+    },
+    {
+      "word": "Papá",
+      "category": "Familia",
+      "video_path": "videos/familia/papa.mp4"
+    },
+    {
+      "word": "Azul",
+      "category": "Colores",
+      "video_path": "videos/colores/azul.mp4"
+    }
+  ]
+}

@@ -175,5 +175,6 @@ class StatsSummary(BaseModel):
     tiempo_total_ms: int = 0
     racha_actual: int = 0
     senas_dominadas: int = 0
+    daily_xp: int = 0  # <--- NUEVO CAMPO
 
     
