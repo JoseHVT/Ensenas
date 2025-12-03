@@ -70,58 +70,68 @@ def get_my_attempts(
     user_id = current_user["uid"]
     return crud_quizzes.get_user_attempts(db, user_id=user_id, skip=skip, limit=limit)
 
-
-
-
-# --- Endpoint Temporal de Desarrollo (seed) ---
-
-@router.post("/seed-test-quiz", tags=["_TEMP_Dev_Helpers"])
-def seed_test_quiz(db: Session = Depends(get_db)):
+@router.post("/", response_model=schemas.Quiz, status_code=status.HTTP_201_CREATED)
+def create_full_quiz(
+    quiz: schemas.QuizCreateFull, 
+    module_id: int,
+    db: Session = Depends(get_db)
+):
     """
-    [USO TEMPORAL] Crea un quiz de prueba con 2 preguntas,
-    asociado al modulo 1.
-
+    Crea un nuevo quiz con sus preguntas asociadas a un mdulo.
+    Usado por el script de carga (seed).
     """
+    return crud_quizzes.create_quiz_with_questions(db, quiz=quiz, module_id=module_id)
 
-    # 1. Busca el Modulo 1 
-    test_module = db.query(models.Module).filter(models.Module.id == 1).first()
 
-    if not test_module:
-        raise HTTPException(
-            status_code=404, 
-            detail="modulo 1 no encontrado. Por favor, crea un modulo con POST /modules primero."
-        )
+# # --- Endpoint Temporal de Desarrollo (seed) ---
 
-    # 2. Revisa si el quiz de prueba ya existe
-    existing_quiz = db.query(models.Quiz).filter(models.Quiz.title == "Quiz de Saludos (Prueba)").first()
-    if existing_quiz:
-        return {"message": "El quiz de prueba ya existe.", "quiz_id": existing_quiz.id}
+# @router.post("/seed-test-quiz", tags=["_TEMP_Dev_Helpers"])
+# def seed_test_quiz(db: Session = Depends(get_db)):
+#     """
+#     [USO TEMPORAL] Crea un quiz de prueba con 2 preguntas,
+#     asociado al modulo 1.
 
-    # 3. Crea el Quiz y sus Preguntas 
-    new_quiz = models.Quiz(
-        title="Quiz de Saludos (Prueba)",
-        type="multiple_choice",
-        module_id=test_module.id, # Lo asociamos al mo4dulo 1
-        questions=[  #  crear las preguntas "hijo" directamente
-            models.QuizQuestion(
-                prompt="¿Que seña significa 'Hola'?",
-                options={"a": "video_a.mp4", "b": "video_hola.mp4", "c": "video_c.mp4"},
-                answer="b"
-            ),
-            models.QuizQuestion(
-                prompt="¿Que seña significa 'Adios'?",
-                options={"a": "video_adios.mp4", "b": "video_y.mp4", "c": "video_z.mp4"},
-                answer="a"
-            )
-        ]
-    )
+#     """
 
-    # 4. Añadimos el quizz y SQLAlchemy se encarga de las pregunts
-    db.add(new_quiz)
-    db.commit()
-    db.refresh(new_quiz)
+#     # 1. Busca el Modulo 1 
+#     test_module = db.query(models.Module).filter(models.Module.id == 1).first()
 
-    return {
-        "message": "Quiz de prueba y 2 preguntas creados exitosamente.", 
-        "quiz_id": new_quiz.id
-    }
+#     if not test_module:
+#         raise HTTPException(
+#             status_code=404, 
+#             detail="modulo 1 no encontrado. Por favor, crea un modulo con POST /modules primero."
+#         )
+
+#     # 2. Revisa si el quiz de prueba ya existe
+#     existing_quiz = db.query(models.Quiz).filter(models.Quiz.title == "Quiz de Saludos (Prueba)").first()
+#     if existing_quiz:
+#         return {"message": "El quiz de prueba ya existe.", "quiz_id": existing_quiz.id}
+
+#     # 3. Crea el Quiz y sus Preguntas 
+#     new_quiz = models.Quiz(
+#         title="Quiz de Saludos (Prueba)",
+#         type="multiple_choice",
+#         module_id=test_module.id, # Lo asociamos al mo4dulo 1
+#         questions=[  #  crear las preguntas "hijo" directamente
+#             models.QuizQuestion(
+#                 prompt="¿Que seña significa 'Hola'?",
+#                 options={"a": "video_a.mp4", "b": "video_hola.mp4", "c": "video_c.mp4"},
+#                 answer="b"
+#             ),
+#             models.QuizQuestion(
+#                 prompt="¿Que seña significa 'Adios'?",
+#                 options={"a": "video_adios.mp4", "b": "video_y.mp4", "c": "video_z.mp4"},
+#                 answer="a"
+#             )
+#         ]
+#     )
+
+#     # 4. Añadimos el quizz y SQLAlchemy se encarga de las pregunts
+#     db.add(new_quiz)
+#     db.commit()
+#     db.refresh(new_quiz)
+
+#     return {
+#         "message": "Quiz de prueba y 2 preguntas creados exitosamente.", 
+#         "quiz_id": new_quiz.id
+#     }

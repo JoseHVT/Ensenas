@@ -58,3 +58,30 @@ def get_user_attempts(db: Session, user_id: str, skip: int = 0, limit: int = 50)
              .filter(models.QuizAttempt.user_id == user_id)\
              .order_by(models.QuizAttempt.created_at.desc())\
              .offset(skip).limit(limit).all()
+
+def create_quiz_with_questions(db: Session, quiz: schemas.QuizCreateFull, module_id: int):
+    """Crea un quiz y sus preguntas en una sola transacción."""
+    
+    # 1. Crear el Quiz (Padre)
+    db_quiz = models.Quiz(
+        title=quiz.title,
+        type=quiz.type,
+        module_id=module_id
+    )
+    db.add(db_quiz)
+    db.commit()
+    db.refresh(db_quiz)
+    
+    # 2. Crear las Preguntas (Hijos)
+    for q in quiz.questions:
+        db_question = models.QuizQuestion(
+            quiz_id=db_quiz.id, # Usamos el ID del padr creado
+            prompt=q.prompt,
+            options=q.options,
+            answer=q.answer
+        )
+        db.add(db_question)
+    
+    db.commit()
+    db.refresh(db_quiz)
+    return db_quiz
