@@ -17,6 +17,144 @@
       "description": "Aprende a contar y describir objetos.",
       "code": "MOD-03",
       "sort_order": 3
+    },
+    {
+      "title": "Módulo 4: Abecedario",
+      "description": "Señas relacionadas con abecedario en LSM.",
+      "code": "MOD-04",
+      "sort_order": 4
+    },
+    {
+      "title": "Módulo 5: Animales",
+      "description": "Señas relacionadas con animales en LSM.",
+      "code": "MOD-05",
+      "sort_order": 5
+    },
+    {
+      "title": "Módulo 6: Colores",
+      "description": "Señas relacionadas con colores en LSM.",
+      "code": "MOD-06",
+      "sort_order": 6
+    },
+    {
+      "title": "Módulo 7: Comida",
+      "description": "Señas relacionadas con comida en LSM.",
+      "code": "MOD-07",
+      "sort_order": 7
+    },
+    {
+      "title": "Módulo 8: Cuerpo",
+      "description": "Señas relacionadas con cuerpo en LSM.",
+      "code": "MOD-08",
+      "sort_order": 8
+    },
+    {
+      "title": "Módulo 9: Dias de La Semana",
+      "description": "Señas relacionadas con dias de la semana en LSM.",
+      "code": "MOD-09",
+      "sort_order": 9
+    },
+    {
+      "title": "Módulo 10: Frutas",
+      "description": "Señas relacionadas con frutas en LSM.",
+      "code": "MOD-10",
+      "sort_order": 10
+    },
+    {
+      "title": "Módulo 11: Hogar",
+      "description": "Señas relacionadas con hogar en LSM.",
+      "code": "MOD-11",
+      "sort_order": 11
+    },
+    {
+      "title": "Módulo 12: Lugares",
+      "description": "Señas relacionadas con lugares en LSM.",
+      "code": "MOD-12",
+      "sort_order": 12
+    },
+    {
+      "title": "Módulo 13: Meses del Anio",
+      "description": "Señas relacionadas con meses del anio en LSM.",
+      "code": "MOD-13",
+      "sort_order": 13
+    },
+    {
+      "title": "Módulo 14: Numero",
+      "description": "Señas relacionadas con numero en LSM.",
+      "code": "MOD-14",
+      "sort_order": 14
+    },
+    {
+      "title": "Módulo 15: Personas",
+      "description": "Señas relacionadas con personas en LSM.",
+      "code": "MOD-15",
+      "sort_order": 15
+    },
+    {
+      "title": "Módulo 16: Preguntas",
+      "description": "Señas relacionadas con preguntas en LSM.",
+      "code": "MOD-16",
+      "sort_order": 16
+    },
+    {
+      "title": "Módulo 17: Preposiciones Adjetivos Sustantivos Adverbios",
+      "description": "Señas relacionadas con preposiciones adjetivos sustantivos adverbios en LSM.",
+      "code": "MOD-17",
+      "sort_order": 17
+    },
+    {
+      "title": "Módulo 18: Pronombres",
+      "description": "Señas relacionadas con pronombres en LSM.",
+      "code": "MOD-18",
+      "sort_order": 18
+    },
+    {
+      "title": "Módulo 19: Puestos Profesiones Oficios",
+      "description": "Señas relacionadas con puestos profesiones oficios en LSM.",
+      "code": "MOD-19",
+      "sort_order": 19
+    },
+    {
+      "title": "Módulo 20: Ropa",
+      "description": "Señas relacionadas con ropa en LSM.",
+      "code": "MOD-20",
+      "sort_order": 20
+    },
+    {
+      "title": "Módulo 21: Saludos Cortesias",
+      "description": "Señas relacionadas con saludos cortesias en LSM.",
+      "code": "MOD-21",
+      "sort_order": 21
+    },
+    {
+      "title": "Módulo 22: Tiempo",
+      "description": "Señas relacionadas con tiempo en LSM.",
+      "code": "MOD-22",
+      "sort_order": 22
+    },
+    {
+      "title": "Módulo 23: Transporte",
+      "description": "Señas relacionadas con transporte en LSM.",
+      "code": "MOD-23",
+      "sort_order": 23
+    },
+    {
+      "title": "Módulo 24: Verbos Comunes",
+      "description": "Señas relacionadas con verbos comunes en LSM.",
+      "code": "MOD-24",
+      "sort_order": 24
+    },
+    {
+      "title": "Módulo 25: Verbos Narrativos",
+      "description": "Señas relacionadas con verbos narrativos en LSM.",
+      "code": "MOD-25",
+      "sort_order": 25
+    },
+    {
+      "title": "Módulo 26: Verduras",
+      "description": "Señas relacionadas con verduras en LSM.",
+      "code": "MOD-26",
+      "sort_order": 26
     }
   ],
   "signs": [
@@ -44,6 +182,2696 @@
       "word": "Azul",
       "category": "Colores",
       "video_path": "videos/colores/azul.mp4"
+    },
+    {
+      "word": "Raton",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Raton_Web.m4v"
+    },
+    {
+      "word": "Abeja",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Abeja_Web.m4v"
+    },
+    {
+      "word": "Pajaro",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Pajaro_Web.m4v"
+    },
+    {
+      "word": "Aguila",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Aguila_Web.m4v"
+    },
+    {
+      "word": "Jirafa",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Jirafa_Web.m4v"
+    },
+    {
+      "word": "Vaca",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Vaca_Web.m4v"
+    },
+    {
+      "word": "Chango",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Chango_Web.m4v"
+    },
+    {
+      "word": "Cerdo",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Cerdo_Web.m4v"
+    },
+    {
+      "word": "Gato",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Gato_Web.m4v"
+    },
+    {
+      "word": "Oso",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Oso_Web.m4v"
+    },
+    {
+      "word": "Arana",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Arana_Web.m4v"
+    },
+    {
+      "word": "Pez",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Pez_Web.m4v"
+    },
+    {
+      "word": "Caballo",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Caballo_Web.m4v"
+    },
+    {
+      "word": "Tigre",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Tigre_Web.m4v"
+    },
+    {
+      "word": "Paloma",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Paloma_Web.m4v"
+    },
+    {
+      "word": "Burro",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Burro_Web.m4v"
+    },
+    {
+      "word": "Gusano",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Gusano_Web.m4v"
+    },
+    {
+      "word": "Tortuga",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Tortuga_Web.m4v"
+    },
+    {
+      "word": "Leon",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Leon_Web.m4v"
+    },
+    {
+      "word": "Mariposa",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Mariposa_Web.m4v"
+    },
+    {
+      "word": "Perro",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Perro_Web.m4v"
+    },
+    {
+      "word": "Conejo",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Conejo_Web.m4v"
+    },
+    {
+      "word": "Toro",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Toro_Web.m4v"
+    },
+    {
+      "word": "Gorila",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Gorila_Web.m4v"
+    },
+    {
+      "word": "Ardilla",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Ardilla_Web.m4v"
+    },
+    {
+      "word": "Vibora",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Vibora_Web.m4v"
+    },
+    {
+      "word": "Pato",
+      "category": "Animales",
+      "video_path": "videos/LSM_Animales_Web/Pato_Web.m4v"
+    },
+    {
+      "word": "Casa",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Casa_Web.m4v"
+    },
+    {
+      "word": "Cuarto",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Cuarto_Web.m4v"
+    },
+    {
+      "word": "Plato",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Plato_Web.m4v"
+    },
+    {
+      "word": "Cama",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Cama_Web.m4v"
+    },
+    {
+      "word": "Impresora",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Impresora_Web.m4v"
+    },
+    {
+      "word": "Tenedor",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Tenedor_Web.m4v"
+    },
+    {
+      "word": "Cuchara",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Cuchara_Web.m4v"
+    },
+    {
+      "word": "Vaso",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Vaso_Web.m4v"
+    },
+    {
+      "word": "Caja",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Caja_Web.m4v"
+    },
+    {
+      "word": "Mesa",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Mesa_Web.m4v"
+    },
+    {
+      "word": "Puerta",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Puerta_Web.m4v"
+    },
+    {
+      "word": "Licuadora",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Licuadora_Web.m4v"
+    },
+    {
+      "word": "Telefono",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Telefono_Web.m4v"
+    },
+    {
+      "word": "Ventana",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Ventana_Web.m4v"
+    },
+    {
+      "word": "Celular",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Celular_Web.m4v"
+    },
+    {
+      "word": "Llave",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Llave_Web.m4v"
+    },
+    {
+      "word": "Foco",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Foco_Web.m4v"
+    },
+    {
+      "word": "Silla",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Silla_Web.m4v"
+    },
+    {
+      "word": "Bano",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Bano_Web.m4v"
+    },
+    {
+      "word": "Computadora",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Computadora_Web.m4v"
+    },
+    {
+      "word": "Cocina",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Cocina_Web.m4v"
+    },
+    {
+      "word": "Plancha",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Plancha_Web.m4v"
+    },
+    {
+      "word": "Luz",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Luz_Web.m4v"
+    },
+    {
+      "word": "Gas",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Gas_Web.m4v"
+    },
+    {
+      "word": "Lavadora",
+      "category": "Hogar",
+      "video_path": "videos/LSM_Hogar_Web/Lavadora_Web.m4v"
+    },
+    {
+      "word": "Casa",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Casa_Web.m4v"
+    },
+    {
+      "word": "Calle",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Calle_Web.m4v"
+    },
+    {
+      "word": "Museo",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Museo_Web.m4v"
+    },
+    {
+      "word": "Centro",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Centro_Web.m4v"
+    },
+    {
+      "word": "Ciudad",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Ciudad_Web.m4v"
+    },
+    {
+      "word": "Mercado",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Mercado_Web.m4v"
+    },
+    {
+      "word": "Banco",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Banco_Web.m4v"
+    },
+    {
+      "word": "Iglesia",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Iglesia_Web.m4v"
+    },
+    {
+      "word": "Teatro",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Teatro_Web.m4v"
+    },
+    {
+      "word": "Hotel",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Hotel_Web.m4v"
+    },
+    {
+      "word": "Cantina",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Cantina_Web.m4v"
+    },
+    {
+      "word": "Feria",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Feria_Web.m4v"
+    },
+    {
+      "word": "Tienda",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Tienda_Web.m4v"
+    },
+    {
+      "word": "Cine",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Cine_Web.m4v"
+    },
+    {
+      "word": "Fiesta",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Fiesta_Web.m4v"
+    },
+    {
+      "word": "Escuela",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Escuela_Web.m4v"
+    },
+    {
+      "word": "Fabrica",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Fabrica_Web.m4v"
+    },
+    {
+      "word": "Antro",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Antro_Web.m4v"
+    },
+    {
+      "word": "Restaurante",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Restaurante_Web.m4v"
+    },
+    {
+      "word": "Edificio",
+      "category": "Lugares",
+      "video_path": "videos/LSM_Lugares_Web/Edificio_Web.m4v"
+    },
+    {
+      "word": "Octubre",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Octubre_Web.m4v"
+    },
+    {
+      "word": "Febrero",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Febrero_Web.m4v"
+    },
+    {
+      "word": "Marzo",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Marzo_Web.m4v"
+    },
+    {
+      "word": "Septiembre",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Septiembre_Web.m4v"
+    },
+    {
+      "word": "Junio",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Junio_Web.m4v"
+    },
+    {
+      "word": "Mayo",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Mayo_Web.m4v"
+    },
+    {
+      "word": "Diciembre",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Diciembre_Web.m4v"
+    },
+    {
+      "word": "Noviembre",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Noviembre_Web.m4v"
+    },
+    {
+      "word": "Agosto",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Agosto_Web.m4v"
+    },
+    {
+      "word": "Julio",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Julio_Web.m4v"
+    },
+    {
+      "word": "Abril",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Abril_Web.m4v"
+    },
+    {
+      "word": "Enero",
+      "category": "Meses del Anio",
+      "video_path": "videos/LSM_MesesDelAnio_Web/Enero_Web.m4v"
+    },
+    {
+      "word": "9",
+      "category": "Numero",
+      "video_path": "videos/LSM_Numero_Web/9_Web.m4v"
+    },
+    {
+      "word": "10",
+      "category": "Numero",
+      "video_path": "videos/LSM_Numero_Web/10_Web.m4v"
+    },
+    {
+      "word": "Azul",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Azul_Web.m4v"
+    },
+    {
+      "word": "Blanco",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Blanco_Web.m4v"
+    },
+    {
+      "word": "Morado",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Morado_Web.m4v"
+    },
+    {
+      "word": "Verde",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Verde_Web.m4v"
+    },
+    {
+      "word": "Rojo",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Rojo_Web.m4v"
+    },
+    {
+      "word": "Negro",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Negro_Web.m4v"
+    },
+    {
+      "word": "Oro",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Oro_Web.m4v"
+    },
+    {
+      "word": "Rosa",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Rosa_Web.m4v"
+    },
+    {
+      "word": "Plata",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Plata_Web.m4v"
+    },
+    {
+      "word": "Gris",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Gris_Web.m4v"
+    },
+    {
+      "word": "Naranja",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Naranja_Web.m4v"
+    },
+    {
+      "word": "Cafe",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Cafe_Web.m4v"
+    },
+    {
+      "word": "Amarillo",
+      "category": "Colores",
+      "video_path": "videos/LSM_Colores_Web/Amarillo_Web.m4v"
+    },
+    {
+      "word": "Querer",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Querer_Web.m4v"
+    },
+    {
+      "word": "Nogustar",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Nogustar_Web.m4v"
+    },
+    {
+      "word": "Noquerer",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Noquerer_Web.m4v"
+    },
+    {
+      "word": "Entender",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Entender_Web.m4v"
+    },
+    {
+      "word": "Gustar",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Gustar_Web.m4v"
+    },
+    {
+      "word": "Nohaber",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Nohaber_Web.m4v"
+    },
+    {
+      "word": "Saber",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Saber_Web.m4v"
+    },
+    {
+      "word": "Nopoder",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Nopoder_Web.m4v"
+    },
+    {
+      "word": "Noentender",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Noentender_Web.m4v"
+    },
+    {
+      "word": "Noservir",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Noservir_Web.m4v"
+    },
+    {
+      "word": "Noconocer",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Noconocer_Web.m4v"
+    },
+    {
+      "word": "Poder",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Poder_Web.m4v"
+    },
+    {
+      "word": "Servir",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Servir_Web.m4v"
+    },
+    {
+      "word": "Nosaber",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Nosaber_Web.m4v"
+    },
+    {
+      "word": "Haber",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Haber_Web.m4v"
+    },
+    {
+      "word": "Conocer",
+      "category": "Verbos Narrativos",
+      "video_path": "videos/LSM_VerbosNarrativos_Web/Conocer_Web.m4v"
+    },
+    {
+      "word": "Pobre",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Pobre_Web.m4v"
+    },
+    {
+      "word": "Feliz",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Feliz_Web.m4v"
+    },
+    {
+      "word": "Ojala",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ojala_Web.m4v"
+    },
+    {
+      "word": "Guapo",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Guapo_Web.m4v"
+    },
+    {
+      "word": "Sucio",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Sucio_Web.m4v"
+    },
+    {
+      "word": "Necio",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Necio_Web.m4v"
+    },
+    {
+      "word": "Lejos",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lejos_Web.m4v"
+    },
+    {
+      "word": "Inteligente",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Inteligente_Web.m4v"
+    },
+    {
+      "word": "Adentro",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Adentro_Web.m4v"
+    },
+    {
+      "word": "Enojado",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Enojado_Web.m4v"
+    },
+    {
+      "word": "Alegredivertido",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Alegredivertido_Web.m4v"
+    },
+    {
+      "word": "Fuerza",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Fuerza_Web.m4v"
+    },
+    {
+      "word": "Fuerte",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Fuerte_Web.m4v"
+    },
+    {
+      "word": "Pero",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Pero_Web.m4v"
+    },
+    {
+      "word": "Abajo",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Abajo_Web.m4v"
+    },
+    {
+      "word": "Rapidopronto",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Rapidopronto_Web.m4v"
+    },
+    {
+      "word": "Malo",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Malo_Web.m4v"
+    },
+    {
+      "word": "Senaproipa",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Senaproipa_Web.m4v"
+    },
+    {
+      "word": "Algunos",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Algunos_Web.m4v"
+    },
+    {
+      "word": "Senas",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Senas_Web.m4v"
+    },
+    {
+      "word": "Todo",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Todo_Web.m4v"
+    },
+    {
+      "word": "Junta",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Junta_Web.m4v"
+    },
+    {
+      "word": "Facil",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Facil_Web.m4v"
+    },
+    {
+      "word": "Triste",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Triste_Web.m4v"
+    },
+    {
+      "word": "Antes",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Antes_Web.m4v"
+    },
+    {
+      "word": "Historia",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Historia_Web.m4v"
+    },
+    {
+      "word": "Travieso",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Travieso_Web.m4v"
+    },
+    {
+      "word": "Suerte",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Suerte_Web.m4v"
+    },
+    {
+      "word": "Jamas",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Jamas_Web.m4v"
+    },
+    {
+      "word": "Feo",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Feo_Web.m4v"
+    },
+    {
+      "word": "Nunca",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Nunca_Web.m4v"
+    },
+    {
+      "word": "Accidente",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Accidente_Web.m4v"
+    },
+    {
+      "word": "Chistoso",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Chistoso_Web.m4v"
+    },
+    {
+      "word": "Curioso",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Curioso_Web.m4v"
+    },
+    {
+      "word": "Aburrido",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Aburrido_Web.m4v"
+    },
+    {
+      "word": "Debil",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Debil_Web.m4v"
+    },
+    {
+      "word": "Falso",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Falso_Web.m4v"
+    },
+    {
+      "word": "Ejercicio",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ejercicio_Web.m4v"
+    },
+    {
+      "word": "Presumido",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Presumido_Web.m4v"
+    },
+    {
+      "word": "Afortunado",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Afortunado_Web.m4v"
+    },
+    {
+      "word": "Diferente",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Diferente_Web.m4v"
+    },
+    {
+      "word": "Grosero",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Grosero_Web.m4v"
+    },
+    {
+      "word": "Egoista",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Egoista_Web.m4v"
+    },
+    {
+      "word": "Broma",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Broma_Web.m4v"
+    },
+    {
+      "word": "Envidia",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Envidia_Web.m4v"
+    },
+    {
+      "word": "Gratis",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Gratis_Web.m4v"
+    },
+    {
+      "word": "Gordo",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Gordo_Web.m4v"
+    },
+    {
+      "word": "Chaparro",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Chaparro_Web.m4v"
+    },
+    {
+      "word": "Especial",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Especial_Web.m4v"
+    },
+    {
+      "word": "Baboso",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Baboso_Web.m4v"
+    },
+    {
+      "word": "Dificil",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Dificil_Web.m4v"
+    },
+    {
+      "word": "Peor",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Peor_Web.m4v"
+    },
+    {
+      "word": "Bonito",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Bonito_Web.m4v"
+    },
+    {
+      "word": "Cada",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cada_Web.m4v"
+    },
+    {
+      "word": "Paciencia",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Paciencia_Web.m4v"
+    },
+    {
+      "word": "Atencionatento",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Atencionatento_Web.m4v"
+    },
+    {
+      "word": "Duda",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Duda_Web.m4v"
+    },
+    {
+      "word": "Mas",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Mas_Web.m4v"
+    },
+    {
+      "word": "Mejor",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Mejor_Web.m4v"
+    },
+    {
+      "word": "Miedo",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Miedo_Web.m4v"
+    },
+    {
+      "word": "Verdad",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Verdad_Web.m4v"
+    },
+    {
+      "word": "Altoestatura",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Altoestatura_Web.m4v"
+    },
+    {
+      "word": "Cansado",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cansado_Web.m4v"
+    },
+    {
+      "word": "Libre",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Libre_Web.m4v"
+    },
+    {
+      "word": "Bueno",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Bueno_Web.m4v"
+    },
+    {
+      "word": "Arriba",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Arriba_Web.m4v"
+    },
+    {
+      "word": "Junto",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Junto_Web.m4v"
+    },
+    {
+      "word": "Nuevo",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Nuevo_Web.m4v"
+    },
+    {
+      "word": "Raro",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Raro_Web.m4v"
+    },
+    {
+      "word": "Lsm",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lsm_Web.m4v"
+    },
+    {
+      "word": "No",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/No_Web.m4v"
+    },
+    {
+      "word": "Celoso",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Celoso_Web.m4v"
+    },
+    {
+      "word": "Decente",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Decente_Web.m4v"
+    },
+    {
+      "word": "Humilde",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Humilde_Web.m4v"
+    },
+    {
+      "word": "Importante",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Importante_Web.m4v"
+    },
+    {
+      "word": "Asustado",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Asustado_Web.m4v"
+    },
+    {
+      "word": "Secreto",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Secreto_Web.m4v"
+    },
+    {
+      "word": "Delgado",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Delgado_Web.m4v"
+    },
+    {
+      "word": "Amable",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Amable_Web.m4v"
+    },
+    {
+      "word": "Contento",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Contento_Web.m4v"
+    },
+    {
+      "word": "Ejemplo",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ejemplo_Web.m4v"
+    },
+    {
+      "word": "Problema",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Problema_Web.m4v"
+    },
+    {
+      "word": "Flojo",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Flojo_Web.m4v"
+    },
+    {
+      "word": "Tonto",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Tonto_Web.m4v"
+    },
+    {
+      "word": "Si",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Si_Web.m4v"
+    },
+    {
+      "word": "Carino",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Carino_Web.m4v"
+    },
+    {
+      "word": "Verguenza",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Verguenza_Web.m4v"
+    },
+    {
+      "word": "Despacio",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Despacio_Web.m4v"
+    },
+    {
+      "word": "Diploma",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Diploma_Web.m4v"
+    },
+    {
+      "word": "Cobarde",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cobarde_Web.m4v"
+    },
+    {
+      "word": "Hambre",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Hambre_Web.m4v"
+    },
+    {
+      "word": "Loco",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Loco_Web.m4v"
+    },
+    {
+      "word": "Caliente",
+      "category": "Preposiciones Adjetivos Sustantivos Adverbios",
+      "video_path": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Caliente_Web.m4v"
+    },
+    {
+      "word": "Oreja",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Oreja_Web.m4v"
+    },
+    {
+      "word": "Cara",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Cara_Web.m4v"
+    },
+    {
+      "word": "Estomago",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Estomago_Web.m4v"
+    },
+    {
+      "word": "Nariz",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Nariz_Web.m4v"
+    },
+    {
+      "word": "Pestanas",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Pestanas_Web.m4v"
+    },
+    {
+      "word": "Sangre",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Sangre_Web.m4v"
+    },
+    {
+      "word": "Corazon",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Corazon_Web.m4v"
+    },
+    {
+      "word": "Hueso",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Hueso_Web.m4v"
+    },
+    {
+      "word": "Boca",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Boca_Web.m4v"
+    },
+    {
+      "word": "Ojos",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Ojos_Web.m4v"
+    },
+    {
+      "word": "Piel",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Piel_Web.m4v"
+    },
+    {
+      "word": "Cejas",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Cejas_Web.m4v"
+    },
+    {
+      "word": "Pies",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Pies_Web.m4v"
+    },
+    {
+      "word": "Mano",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Mano_Web.m4v"
+    },
+    {
+      "word": "Cabeza",
+      "category": "Cuerpo",
+      "video_path": "videos/LSM_Cuerpo_Web/Cabeza_Web.m4v"
+    },
+    {
+      "word": "Porfavor",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Porfavor_Web.m4v"
+    },
+    {
+      "word": "Buenosdias",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Buenosdias_Web.m4v"
+    },
+    {
+      "word": "Perdon",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Perdon_Web.m4v"
+    },
+    {
+      "word": "Hola",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Hola_Web.m4v"
+    },
+    {
+      "word": "Denada",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Denada_Web.m4v"
+    },
+    {
+      "word": "Gracias",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Gracias_Web.m4v"
+    },
+    {
+      "word": "Gustodeconocerte",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Gustodeconocerte_Web.m4v"
+    },
+    {
+      "word": "Bien",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Bien_Web.m4v"
+    },
+    {
+      "word": "Comotellamas",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Comotellamas_Web.m4v"
+    },
+    {
+      "word": "Nosvemos",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Nosvemos_Web.m4v"
+    },
+    {
+      "word": "Adios",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Adios_Web.m4v"
+    },
+    {
+      "word": "Comoestas",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Comoestas_Web.m4v"
+    },
+    {
+      "word": "Masomenos",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Masomenos_Web.m4v"
+    },
+    {
+      "word": "Mal",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Mal_Web.m4v"
+    },
+    {
+      "word": "Buenastardes",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Buenastardes_Web.m4v"
+    },
+    {
+      "word": "Buenasnoches",
+      "category": "Saludos Cortesias",
+      "video_path": "videos/LSM_SaludosCortesias_Web/Buenasnoches_Web.m4v"
+    },
+    {
+      "word": "Platicar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Platicar_Web.m4v"
+    },
+    {
+      "word": "Terminar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Terminar_Web.m4v"
+    },
+    {
+      "word": "Pensar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Pensar_Web.m4v"
+    },
+    {
+      "word": "Olvidar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Olvidar_Web.m4v"
+    },
+    {
+      "word": "Estudiar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Estudiar_Web.m4v"
+    },
+    {
+      "word": "Perder",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Perder_Web.m4v"
+    },
+    {
+      "word": "Limpiar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Limpiar_Web.m4v"
+    },
+    {
+      "word": "Pagar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Pagar_Web.m4v"
+    },
+    {
+      "word": "Dar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Dar_Web.m4v"
+    },
+    {
+      "word": "Esperar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Esperar_Web.m4v"
+    },
+    {
+      "word": "Comprar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Comprar_Web.m4v"
+    },
+    {
+      "word": "Vivir",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Vivir_Web.m4v"
+    },
+    {
+      "word": "Creer",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Creer_Web.m4v"
+    },
+    {
+      "word": "Descansar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Descansar_Web.m4v"
+    },
+    {
+      "word": "Hablar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Hablar_Web.m4v"
+    },
+    {
+      "word": "Entender",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Entender_Web.m4v"
+    },
+    {
+      "word": "Trabajar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Trabajar_Web.m4v"
+    },
+    {
+      "word": "Comer",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Comer_Web.m4v"
+    },
+    {
+      "word": "Ayudar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Ayudar_Web.m4v"
+    },
+    {
+      "word": "Explicar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Explicar_Web.m4v"
+    },
+    {
+      "word": "Decir",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Decir_Web.m4v"
+    },
+    {
+      "word": "Vender",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Vender_Web.m4v"
+    },
+    {
+      "word": "Ensenar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Ensenar_Web.m4v"
+    },
+    {
+      "word": "Jugar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Jugar_Web.m4v"
+    },
+    {
+      "word": "Empezar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Empezar_Web.m4v"
+    },
+    {
+      "word": "Ver",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Ver_Web.m4v"
+    },
+    {
+      "word": "Hacer",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Hacer_Web.m4v"
+    },
+    {
+      "word": "Sentar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Sentar_Web.m4v"
+    },
+    {
+      "word": "Aprender",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Aprender_Web.m4v"
+    },
+    {
+      "word": "Poder",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Poder_Web.m4v"
+    },
+    {
+      "word": "Preguntar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Preguntar_Web.m4v"
+    },
+    {
+      "word": "Escribir",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Escribir_Web.m4v"
+    },
+    {
+      "word": "Cuidar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Cuidar_Web.m4v"
+    },
+    {
+      "word": "Necesitar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Necesitar_Web.m4v"
+    },
+    {
+      "word": "Dormir",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Dormir_Web.m4v"
+    },
+    {
+      "word": "Avisar",
+      "category": "Verbos Comunes",
+      "video_path": "videos/LSM_VerbosComunes_Web/Avisar_Web.m4v"
+    },
+    {
+      "word": "Galleta",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Galleta_Web.m4v"
+    },
+    {
+      "word": "Agua",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Agua_Web.m4v"
+    },
+    {
+      "word": "Queso",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Queso_Web.m4v"
+    },
+    {
+      "word": "Cerveza",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Cerveza_Web.m4v"
+    },
+    {
+      "word": "Arroz",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Arroz_Web.m4v"
+    },
+    {
+      "word": "Chile",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Chile_Web.m4v"
+    },
+    {
+      "word": "Tortilla",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Tortilla_Web.m4v"
+    },
+    {
+      "word": "Pan",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Pan_Web.m4v"
+    },
+    {
+      "word": "Azucar",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Azucar_Web.m4v"
+    },
+    {
+      "word": "Dulce",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Dulce_Web.m4v"
+    },
+    {
+      "word": "Hamburguesa",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Hamburguesa_Web.m4v"
+    },
+    {
+      "word": "Pescado",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Pescado_Web.m4v"
+    },
+    {
+      "word": "Huevo",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Huevo_Web.m4v"
+    },
+    {
+      "word": "Sopa",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Sopa_Web.m4v"
+    },
+    {
+      "word": "Frijol",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Frijol_Web.m4v"
+    },
+    {
+      "word": "Leche",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Leche_Web.m4v"
+    },
+    {
+      "word": "Carne",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Carne_Web.m4v"
+    },
+    {
+      "word": "Pastel",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Pastel_Web.m4v"
+    },
+    {
+      "word": "Pollo",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Pollo_Web.m4v"
+    },
+    {
+      "word": "Cocacola",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Cocacola_Web.m4v"
+    },
+    {
+      "word": "Pizza",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Pizza_Web.m4v"
+    },
+    {
+      "word": "Refresco",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Refresco_Web.m4v"
+    },
+    {
+      "word": "Caldo",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Caldo_Web.m4v"
+    },
+    {
+      "word": "Fruta",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Fruta_Web.m4v"
+    },
+    {
+      "word": "Verdura",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Verdura_Web.m4v"
+    },
+    {
+      "word": "Chocolate",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Chocolate_Web.m4v"
+    },
+    {
+      "word": "Ensalada",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Ensalada_Web.m4v"
+    },
+    {
+      "word": "Cafe",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Cafe_Web.m4v"
+    },
+    {
+      "word": "Taco",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Taco_Web.m4v"
+    },
+    {
+      "word": "Aceite",
+      "category": "Comida",
+      "video_path": "videos/LSM_Comida_Web/Aceite_Web.m4v"
+    },
+    {
+      "word": "Ll",
+      "category": "Abecedario",
+      "video_path": "videos/LSM_Abecedario_Web/Ll_Web.m4v"
+    },
+    {
+      "word": "K",
+      "category": "Abecedario",
+      "video_path": "videos/LSM_Abecedario_Web/K_Web.m4v"
+    },
+    {
+      "word": "J",
+      "category": "Abecedario",
+      "video_path": "videos/LSM_Abecedario_Web/J_Web.m4v"
+    },
+    {
+      "word": "Rr",
+      "category": "Abecedario",
+      "video_path": "videos/LSM_Abecedario_Web/Rr_Web.m4v"
+    },
+    {
+      "word": "Nie",
+      "category": "Abecedario",
+      "video_path": "videos/LSM_Abecedario_Web/Nie_Web.m4v"
+    },
+    {
+      "word": "Z",
+      "category": "Abecedario",
+      "video_path": "videos/LSM_Abecedario_Web/Z_Web.m4v"
+    },
+    {
+      "word": "Q",
+      "category": "Abecedario",
+      "video_path": "videos/LSM_Abecedario_Web/Q_Web.m4v"
+    },
+    {
+      "word": "X",
+      "category": "Abecedario",
+      "video_path": "videos/LSM_Abecedario_Web/X_Web.m4v"
+    },
+    {
+      "word": "Cunada",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Cunada_Web.m4v"
+    },
+    {
+      "word": "Hijastro",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Hijastro_Web.m4v"
+    },
+    {
+      "word": "Hermana",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Hermana_Web.m4v"
+    },
+    {
+      "word": "Oyente",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Oyente_Web.m4v"
+    },
+    {
+      "word": "Sobrina",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Sobrina_Web.m4v"
+    },
+    {
+      "word": "Unionlibre",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Unionlibre_Web.m4v"
+    },
+    {
+      "word": "Matrimonio",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Matrimonio_Web.m4v"
+    },
+    {
+      "word": "Hombre",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Hombre_Web.m4v"
+    },
+    {
+      "word": "Esposa",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Esposa_Web.m4v"
+    },
+    {
+      "word": "Nieto",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Nieto_Web.m4v"
+    },
+    {
+      "word": "Bebe",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Bebe_Web.m4v"
+    },
+    {
+      "word": "Prima",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Prima_Web.m4v"
+    },
+    {
+      "word": "Novio",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Novio_Web.m4v"
+    },
+    {
+      "word": "Tio",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Tio_Web.m4v"
+    },
+    {
+      "word": "Vecino",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Vecino_Web.m4v"
+    },
+    {
+      "word": "Yerno",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Yerno_Web.m4v"
+    },
+    {
+      "word": "Bisnieto",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Bisnieto_Web.m4v"
+    },
+    {
+      "word": "Mujer",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Mujer_Web.m4v"
+    },
+    {
+      "word": "Padrino",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Padrino_Web.m4v"
+    },
+    {
+      "word": "Adulto",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Adulto_Web.m4v"
+    },
+    {
+      "word": "Madrastra",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Madrastra_Web.m4v"
+    },
+    {
+      "word": "Sordo",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Sordo_Web.m4v"
+    },
+    {
+      "word": "Nina",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Nina_Web.m4v"
+    },
+    {
+      "word": "Madrina",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Madrina_Web.m4v"
+    },
+    {
+      "word": "Hija",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Hija_Web.m4v"
+    },
+    {
+      "word": "Amiga",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Amiga_Web.m4v"
+    },
+    {
+      "word": "Companero",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Companero_Web.m4v"
+    },
+    {
+      "word": "Mediohermano",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Mediohermano_Web.m4v"
+    },
+    {
+      "word": "Bisabuelo",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Bisabuelo_Web.m4v"
+    },
+    {
+      "word": "Divorciado",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Divorciado_Web.m4v"
+    },
+    {
+      "word": "Soltero",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Soltero_Web.m4v"
+    },
+    {
+      "word": "Abuela",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Abuela_Web.m4v"
+    },
+    {
+      "word": "Suegro",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Suegro_Web.m4v"
+    },
+    {
+      "word": "Persona",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Persona_Web.m4v"
+    },
+    {
+      "word": "Hermano",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Hermano_Web.m4v"
+    },
+    {
+      "word": "Separado",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Separado_Web.m4v"
+    },
+    {
+      "word": "Cunado",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Cunado_Web.m4v"
+    },
+    {
+      "word": "Hijastra",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Hijastra_Web.m4v"
+    },
+    {
+      "word": "Senora",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Senora_Web.m4v"
+    },
+    {
+      "word": "Nuera",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Nuera_Web.m4v"
+    },
+    {
+      "word": "Sobrino",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Sobrino_Web.m4v"
+    },
+    {
+      "word": "Papa",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Papa_Web.m4v"
+    },
+    {
+      "word": "Esposo",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Esposo_Web.m4v"
+    },
+    {
+      "word": "Huerfano",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Huerfano_Web.m4v"
+    },
+    {
+      "word": "Primo",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Primo_Web.m4v"
+    },
+    {
+      "word": "Nieta",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Nieta_Web.m4v"
+    },
+    {
+      "word": "Pareja",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Pareja_Web.m4v"
+    },
+    {
+      "word": "Senor",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Senor_Web.m4v"
+    },
+    {
+      "word": "Mediahermana",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Mediahermana_Web.m4v"
+    },
+    {
+      "word": "Bisnieta",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Bisnieta_Web.m4v"
+    },
+    {
+      "word": "Novia",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Novia_Web.m4v"
+    },
+    {
+      "word": "Mama",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Mama_Web.m4v"
+    },
+    {
+      "word": "Tia",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Tia_Web.m4v"
+    },
+    {
+      "word": "Viudo",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Viudo_Web.m4v"
+    },
+    {
+      "word": "Senorita",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Senorita_Web.m4v"
+    },
+    {
+      "word": "Hijo",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Hijo_Web.m4v"
+    },
+    {
+      "word": "Anciano",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Anciano_Web.m4v"
+    },
+    {
+      "word": "Amigo",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Amigo_Web.m4v"
+    },
+    {
+      "word": "Ciego",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Ciego_Web.m4v"
+    },
+    {
+      "word": "Nino",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Nino_Web.m4v"
+    },
+    {
+      "word": "Amante",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Amante_Web.m4v"
+    },
+    {
+      "word": "Abuelo",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Abuelo_Web.m4v"
+    },
+    {
+      "word": "Suegra",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Suegra_Web.m4v"
+    },
+    {
+      "word": "Bisabuela",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Bisabuela_Web.m4v"
+    },
+    {
+      "word": "Padrastro",
+      "category": "Personas",
+      "video_path": "videos/LSM_Personas_Web/Padrastro_Web.m4v"
+    },
+    {
+      "word": "Presidente",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Presidente_Web.m4v"
+    },
+    {
+      "word": "Gobernador",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Gobernador_Web.m4v"
+    },
+    {
+      "word": "Guardia",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Guardia_Web.m4v"
+    },
+    {
+      "word": "Carpintero",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Carpintero_Web.m4v"
+    },
+    {
+      "word": "Profesor",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Profesor_Web.m4v"
+    },
+    {
+      "word": "Albanil",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Albanil_Web.m4v"
+    },
+    {
+      "word": "Dentista",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Dentista_Web.m4v"
+    },
+    {
+      "word": "Alumno",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Alumno_Web.m4v"
+    },
+    {
+      "word": "Tecnico",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Tecnico_Web.m4v"
+    },
+    {
+      "word": "Arquitecto",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Arquitecto_Web.m4v"
+    },
+    {
+      "word": "Actor",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Actor_Web.m4v"
+    },
+    {
+      "word": "Lider",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Lider_Web.m4v"
+    },
+    {
+      "word": "Psicologo",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Psicologo_Web.m4v"
+    },
+    {
+      "word": "Abogado",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Abogado_Web.m4v"
+    },
+    {
+      "word": "Maestro",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Maestro_Web.m4v"
+    },
+    {
+      "word": "Ingeniero",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Ingeniero_Web.m4v"
+    },
+    {
+      "word": "Diputado",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Diputado_Web.m4v"
+    },
+    {
+      "word": "Director",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Director_Web.m4v"
+    },
+    {
+      "word": "Medico",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Medico_Web.m4v"
+    },
+    {
+      "word": "Mecanico",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Mecanico_Web.m4v"
+    },
+    {
+      "word": "Chofer",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Chofer_Web.m4v"
+    },
+    {
+      "word": "Vendedor",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Vendedor_Web.m4v"
+    },
+    {
+      "word": "Soldado",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Soldado_Web.m4v"
+    },
+    {
+      "word": "Mesero",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Mesero_Web.m4v"
+    },
+    {
+      "word": "Enfermera",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Enfermera_Web.m4v"
+    },
+    {
+      "word": "Jefe",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Jefe_Web.m4v"
+    },
+    {
+      "word": "Licenciado",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Licenciado_Web.m4v"
+    },
+    {
+      "word": "Policia",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Policia_Web.m4v"
+    },
+    {
+      "word": "Taxista",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Taxista_Web.m4v"
+    },
+    {
+      "word": "Senador",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Senador_Web.m4v"
+    },
+    {
+      "word": "Bombero",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Bombero_Web.m4v"
+    },
+    {
+      "word": "Interprete",
+      "category": "Puestos Profesiones Oficios",
+      "video_path": "videos/LSM_PuestosProfesionesOficios_Web/Interprete_Web.m4v"
+    },
+    {
+      "word": "Cdeautobuses",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Cdeautobuses_Web.m4v"
+    },
+    {
+      "word": "Bicicleta",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Bicicleta_Web.m4v"
+    },
+    {
+      "word": "Transporte",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Transporte_Web.m4v"
+    },
+    {
+      "word": "Barco",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Barco_Web.m4v"
+    },
+    {
+      "word": "Metro",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Metro_Web.m4v"
+    },
+    {
+      "word": "Motocicleta",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Motocicleta_Web.m4v"
+    },
+    {
+      "word": "Avion",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Avion_Web.m4v"
+    },
+    {
+      "word": "Carro",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Carro_Web.m4v"
+    },
+    {
+      "word": "Camion",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Camion_Web.m4v"
+    },
+    {
+      "word": "Tren",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Tren_Web.m4v"
+    },
+    {
+      "word": "Taxi",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Taxi_Web.m4v"
+    },
+    {
+      "word": "Helicoptero",
+      "category": "Transporte",
+      "video_path": "videos/LSM_Transporte_Web/Helicoptero_Web.m4v"
+    },
+    {
+      "word": "Zapatos",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Zapatos_Web.m4v"
+    },
+    {
+      "word": "Bufanda",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Bufanda_Web.m4v"
+    },
+    {
+      "word": "Tenis",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Tenis_Web.m4v"
+    },
+    {
+      "word": "Vestido",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Vestido_Web.m4v"
+    },
+    {
+      "word": "Medias",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Medias_Web.m4v"
+    },
+    {
+      "word": "Corbata",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Corbata_Web.m4v"
+    },
+    {
+      "word": "Camisa",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Camisa_Web.m4v"
+    },
+    {
+      "word": "Falda",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Falda_Web.m4v"
+    },
+    {
+      "word": "Brasier",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Brasier_Web.m4v"
+    },
+    {
+      "word": "Pantalon",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Pantalon_Web.m4v"
+    },
+    {
+      "word": "Abrigo",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Abrigo_Web.m4v"
+    },
+    {
+      "word": "Calzon",
+      "category": "Ropa",
+      "video_path": "videos/LSM_Ropa_Web/Calzon_Web.m4v"
+    },
+    {
+      "word": "Mango",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Mango_Web.m4v"
+    },
+    {
+      "word": "Papaya",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Papaya_Web.m4v"
+    },
+    {
+      "word": "Jamaica",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Jamaica_Web.m4v"
+    },
+    {
+      "word": "Toronja",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Toronja_Web.m4v"
+    },
+    {
+      "word": "Guayaba",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Guayaba_Web.m4v"
+    },
+    {
+      "word": "Platano",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Platano_Web.m4v"
+    },
+    {
+      "word": "Nuez",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Nuez_Web.m4v"
+    },
+    {
+      "word": "Fresa",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Fresa_Web.m4v"
+    },
+    {
+      "word": "Pina",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Pina_Web.m4v"
+    },
+    {
+      "word": "Jicama",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Jicama_Web.m4v"
+    },
+    {
+      "word": "Cereza",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Cereza_Web.m4v"
+    },
+    {
+      "word": "Melon",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Melon_Web.m4v"
+    },
+    {
+      "word": "Coco",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Coco_Web.m4v"
+    },
+    {
+      "word": "Uva",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Uva_Web.m4v"
+    },
+    {
+      "word": "Pera",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Pera_Web.m4v"
+    },
+    {
+      "word": "Durazno",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Durazno_Web.m4v"
+    },
+    {
+      "word": "Sandia",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Sandia_Web.m4v"
+    },
+    {
+      "word": "Limon",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Limon_Web.m4v"
+    },
+    {
+      "word": "Tamarindo",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Tamarindo_Web.m4v"
+    },
+    {
+      "word": "Almendra",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Almendra_Web.m4v"
+    },
+    {
+      "word": "Manzana",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Manzana_Web.m4v"
+    },
+    {
+      "word": "Naranja",
+      "category": "Frutas",
+      "video_path": "videos/LSM_Frutas_Web/Naranja_Web.m4v"
+    },
+    {
+      "word": "Fecha",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Fecha_Web.m4v"
+    },
+    {
+      "word": "Noche",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Noche_Web.m4v"
+    },
+    {
+      "word": "Tarde",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Tarde_Web.m4v"
+    },
+    {
+      "word": "Hasta",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Hasta_Web.m4v"
+    },
+    {
+      "word": "Proximo",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Proximo_Web.m4v"
+    },
+    {
+      "word": "Hora",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Hora_Web.m4v"
+    },
+    {
+      "word": "Mediodia",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Mediodia_Web.m4v"
+    },
+    {
+      "word": "Dia",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Dia_Web.m4v"
+    },
+    {
+      "word": "Futuro",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Futuro_Web.m4v"
+    },
+    {
+      "word": "Semana",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Semana_Web.m4v"
+    },
+    {
+      "word": "Ano",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Ano_Web.m4v"
+    },
+    {
+      "word": "Otro",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Otro_Web.m4v"
+    },
+    {
+      "word": "Otravez",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Otravez_Web.m4v"
+    },
+    {
+      "word": "Despues",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Despues_Web.m4v"
+    },
+    {
+      "word": "Viento",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Viento_Web.m4v"
+    },
+    {
+      "word": "Ahorita",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Ahorita_Web.m4v"
+    },
+    {
+      "word": "Aveces",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Aveces_Web.m4v"
+    },
+    {
+      "word": "Calendario",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Calendario_Web.m4v"
+    },
+    {
+      "word": "Ahora",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Ahora_Web.m4v"
+    },
+    {
+      "word": "Primavera",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Primavera_Web.m4v"
+    },
+    {
+      "word": "Presente",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Presente_Web.m4v"
+    },
+    {
+      "word": "Ayer",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Ayer_Web.m4v"
+    },
+    {
+      "word": "Unavez",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Unavez_Web.m4v"
+    },
+    {
+      "word": "Siempre",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Siempre_Web.m4v"
+    },
+    {
+      "word": "Manana",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Manana_Web.m4v"
+    },
+    {
+      "word": "Mes",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Mes_Web.m4v"
+    },
+    {
+      "word": "Frio",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Frio_Web.m4v"
+    },
+    {
+      "word": "Aire",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Aire_Web.m4v"
+    },
+    {
+      "word": "Edad",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Edad_Web.m4v"
+    },
+    {
+      "word": "Cumpleanos",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Cumpleanos_Web.m4v"
+    },
+    {
+      "word": "Temprano",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Temprano_Web.m4v"
+    },
+    {
+      "word": "Antier",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Antier_Web.m4v"
+    },
+    {
+      "word": "Primeravez",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Primeravez_Web.m4v"
+    },
+    {
+      "word": "Mientras",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Mientras_Web.m4v"
+    },
+    {
+      "word": "Hoy",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Hoy_Web.m4v"
+    },
+    {
+      "word": "Verano",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Verano_Web.m4v"
+    },
+    {
+      "word": "Pasado",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Pasado_Web.m4v"
+    },
+    {
+      "word": "Calor",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Calor_Web.m4v"
+    },
+    {
+      "word": "Invierno",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Invierno_Web.m4v"
+    },
+    {
+      "word": "Otono",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Otono_Web.m4v"
+    },
+    {
+      "word": "Minuto",
+      "category": "Tiempo",
+      "video_path": "videos/LSM_Tiempo_Web/Minuto_Web.m4v"
+    },
+    {
+      "word": "Donde",
+      "category": "Preguntas",
+      "video_path": "videos/LSM_Preguntas_Web/Donde_Web.m4v"
+    },
+    {
+      "word": "Cuando",
+      "category": "Preguntas",
+      "video_path": "videos/LSM_Preguntas_Web/Cuando_Web.m4v"
+    },
+    {
+      "word": "Como",
+      "category": "Preguntas",
+      "video_path": "videos/LSM_Preguntas_Web/Como_Web.m4v"
+    },
+    {
+      "word": "Que",
+      "category": "Preguntas",
+      "video_path": "videos/LSM_Preguntas_Web/Que_Web.m4v"
+    },
+    {
+      "word": "Cuanto",
+      "category": "Preguntas",
+      "video_path": "videos/LSM_Preguntas_Web/Cuanto_Web.m4v"
+    },
+    {
+      "word": "Cual",
+      "category": "Preguntas",
+      "video_path": "videos/LSM_Preguntas_Web/Cual_Web.m4v"
+    },
+    {
+      "word": "Paraque",
+      "category": "Preguntas",
+      "video_path": "videos/LSM_Preguntas_Web/Paraque_Web.m4v"
+    },
+    {
+      "word": "Porque",
+      "category": "Preguntas",
+      "video_path": "videos/LSM_Preguntas_Web/Porque_Web.m4v"
+    },
+    {
+      "word": "Quien",
+      "category": "Preguntas",
+      "video_path": "videos/LSM_Preguntas_Web/Quien_Web.m4v"
+    },
+    {
+      "word": "Cebolla",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Cebolla_Web.m4v"
+    },
+    {
+      "word": "Lechuga",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Lechuga_Web.m4v"
+    },
+    {
+      "word": "Zanahoria",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Zanahoria_Web.m4v"
+    },
+    {
+      "word": "Chile",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Chile_Web.m4v"
+    },
+    {
+      "word": "Pepino",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Pepino_Web.m4v"
+    },
+    {
+      "word": "Jitomate",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Jitomate_Web.m4v"
+    },
+    {
+      "word": "Aguacate",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Aguacate_Web.m4v"
+    },
+    {
+      "word": "Betabel",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Betabel_Web.m4v"
+    },
+    {
+      "word": "Chicharo",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Chicharo_Web.m4v"
+    },
+    {
+      "word": "Nopal",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Nopal_Web.m4v"
+    },
+    {
+      "word": "Frijol",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Frijol_Web.m4v"
+    },
+    {
+      "word": "Papa",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Papa_Web.m4v"
+    },
+    {
+      "word": "Calabacita",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Calabacita_Web.m4v"
+    },
+    {
+      "word": "Calabaza",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Calabaza_Web.m4v"
+    },
+    {
+      "word": "Hongo",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Hongo_Web.m4v"
+    },
+    {
+      "word": "Camote",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Camote_Web.m4v"
+    },
+    {
+      "word": "Elote",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Elote_Web.m4v"
+    },
+    {
+      "word": "Ajo",
+      "category": "Verduras",
+      "video_path": "videos/LSM_Verduras_Web/Ajo_Web.m4v"
+    },
+    {
+      "word": "Ustedes",
+      "category": "Pronombres",
+      "video_path": "videos/LSM_Pronombres_Web/Ustedes_Web.m4v"
+    },
+    {
+      "word": "Yo",
+      "category": "Pronombres",
+      "video_path": "videos/LSM_Pronombres_Web/Yo_Web.m4v"
+    },
+    {
+      "word": "Tu",
+      "category": "Pronombres",
+      "video_path": "videos/LSM_Pronombres_Web/Tu_Web.m4v"
+    },
+    {
+      "word": "El",
+      "category": "Pronombres",
+      "video_path": "videos/LSM_Pronombres_Web/El_Web.m4v"
+    },
+    {
+      "word": "Ellos",
+      "category": "Pronombres",
+      "video_path": "videos/LSM_Pronombres_Web/Ellos_Web.m4v"
+    },
+    {
+      "word": "Nosotros",
+      "category": "Pronombres",
+      "video_path": "videos/LSM_Pronombres_Web/Nosotros_Web.m4v"
+    },
+    {
+      "word": "Ella",
+      "category": "Pronombres",
+      "video_path": "videos/LSM_Pronombres_Web/Ella_Web.m4v"
+    },
+    {
+      "word": "Miercoles",
+      "category": "Dias de La Semana",
+      "video_path": "videos/LSM_DiasDeLaSemana_Web/Miercoles_Web.m4v"
+    },
+    {
+      "word": "Lunes",
+      "category": "Dias de La Semana",
+      "video_path": "videos/LSM_DiasDeLaSemana_Web/Lunes_Web.m4v"
+    },
+    {
+      "word": "Jueves",
+      "category": "Dias de La Semana",
+      "video_path": "videos/LSM_DiasDeLaSemana_Web/Jueves_Web.m4v"
+    },
+    {
+      "word": "Sabado",
+      "category": "Dias de La Semana",
+      "video_path": "videos/LSM_DiasDeLaSemana_Web/Sabado_Web.m4v"
+    },
+    {
+      "word": "Martes",
+      "category": "Dias de La Semana",
+      "video_path": "videos/LSM_DiasDeLaSemana_Web/Martes_Web.m4v"
+    },
+    {
+      "word": "Viernes",
+      "category": "Dias de La Semana",
+      "video_path": "videos/LSM_DiasDeLaSemana_Web/Viernes_Web.m4v"
+    },
+    {
+      "word": "Domingo",
+      "category": "Dias de La Semana",
+      "video_path": "videos/LSM_DiasDeLaSemana_Web/Domingo_Web.m4v"
     }
   ]
 }
