@@ -108,7 +108,7 @@ def load_data():
                 if mod_code and mod_code in modules_map:
                     mod_id = modules_map[mod_code]
                     try:
-                        resp = requests.post(f"{API_URL}/modules/{mod_id}/lessons", json=lesson)
+                        resp = requests.post(f"{API_URL}/lessons/?module_id={mod_id}", json=lesson)
                         if resp.status_code == 201:
                             print(f" Leccion creada: {lesson['title']}")
                         else:
