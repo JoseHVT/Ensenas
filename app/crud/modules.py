@@ -28,8 +28,3 @@ def create_module(db: Session, module: schemas.ModuleCreate):
     db.refresh(db_module)
     return db_module
 
-# --- CRUD para Lecciones
-
-def get_lessons_by_module(db: Session, module_id: int):
-    """Obtiene todas las lecciones de un modulo especifico"""
-    return db.query(models.Lesson).filter(models.Lesson.module_id == module_id).all()
