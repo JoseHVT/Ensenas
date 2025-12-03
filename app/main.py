@@ -8,7 +8,7 @@ from .database import engine
 
 #routers
 
-from .routers import users, modules, dictionary, quizzes, memory, progress, media
+from .routers import users, modules, dictionary, quizzes, memory, progress, media, missions
 
 #----------------------------------------------
 

@@ -110,8 +110,7 @@ def get_user_stats_summary(db: Session, user_id: str) -> schemas.StatsSummary:
         models.UserModuleProgress.percent == 100
     ).count()
 
-    # logica de racha 
-    # exp de ho
+    # 6. exp de ho
     today = datetime.now().date()
 
     #score de quizz de hoy
@@ -126,14 +125,17 @@ def get_user_stats_summary(db: Session, user_id: str) -> schemas.StatsSummary:
         .filter(cast(models.MemoryRun.created_at, Date) == today)\
         .scalar() or 0
     
-    # xp total de hoy
+    # xp total de hoy = aciertos de quiz (10) + puntos por memorama(5)
     xp_today = (daily_quiz_score * 10) + (daily_memory_matches * 5)
+
+    # 7. calc racha
+    racha_real = calculate_streak(db, user_id)
 
 
     return schemas.StatsSummary(
         precision_global=round(precision_global, 2),
         tiempo_total_ms=total_duration_ms,
-        racha_actual=0, # Placeholder
+        racha_actual=racha_real,
         senas_dominadas=senas_dominadas,
         daily_xp=xp_today # 
     )
