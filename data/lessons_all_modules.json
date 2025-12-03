@@ -1,0 +1,337 @@
+[
+  {
+    "module_code": "MOD-01",
+    "title": "El Abecedario",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-01",
+    "title": "Saludos básicos",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-01",
+    "title": "Despedidas y cortesía",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-01",
+    "title": "Presentaciones personales",
+    "sort_order": 4
+  },
+  {
+    "module_code": "MOD-02",
+    "title": "Miembros nucleares",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-02",
+    "title": "Parientes lejanos",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-02",
+    "title": "Estados civiles y relaciones",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-03",
+    "title": "Los colores primarios",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-03",
+    "title": "Colores secundarios y combinaciones",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-03",
+    "title": "Números del 1 al 10",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-04",
+    "title": "Letras A–M",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-04",
+    "title": "Letras N–Z",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-04",
+    "title": "Abecedario en contexto",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-05",
+    "title": "Animales domésticos",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-05",
+    "title": "Animales de granja",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-05",
+    "title": "Animales salvajes",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-06",
+    "title": "Alimentos básicos",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-06",
+    "title": "Platillos cotidianos",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-06",
+    "title": "Gustos y preferencias",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-07",
+    "title": "Partes del cuerpo superior",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-07",
+    "title": "Partes del cuerpo inferior",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-07",
+    "title": "Gestos y expresiones faciales",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-08",
+    "title": "Días de la semana",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-08",
+    "title": "Rutinas diarias",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-08",
+    "title": "Agenda semanal",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-09",
+    "title": "Frutas comunes",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-09",
+    "title": "Frutas tropicales",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-09",
+    "title": "Frutas en oraciones",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-10",
+    "title": "Objetos de la casa",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-10",
+    "title": "Habitaciones y espacios",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-10",
+    "title": "Acciones en el hogar",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-11",
+    "title": "Lugares de la ciudad",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-11",
+    "title": "Lugares de estudio y trabajo",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-11",
+    "title": "Lugares de recreación",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-12",
+    "title": "Meses del año",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-12",
+    "title": "Estaciones y clima",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-12",
+    "title": "Fechas importantes",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-13",
+    "title": "Preguntas básicas",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-13",
+    "title": "Preguntas de información",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-13",
+    "title": "Preguntas en conversación",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-14",
+    "title": "Preposiciones de lugar",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-14",
+    "title": "Adjetivos descriptivos",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-14",
+    "title": "Sustantivos frecuentes",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-15",
+    "title": "Pronombres personales",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-15",
+    "title": "Pronombres posesivos",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-15",
+    "title": "Pronombres en contexto",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-16",
+    "title": "Profesiones comunes",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-16",
+    "title": "Oficios y trabajos del hogar",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-16",
+    "title": "Sueños profesionales",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-17",
+    "title": "Prendas básicas",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-17",
+    "title": "Ropa para cada clima",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-17",
+    "title": "Opinando sobre la ropa",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-18",
+    "title": "Expresiones de tiempo básico",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-18",
+    "title": "Frecuencia y duración",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-18",
+    "title": "Hablar del pasado y futuro",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-19",
+    "title": "Medios de transporte",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-19",
+    "title": "Rutas y desplazamientos",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-19",
+    "title": "Seguridad al viajar",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-20",
+    "title": "Acciones cotidianas",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-20",
+    "title": "Rutinas diarias",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-20",
+    "title": "Verbos en frases",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-21",
+    "title": "Acciones para contar historias",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-21",
+    "title": "Conectores y secuencia",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-21",
+    "title": "Relatar experiencias",
+    "sort_order": 3
+  },
+  {
+    "module_code": "MOD-22",
+    "title": "Verduras básicas",
+    "sort_order": 1
+  },
+  {
+    "module_code": "MOD-22",
+    "title": "Verduras en la cocina",
+    "sort_order": 2
+  },
+  {
+    "module_code": "MOD-22",
+    "title": "Hábitos saludables",
+    "sort_order": 3
+  }
+]

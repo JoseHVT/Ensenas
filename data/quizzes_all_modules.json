@@ -1,0 +1,4719 @@
+[
+  {
+    "module_code": "MOD-01",
+    "title": "Evaluación: Introducción y saludos",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona el video que representa la seña de 'Adios'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_SaludosCortesias_Web/Buenasnoches_Web.m4v",
+          "b": "videos/LSM_SaludosCortesias_Web/Adios_Web.m4v",
+          "c": "videos/LSM_SaludosCortesias_Web/Mal_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona el video que representa la seña de 'Buenas noches'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_SaludosCortesias_Web/Buenasnoches_Web.m4v",
+          "b": "videos/LSM_SaludosCortesias_Web/Mal_Web.m4v",
+          "c": "videos/LSM_SaludosCortesias_Web/Buenosdias_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona el video que representa la seña de 'Buenos días'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_SaludosCortesias_Web/Masomenos_Web.m4v",
+          "b": "videos/LSM_SaludosCortesias_Web/Buenosdias_Web.m4v",
+          "c": "videos/LSM_SaludosCortesias_Web/Bien_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona el video que representa la seña de 'Gracias'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_SaludosCortesias_Web/Gracias_Web.m4v",
+          "b": "videos/LSM_SaludosCortesias_Web/Buenasnoches_Web.m4v",
+          "c": "videos/LSM_SaludosCortesias_Web/Mal_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona el video que representa la seña de 'Hola'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_SaludosCortesias_Web/Hola_Web.m4v",
+          "b": "videos/LSM_SaludosCortesias_Web/Denada_Web.m4v",
+          "c": "videos/LSM_SaludosCortesias_Web/Adios_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona el video que representa la seña de 'Por favor'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_SaludosCortesias_Web/Bien_Web.m4v",
+          "b": "videos/LSM_SaludosCortesias_Web/Porfavor_Web.m4v",
+          "c": "videos/LSM_SaludosCortesias_Web/Comotellamas_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-02",
+    "title": "Evaluación: Familia y personas",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Abuela'?",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Hermana_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Abuela_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Matrimonio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Abuelo'?",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Nino_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Abuelo_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Pareja_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Bebé'?",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Tio_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Bebe_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Hijo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Hermana'?",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Bisabuelo_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Hermana_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Esposo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Hermano'?",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Hermano_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Tio_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Ciego_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Hija'?",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Madrastra_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Hija_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Padrino_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Hijo'?",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Papa_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Hijo_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Nieto_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Mamá'?",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Divorciado_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Mama_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Madrastra_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Papá'?",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Senor_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Amante_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Papa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Prima'?",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Prima_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Separado_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Senorita_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Primo'?",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Mediahermana_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Yerno_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Primo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Sobrina'?",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Sobrina_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Huerfano_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Viudo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Sobrino'?",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Sobrino_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Primo_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Senora_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Tia'?",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Anciano_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Bisnieta_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Tia_Web.m4v"
+        }
+      },
+      {
+        "prompt": "¿Cuál de estos videos muestra la seña de 'Tio'?",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Personas_Web/Amiga_Web.m4v",
+          "b": "videos/LSM_Personas_Web/Esposo_Web.m4v",
+          "c": "videos/LSM_Personas_Web/Tio_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-03",
+    "title": "Evaluación: Colores y números del 1 al 10",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Elige el video correcto para el color 'Amarillo'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Amarillo_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Cafe_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Morado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Azul'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Azul_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Amarillo_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Gris_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Blanco'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Cafe_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Blanco_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Verde_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Cafe'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Azul_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Naranja_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Cafe_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Gris'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Oro_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Gris_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Amarillo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Morado'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Negro_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Oro_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Morado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Naranja'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Naranja_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Verde_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Amarillo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Negro'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Negro_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Verde_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Gris_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Oro'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Oro_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Amarillo_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Rojo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Plata'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Plata_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Oro_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Rojo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Rojo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Negro_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Rojo_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Verde_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Rosa'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Negro_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Naranja_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Rosa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Elige el video correcto para el color 'Verde'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Colores_Web/Verde_Web.m4v",
+          "b": "videos/LSM_Colores_Web/Amarillo_Web.m4v",
+          "c": "videos/LSM_Colores_Web/Rosa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa el número '1'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Numero_Web/1.JPG",
+          "b": "videos/LSM_Numero_Web/30_Web.m4v",
+          "c": "videos/LSM_Numero_Web/13_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa el número '2'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Numero_Web/70_Web.m4v",
+          "b": "videos/LSM_Numero_Web/900_Web.m4v",
+          "c": "videos/LSM_Numero_Web/2.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa el número '3'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Numero_Web/14_Web.m4v",
+          "b": "videos/LSM_Numero_Web/800_Web.m4v",
+          "c": "videos/LSM_Numero_Web/3.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa el número '4'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Numero_Web/4.JPG",
+          "b": "videos/LSM_Numero_Web/800_Web.m4v",
+          "c": "videos/LSM_Numero_Web/1000_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa el número '5'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Numero_Web/70_Web.m4v",
+          "b": "videos/LSM_Numero_Web/5.JPG",
+          "c": "videos/LSM_Numero_Web/400_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa el número '6'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Numero_Web/6.JPG",
+          "b": "videos/LSM_Numero_Web/17_Web.m4v",
+          "c": "videos/LSM_Numero_Web/3.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa el número '7'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Numero_Web/300_Web.m4v",
+          "b": "videos/LSM_Numero_Web/13_Web.m4v",
+          "c": "videos/LSM_Numero_Web/7.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa el número '8'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Numero_Web/6.JPG",
+          "b": "videos/LSM_Numero_Web/8.JPG",
+          "c": "videos/LSM_Numero_Web/0.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa el número '10'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Numero_Web/10_Web.m4v",
+          "b": "videos/LSM_Numero_Web/12_Web.m4v",
+          "c": "videos/LSM_Numero_Web/1000000_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa el número '9'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Numero_Web/300_Web.m4v",
+          "b": "videos/LSM_Numero_Web/600_Web.m4v",
+          "c": "videos/LSM_Numero_Web/9_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-04",
+    "title": "Evaluación: Abecedario",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'J'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/J_Web.m4v",
+          "b": "videos/LSM_Abecedario_Web/t.JPG",
+          "c": "videos/LSM_Abecedario_Web/g.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'K'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/Ll_Web.m4v",
+          "b": "videos/LSM_Abecedario_Web/s.JPG",
+          "c": "videos/LSM_Abecedario_Web/K_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ll'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/t.JPG",
+          "b": "videos/LSM_Abecedario_Web/Ll_Web.m4v",
+          "c": "videos/LSM_Abecedario_Web/l.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nie'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/t.JPG",
+          "b": "videos/LSM_Abecedario_Web/Nie_Web.m4v",
+          "c": "videos/LSM_Abecedario_Web/h.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Q'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/b.JPG",
+          "b": "videos/LSM_Abecedario_Web/Q_Web.m4v",
+          "c": "videos/LSM_Abecedario_Web/p.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Rr'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/u.JPG",
+          "b": "videos/LSM_Abecedario_Web/l.JPG",
+          "c": "videos/LSM_Abecedario_Web/Rr_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'X'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/X_Web.m4v",
+          "b": "videos/LSM_Abecedario_Web/K_Web.m4v",
+          "c": "videos/LSM_Abecedario_Web/y.jpg"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Z'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/e.JPG",
+          "b": "videos/LSM_Abecedario_Web/Z_Web.m4v",
+          "c": "videos/LSM_Abecedario_Web/m.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'A'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/Q_Web.m4v",
+          "b": "videos/LSM_Abecedario_Web/a.JPG",
+          "c": "videos/LSM_Abecedario_Web/K_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'B'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/g.JPG",
+          "b": "videos/LSM_Abecedario_Web/J_Web.m4v",
+          "c": "videos/LSM_Abecedario_Web/b.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'C'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/c.JPG",
+          "b": "videos/LSM_Abecedario_Web/u.JPG",
+          "c": "videos/LSM_Abecedario_Web/w.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'D'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/w.JPG",
+          "b": "videos/LSM_Abecedario_Web/d.JPG",
+          "c": "videos/LSM_Abecedario_Web/l.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'E'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/K_Web.m4v",
+          "b": "videos/LSM_Abecedario_Web/e.JPG",
+          "c": "videos/LSM_Abecedario_Web/n.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'F'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/f.JPG",
+          "b": "videos/LSM_Abecedario_Web/s.JPG",
+          "c": "videos/LSM_Abecedario_Web/g.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'G'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/h.JPG",
+          "b": "videos/LSM_Abecedario_Web/t.JPG",
+          "c": "videos/LSM_Abecedario_Web/g.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'H'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/n.JPG",
+          "b": "videos/LSM_Abecedario_Web/h.JPG",
+          "c": "videos/LSM_Abecedario_Web/K_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'I'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/Z_Web.m4v",
+          "b": "videos/LSM_Abecedario_Web/i.JPG",
+          "c": "videos/LSM_Abecedario_Web/f.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'L'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/l.JPG",
+          "b": "videos/LSM_Abecedario_Web/u.JPG",
+          "c": "videos/LSM_Abecedario_Web/p.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'M'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/n.JPG",
+          "b": "videos/LSM_Abecedario_Web/m.JPG",
+          "c": "videos/LSM_Abecedario_Web/w.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'N'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/l.JPG",
+          "b": "videos/LSM_Abecedario_Web/o.JPG",
+          "c": "videos/LSM_Abecedario_Web/n.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'O'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/y.jpg",
+          "b": "videos/LSM_Abecedario_Web/w.JPG",
+          "c": "videos/LSM_Abecedario_Web/o.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'P'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/Z_Web.m4v",
+          "b": "videos/LSM_Abecedario_Web/p.JPG",
+          "c": "videos/LSM_Abecedario_Web/h.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'R'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/r.JPG",
+          "b": "videos/LSM_Abecedario_Web/o.JPG",
+          "c": "videos/LSM_Abecedario_Web/s.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'S'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/Nie_Web.m4v",
+          "b": "videos/LSM_Abecedario_Web/f.JPG",
+          "c": "videos/LSM_Abecedario_Web/s.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'T'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/h.JPG",
+          "b": "videos/LSM_Abecedario_Web/t.JPG",
+          "c": "videos/LSM_Abecedario_Web/m.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'U'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/f.JPG",
+          "b": "videos/LSM_Abecedario_Web/u.JPG",
+          "c": "videos/LSM_Abecedario_Web/t.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'V'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/m.JPG",
+          "b": "videos/LSM_Abecedario_Web/f.JPG",
+          "c": "videos/LSM_Abecedario_Web/v.JPG"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'W'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/w.JPG",
+          "b": "videos/LSM_Abecedario_Web/r.JPG",
+          "c": "videos/LSM_Abecedario_Web/Ll_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Y'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Abecedario_Web/y.jpg",
+          "b": "videos/LSM_Abecedario_Web/i.JPG",
+          "c": "videos/LSM_Abecedario_Web/s.JPG"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-05",
+    "title": "Evaluación: Animales",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Abeja'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Aguila_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Abeja_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Tortuga_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Aguila'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Aguila_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Ardilla_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Pez_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Arana'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Arana_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Jirafa_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Perro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ardilla'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Ardilla_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Vaca_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Vibora_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Burro'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Burro_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Conejo_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Abeja_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Caballo'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Leon_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Vibora_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Caballo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cerdo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Gusano_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Cerdo_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Raton_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Chango'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Tigre_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Chango_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Ardilla_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Conejo'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Abeja_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Chango_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Conejo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Gato'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Arana_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Burro_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Gato_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Gorila'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Caballo_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Gorila_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Pato_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Gusano'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Oso_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Mariposa_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Gusano_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Jirafa'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Jirafa_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Paloma_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Mariposa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Leon'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Leon_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Mariposa_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Tigre_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mariposa'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Pez_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Conejo_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Mariposa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Oso'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Oso_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Aguila_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Vaca_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pajaro'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Pajaro_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Chango_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Abeja_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Paloma'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Abeja_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Paloma_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Toro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pato'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Pato_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Ardilla_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Tigre_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Perro'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Raton_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Perro_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Tigre_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pez'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Pez_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Tortuga_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Raton_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Raton'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Raton_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Ardilla_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Aguila_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tigre'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Vaca_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Tigre_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Jirafa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Toro'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Toro_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Gusano_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Ardilla_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tortuga'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Gato_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Tortuga_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Burro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Vaca'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Tigre_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Vaca_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Gusano_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Vibora'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Animales_Web/Cerdo_Web.m4v",
+          "b": "videos/LSM_Animales_Web/Vibora_Web.m4v",
+          "c": "videos/LSM_Animales_Web/Pato_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-06",
+    "title": "Evaluación: Comida",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Aceite'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Taco_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Aceite_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Pan_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Agua'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Carne_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Agua_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Arroz_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Arroz'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Caldo_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Arroz_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Taco_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Azucar'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Hamburguesa_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Azucar_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Taco_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cafe'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Pollo_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Tortilla_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Cafe_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Caldo'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Caldo_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Pan_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Queso_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Carne'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Galleta_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Carne_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Pan_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cerveza'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Pastel_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Cerveza_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Agua_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Chile'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Hamburguesa_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Refresco_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Chile_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Chocolate'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Chocolate_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Cafe_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Aceite_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cocacola'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Cocacola_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Hamburguesa_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Agua_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Dulce'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Dulce_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Pizza_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Frijol_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ensalada'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Chocolate_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Cocacola_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Ensalada_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Frijol'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Frijol_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Azucar_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Huevo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Fruta'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Chile_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Cafe_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Fruta_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Galleta'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Galleta_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Pescado_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Chile_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Hamburguesa'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Caldo_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Hamburguesa_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Chile_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Huevo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Sopa_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Huevo_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Caldo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Leche'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Fruta_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Leche_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Pollo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pan'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Carne_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Pan_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Fruta_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pastel'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Pizza_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Galleta_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Pastel_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pescado'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Ensalada_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Verdura_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Pescado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pizza'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Chile_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Arroz_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Pizza_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pollo'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Pollo_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Huevo_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Cerveza_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Queso'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Queso_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Azucar_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Caldo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Refresco'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Refresco_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Pan_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Queso_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Sopa'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Pan_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Sopa_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Verdura_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Taco'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Taco_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Pizza_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Tortilla_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tortilla'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Aceite_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Pizza_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Tortilla_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Verdura'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Comida_Web/Verdura_Web.m4v",
+          "b": "videos/LSM_Comida_Web/Frijol_Web.m4v",
+          "c": "videos/LSM_Comida_Web/Cerveza_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-07",
+    "title": "Evaluación: Cuerpo",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Boca'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Ojos_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Cejas_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Boca_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cabeza'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Cabeza_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Piel_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Pies_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cara'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Cara_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Ojos_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Corazon_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cejas'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Oreja_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Nariz_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Cejas_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Corazon'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Corazon_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Ojos_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Piel_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Estomago'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Pies_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Estomago_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Piel_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Hueso'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Pestanas_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Hueso_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Estomago_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mano'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Mano_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Sangre_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Cejas_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nariz'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Oreja_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Nariz_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Corazon_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ojos'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Ojos_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Hueso_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Corazon_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Oreja'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Oreja_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Cejas_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Boca_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pestanas'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Cara_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Oreja_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Pestanas_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Piel'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Pies_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Oreja_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Piel_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pies'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Pies_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Cejas_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Estomago_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Sangre'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Cuerpo_Web/Piel_Web.m4v",
+          "b": "videos/LSM_Cuerpo_Web/Sangre_Web.m4v",
+          "c": "videos/LSM_Cuerpo_Web/Hueso_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-08",
+    "title": "Evaluación: DiasDeLaSemana",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Domingo'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_DiasDeLaSemana_Web/Domingo_Web.m4v",
+          "b": "videos/LSM_DiasDeLaSemana_Web/Miercoles_Web.m4v",
+          "c": "videos/LSM_DiasDeLaSemana_Web/Jueves_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Jueves'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_DiasDeLaSemana_Web/Domingo_Web.m4v",
+          "b": "videos/LSM_DiasDeLaSemana_Web/Viernes_Web.m4v",
+          "c": "videos/LSM_DiasDeLaSemana_Web/Jueves_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Lunes'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_DiasDeLaSemana_Web/Martes_Web.m4v",
+          "b": "videos/LSM_DiasDeLaSemana_Web/Sabado_Web.m4v",
+          "c": "videos/LSM_DiasDeLaSemana_Web/Lunes_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Martes'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_DiasDeLaSemana_Web/Martes_Web.m4v",
+          "b": "videos/LSM_DiasDeLaSemana_Web/Viernes_Web.m4v",
+          "c": "videos/LSM_DiasDeLaSemana_Web/Lunes_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Miercoles'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_DiasDeLaSemana_Web/Miercoles_Web.m4v",
+          "b": "videos/LSM_DiasDeLaSemana_Web/Domingo_Web.m4v",
+          "c": "videos/LSM_DiasDeLaSemana_Web/Sabado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Sabado'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_DiasDeLaSemana_Web/Martes_Web.m4v",
+          "b": "videos/LSM_DiasDeLaSemana_Web/Sabado_Web.m4v",
+          "c": "videos/LSM_DiasDeLaSemana_Web/Miercoles_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Viernes'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_DiasDeLaSemana_Web/Domingo_Web.m4v",
+          "b": "videos/LSM_DiasDeLaSemana_Web/Viernes_Web.m4v",
+          "c": "videos/LSM_DiasDeLaSemana_Web/Sabado_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-09",
+    "title": "Evaluación: Frutas",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Almendra'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Almendra_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Jicama_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Tamarindo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cereza'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Uva_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Tamarindo_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Cereza_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Coco'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Toronja_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Pera_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Coco_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Durazno'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Uva_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Durazno_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Toronja_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Fresa'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Pera_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Fresa_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Pina_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Guayaba'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Naranja_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Fresa_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Guayaba_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Jamaica'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Mango_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Jamaica_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Platano_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Jicama'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Jicama_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Mango_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Cereza_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Limon'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Tamarindo_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Limon_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Melon_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mango'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Pera_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Limon_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Mango_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Manzana'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Almendra_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Fresa_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Manzana_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Melon'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Durazno_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Melon_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Mango_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Naranja'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Jicama_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Naranja_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Limon_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nuez'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Nuez_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Sandia_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Jicama_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Papaya'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Melon_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Papaya_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Uva_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pera'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Pera_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Mango_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Nuez_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pina'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Manzana_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Pina_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Platano_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Platano'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Jamaica_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Platano_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Almendra_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Sandia'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Nuez_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Tamarindo_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Sandia_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tamarindo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Toronja_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Tamarindo_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Jamaica_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Toronja'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Mango_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Toronja_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Coco_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Uva'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Frutas_Web/Uva_Web.m4v",
+          "b": "videos/LSM_Frutas_Web/Nuez_Web.m4v",
+          "c": "videos/LSM_Frutas_Web/Tamarindo_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-10",
+    "title": "Evaluación: Hogar",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Bano'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Llave_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Bano_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Plancha_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Caja'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Foco_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Plancha_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Caja_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cama'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Celular_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Bano_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Cama_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Casa'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Cocina_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Casa_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Caja_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Celular'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Celular_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Silla_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Telefono_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cocina'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Plancha_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Casa_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Cocina_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Computadora'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Lavadora_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Cuarto_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Computadora_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cuarto'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Foco_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Llave_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Cuarto_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cuchara'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Plato_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Cuchara_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Lavadora_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Foco'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Foco_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Cocina_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Puerta_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Gas'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Gas_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Luz_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Ventana_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Impresora'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Telefono_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Impresora_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Casa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Lavadora'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Lavadora_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Luz_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Impresora_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Licuadora'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Puerta_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Gas_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Licuadora_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Llave'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Cocina_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Caja_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Llave_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Luz'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Caja_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Computadora_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Luz_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mesa'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Mesa_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Caja_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Ventana_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Plancha'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Gas_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Licuadora_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Plancha_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Plato'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Plato_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Silla_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Plancha_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Puerta'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Cuarto_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Silla_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Puerta_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Silla'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Cuarto_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Plato_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Silla_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Telefono'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Telefono_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Plancha_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Cuchara_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tenedor'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Silla_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Tenedor_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Cama_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Vaso'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Computadora_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Vaso_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Cuchara_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ventana'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Hogar_Web/Ventana_Web.m4v",
+          "b": "videos/LSM_Hogar_Web/Cuchara_Web.m4v",
+          "c": "videos/LSM_Hogar_Web/Bano_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-11",
+    "title": "Evaluación: Lugares",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Antro'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Antro_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Ciudad_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Escuela_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Banco'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Ciudad_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Banco_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Cine_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Calle'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Banco_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Calle_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Restaurante_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cantina'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Cine_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Tienda_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Cantina_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Casa'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Cine_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Iglesia_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Casa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Centro'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Calle_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Centro_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Cantina_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cine'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Teatro_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Cine_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Museo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ciudad'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Ciudad_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Edificio_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Calle_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Edificio'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Casa_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Edificio_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Fiesta_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Escuela'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Fabrica_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Escuela_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Hotel_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Fabrica'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Fabrica_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Centro_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Calle_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Feria'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Escuela_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Feria_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Teatro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Fiesta'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Iglesia_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Calle_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Fiesta_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Hotel'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Fabrica_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Banco_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Hotel_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Iglesia'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Cantina_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Iglesia_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Feria_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mercado'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Mercado_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Ciudad_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Calle_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Museo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Fabrica_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Museo_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Banco_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Restaurante'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Restaurante_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Casa_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Museo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Teatro'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Mercado_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Teatro_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Centro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tienda'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Lugares_Web/Fabrica_Web.m4v",
+          "b": "videos/LSM_Lugares_Web/Tienda_Web.m4v",
+          "c": "videos/LSM_Lugares_Web/Casa_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-12",
+    "title": "Evaluación: MesesDelAnio",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Abril'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Octubre_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Abril_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Julio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Agosto'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Agosto_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Julio_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Junio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Diciembre'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Agosto_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Diciembre_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Junio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Enero'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Noviembre_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Enero_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Marzo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Febrero'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Septiembre_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Junio_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Febrero_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Julio'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Junio_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Julio_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Febrero_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Junio'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Noviembre_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Junio_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Agosto_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Marzo'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Marzo_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Febrero_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Abril_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mayo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Abril_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Mayo_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Diciembre_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Noviembre'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Noviembre_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Enero_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Marzo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Octubre'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Agosto_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Septiembre_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Octubre_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Septiembre'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_MesesDelAnio_Web/Marzo_Web.m4v",
+          "b": "videos/LSM_MesesDelAnio_Web/Diciembre_Web.m4v",
+          "c": "videos/LSM_MesesDelAnio_Web/Septiembre_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-13",
+    "title": "Evaluación: Preguntas",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Como'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Preguntas_Web/Paraque_Web.m4v",
+          "b": "videos/LSM_Preguntas_Web/Porque_Web.m4v",
+          "c": "videos/LSM_Preguntas_Web/Como_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cual'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Preguntas_Web/Cuanto_Web.m4v",
+          "b": "videos/LSM_Preguntas_Web/Cual_Web.m4v",
+          "c": "videos/LSM_Preguntas_Web/Quien_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cuando'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Preguntas_Web/Cuando_Web.m4v",
+          "b": "videos/LSM_Preguntas_Web/Cuanto_Web.m4v",
+          "c": "videos/LSM_Preguntas_Web/Quien_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cuanto'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Preguntas_Web/Cuanto_Web.m4v",
+          "b": "videos/LSM_Preguntas_Web/Porque_Web.m4v",
+          "c": "videos/LSM_Preguntas_Web/Que_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Donde'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Preguntas_Web/Como_Web.m4v",
+          "b": "videos/LSM_Preguntas_Web/Donde_Web.m4v",
+          "c": "videos/LSM_Preguntas_Web/Quien_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Paraque'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Preguntas_Web/Paraque_Web.m4v",
+          "b": "videos/LSM_Preguntas_Web/Porque_Web.m4v",
+          "c": "videos/LSM_Preguntas_Web/Cuanto_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Porque'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Preguntas_Web/Paraque_Web.m4v",
+          "b": "videos/LSM_Preguntas_Web/Porque_Web.m4v",
+          "c": "videos/LSM_Preguntas_Web/Cual_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Que'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Preguntas_Web/Cual_Web.m4v",
+          "b": "videos/LSM_Preguntas_Web/Cuanto_Web.m4v",
+          "c": "videos/LSM_Preguntas_Web/Que_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Quien'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Preguntas_Web/Paraque_Web.m4v",
+          "b": "videos/LSM_Preguntas_Web/Quien_Web.m4v",
+          "c": "videos/LSM_Preguntas_Web/Cuanto_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-14",
+    "title": "Evaluación: PreposicionesAdjetivosSustantivosAdverbios",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Abajo'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Abajo_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Adentro_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Malo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Aburrido'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Duda_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Aburrido_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Contento_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Accidente'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Accidente_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Amable_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ejemplo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Adentro'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/No_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Diferente_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Adentro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Afortunado'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Afortunado_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Feliz_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Carino_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Alegredivertido'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Senas_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Antes_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Alegredivertido_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Algunos'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Caliente_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Raro_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Algunos_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Altoestatura'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Debil_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Egoista_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Altoestatura_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Amable'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Amable_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cansado_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Gordo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Antes'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Antes_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Pobre_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Si_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Arriba'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cada_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Alegredivertido_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Arriba_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Asustado'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Asustado_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Accidente_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Nunca_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Atencionatento'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Atencionatento_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Diferente_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Facil_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Baboso'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Baboso_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Falso_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Contento_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Bonito'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Bonito_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cobarde_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lsm_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Broma'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Arriba_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Broma_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Si_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Bueno'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lsm_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Bueno_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Debil_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cada'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Aburrido_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cada_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Secreto_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Caliente'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Contento_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lejos_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Caliente_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cansado'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Verguenza_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cansado_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Baboso_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Carino'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Celoso_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Carino_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Altoestatura_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Celoso'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Atencionatento_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Celoso_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ejercicio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Chaparro'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Celoso_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Chaparro_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Rapidopronto_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Chistoso'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Mas_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Afortunado_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Chistoso_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cobarde'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Mejor_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Gratis_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cobarde_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Contento'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Aburrido_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Junta_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Contento_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Curioso'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Celoso_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Paciencia_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Curioso_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Debil'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Debil_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Abajo_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Historia_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Decente'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Decente_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Adentro_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Contento_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Delgado'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Accidente_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Delgado_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Asustado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Despacio'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Despacio_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Humilde_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Contento_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Diferente'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Bonito_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Presumido_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Diferente_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Dificil'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Hambre_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Dificil_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Todo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Diploma'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Diploma_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Carino_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Mas_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Duda'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Duda_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Decente_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Arriba_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Egoista'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Egoista_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Algunos_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Flojo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ejemplo'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ojala_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Verdad_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ejemplo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ejercicio'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Paciencia_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lsm_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ejercicio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Enojado'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Enojado_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Senaproipa_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Junto_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Envidia'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Envidia_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cada_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Pobre_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Especial'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Gordo_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Especial_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Asustado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Facil'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Atencionatento_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Facil_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Todo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Falso'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Accidente_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Falso_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Feliz_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Feliz'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Nunca_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Delgado_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Feliz_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Feo'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Alegredivertido_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Triste_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Feo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Flojo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lsm_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Flojo_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Sucio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Fuerte'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Fuerte_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Triste_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Duda_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Fuerza'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Fuerza_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Peor_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Feo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Gordo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Verguenza_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Gordo_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Sucio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Gratis'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Mejor_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ojala_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Gratis_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Grosero'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Senaproipa_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Importante_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Grosero_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Guapo'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Alegredivertido_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Raro_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Guapo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Hambre'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Todo_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Hambre_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Bueno_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Historia'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Abajo_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Historia_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Alegredivertido_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Humilde'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Especial_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Humilde_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Aburrido_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Importante'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Importante_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Paciencia_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Duda_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Inteligente'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Carino_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Raro_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Inteligente_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Jamas'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Jamas_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Alegredivertido_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Baboso_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Junta'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Problema_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Junta_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Gratis_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Junto'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Necio_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Junto_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Problema_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Lejos'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lejos_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Duda_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Senaproipa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Libre'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Libre_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Broma_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Bueno_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Loco'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Adentro_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Loco_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Celoso_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Lsm'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lejos_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Algunos_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lsm_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Malo'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Chistoso_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Amable_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Malo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mas'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Tonto_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Mas_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Necio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mejor'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Gordo_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Mejor_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Nunca_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Miedo'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Enojado_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Chaparro_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Miedo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Necio'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Junta_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Necio_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Historia_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'No'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/No_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Raro_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ejercicio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nuevo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Amable_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Nuevo_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Verguenza_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nunca'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Nunca_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Lsm_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Loco_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ojala'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Atencionatento_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Afortunado_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ojala_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Paciencia'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Chaparro_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Paciencia_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Ejercicio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Peor'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Peor_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Fuerza_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Libre_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pero'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Altoestatura_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Pero_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Rapidopronto_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pobre'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Libre_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Pobre_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Jamas_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Presumido'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Presumido_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Suerte_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Chaparro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Problema'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Senaproipa_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Curioso_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Problema_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Rapidopronto'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Rapidopronto_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Triste_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Hambre_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Raro'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Raro_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Grosero_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Alegredivertido_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Secreto'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Secreto_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Malo_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cada_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Senaproipa'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Bonito_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Senaproipa_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Paciencia_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Senas'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Senas_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Afortunado_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Verguenza_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Si'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Si_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Junta_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Enojado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Sucio'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Peor_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Sucio_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Atencionatento_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Suerte'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Suerte_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Enojado_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Asustado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Todo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Problema_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Todo_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Celoso_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tonto'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Humilde_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Junta_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Tonto_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Travieso'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Travieso_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Presumido_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Inteligente_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Triste'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Debil_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Triste_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Junta_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Verdad'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Paciencia_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Abajo_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Verdad_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Verguenza'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Gratis_Web.m4v",
+          "b": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Verguenza_Web.m4v",
+          "c": "videos/LSM_PreposicionesAdjetivosSustantivosAdverbios_Web/Cada_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-15",
+    "title": "Evaluación: Pronombres",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'El'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Pronombres_Web/Nosotros_Web.m4v",
+          "b": "videos/LSM_Pronombres_Web/El_Web.m4v",
+          "c": "videos/LSM_Pronombres_Web/Tu_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ella'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Pronombres_Web/Tu_Web.m4v",
+          "b": "videos/LSM_Pronombres_Web/Ella_Web.m4v",
+          "c": "videos/LSM_Pronombres_Web/Yo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ellos'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Pronombres_Web/Tu_Web.m4v",
+          "b": "videos/LSM_Pronombres_Web/Yo_Web.m4v",
+          "c": "videos/LSM_Pronombres_Web/Ellos_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nosotros'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Pronombres_Web/Nosotros_Web.m4v",
+          "b": "videos/LSM_Pronombres_Web/Ella_Web.m4v",
+          "c": "videos/LSM_Pronombres_Web/Ustedes_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tu'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Pronombres_Web/Ellos_Web.m4v",
+          "b": "videos/LSM_Pronombres_Web/Tu_Web.m4v",
+          "c": "videos/LSM_Pronombres_Web/Yo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ustedes'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Pronombres_Web/Ustedes_Web.m4v",
+          "b": "videos/LSM_Pronombres_Web/Tu_Web.m4v",
+          "c": "videos/LSM_Pronombres_Web/Nosotros_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Yo'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Pronombres_Web/Nosotros_Web.m4v",
+          "b": "videos/LSM_Pronombres_Web/Ustedes_Web.m4v",
+          "c": "videos/LSM_Pronombres_Web/Yo_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-16",
+    "title": "Evaluación: PuestosProfesionesOficios",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Abogado'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Abogado_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Licenciado_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Lider_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Actor'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Chofer_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Actor_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Medico_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Albanil'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Mecanico_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Senador_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Albanil_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Alumno'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Tecnico_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Alumno_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Lider_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Arquitecto'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Presidente_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Arquitecto_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Jefe_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Bombero'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Bombero_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Enfermera_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Abogado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Carpintero'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Licenciado_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Carpintero_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Profesor_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Chofer'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Maestro_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Chofer_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Taxista_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Dentista'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Dentista_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Tecnico_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Mesero_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Diputado'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Abogado_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Presidente_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Diputado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Director'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Albanil_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Diputado_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Director_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Enfermera'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Senador_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Dentista_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Enfermera_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Gobernador'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Presidente_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Gobernador_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Profesor_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Guardia'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Guardia_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Mesero_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Mecanico_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ingeniero'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Ingeniero_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Enfermera_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Jefe_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Interprete'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Interprete_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Director_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Albanil_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Jefe'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Carpintero_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Jefe_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Chofer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Licenciado'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Dentista_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Licenciado_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Diputado_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Lider'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Medico_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Lider_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Chofer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Maestro'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Mecanico_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Maestro_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Presidente_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mecanico'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Diputado_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Mecanico_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Director_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Medico'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Mesero_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Diputado_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Medico_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mesero'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Enfermera_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Mesero_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Interprete_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Policia'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Policia_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Interprete_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Medico_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Presidente'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Enfermera_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Presidente_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Chofer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Profesor'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Director_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Senador_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Profesor_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Psicologo'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Alumno_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Director_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Psicologo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Senador'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Senador_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Ingeniero_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Actor_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Soldado'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Soldado_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Actor_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Enfermera_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Taxista'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Director_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Taxista_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Tecnico_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tecnico'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Tecnico_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Vendedor_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Carpintero_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Vendedor'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_PuestosProfesionesOficios_Web/Vendedor_Web.m4v",
+          "b": "videos/LSM_PuestosProfesionesOficios_Web/Interprete_Web.m4v",
+          "c": "videos/LSM_PuestosProfesionesOficios_Web/Director_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-17",
+    "title": "Evaluación: Ropa",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Abrigo'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Abrigo_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Camisa_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Brasier_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Brasier'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Falda_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Zapatos_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Brasier_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Bufanda'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Vestido_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Camisa_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Bufanda_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Calzon'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Falda_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Calzon_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Zapatos_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Camisa'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Zapatos_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Vestido_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Camisa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Corbata'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Calzon_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Zapatos_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Corbata_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Falda'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Falda_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Zapatos_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Abrigo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Medias'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Medias_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Tenis_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Zapatos_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pantalon'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Bufanda_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Pantalon_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Camisa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tenis'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Camisa_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Bufanda_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Tenis_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Vestido'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Zapatos_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Abrigo_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Vestido_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Zapatos'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Ropa_Web/Zapatos_Web.m4v",
+          "b": "videos/LSM_Ropa_Web/Abrigo_Web.m4v",
+          "c": "videos/LSM_Ropa_Web/Falda_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-18",
+    "title": "Evaluación: Tiempo",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Ahora'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Fecha_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Calendario_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Ahora_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ahorita'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Pasado_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Ahorita_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Primeravez_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Aire'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Mientras_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Pasado_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Aire_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ano'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Ano_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Otro_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Ayer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Antier'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Hoy_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Aveces_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Antier_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Aveces'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Calor_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Minuto_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Aveces_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ayer'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Tarde_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Ayer_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Aveces_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Calendario'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Calendario_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Mientras_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Manana_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Calor'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Siempre_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Minuto_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Calor_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cumpleanos'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Aire_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Edad_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Cumpleanos_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Despues'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Futuro_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Noche_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Despues_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Dia'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Dia_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Invierno_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Manana_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Edad'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Edad_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Semana_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Frio_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Fecha'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Fecha_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Minuto_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Hasta_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Frio'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Siempre_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Frio_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Verano_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Futuro'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Ahorita_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Ayer_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Futuro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Hasta'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Hora_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Hasta_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Edad_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Hora'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Dia_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Hoy_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Hora_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Hoy'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Hoy_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Minuto_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Invierno_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Invierno'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Invierno_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Despues_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Otravez_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Manana'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Calor_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Manana_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Ahora_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mediodia'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Mediodia_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Invierno_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Otono_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mes'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Mes_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Invierno_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Mediodia_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Mientras'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Otravez_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Mientras_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Fecha_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Minuto'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Futuro_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Minuto_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Edad_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Noche'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Frio_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Noche_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Calendario_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Otono'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Otono_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Primavera_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Edad_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Otravez'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Otravez_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Hoy_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Verano_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Otro'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Tarde_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Unavez_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Otro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pasado'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Pasado_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Hasta_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Antier_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Presente'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Presente_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Minuto_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Cumpleanos_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Primavera'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Invierno_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Primavera_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Edad_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Primeravez'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Mes_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Primeravez_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Futuro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Proximo'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Proximo_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Edad_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Otono_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Semana'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Aire_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Mediodia_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Semana_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Siempre'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Edad_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Siempre_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Invierno_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tarde'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Frio_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Tarde_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Proximo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Temprano'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Unavez_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Verano_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Temprano_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Unavez'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Mientras_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Unavez_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Temprano_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Verano'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Siempre_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Verano_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Noche_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Viento'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Tiempo_Web/Otravez_Web.m4v",
+          "b": "videos/LSM_Tiempo_Web/Proximo_Web.m4v",
+          "c": "videos/LSM_Tiempo_Web/Viento_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-19",
+    "title": "Evaluación: Transporte",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Avion'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Motocicleta_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Avion_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Metro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Barco'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Carro_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Barco_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Transporte_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Bicicleta'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Cdeautobuses_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Taxi_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Bicicleta_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Camion'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Motocicleta_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Camion_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Metro_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Carro'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Avion_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Carro_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Transporte_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cdeautobuses'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Taxi_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Tren_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Cdeautobuses_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Helicoptero'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Transporte_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Helicoptero_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Bicicleta_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Metro'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Taxi_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Metro_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Camion_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Motocicleta'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Helicoptero_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Motocicleta_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Tren_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Taxi'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Taxi_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Barco_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Camion_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Transporte'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Cdeautobuses_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Carro_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Transporte_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Tren'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Transporte_Web/Cdeautobuses_Web.m4v",
+          "b": "videos/LSM_Transporte_Web/Avion_Web.m4v",
+          "c": "videos/LSM_Transporte_Web/Tren_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-20",
+    "title": "Evaluación: VerbosComunes",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Aprender'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Aprender_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Hacer_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Pensar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Avisar'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Platicar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Dormir_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Avisar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ayudar'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Platicar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Jugar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Ayudar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Comer'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Comer_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Vivir_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Hablar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Comprar'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Comprar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Necesitar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Estudiar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Creer'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Poder_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Comer_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Creer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cuidar'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Terminar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Hacer_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Cuidar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Dar'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Limpiar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Terminar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Dar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Decir'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Decir_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Vender_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Poder_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Descansar'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Perder_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Preguntar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Descansar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Dormir'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Dormir_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Dar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Limpiar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Empezar'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Empezar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Decir_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Terminar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ensenar'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Ensenar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Cuidar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Vender_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Entender'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Entender_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Ensenar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Comprar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Escribir'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Estudiar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Escribir_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Sentar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Esperar'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Perder_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Esperar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Descansar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Estudiar'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Ayudar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Estudiar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Olvidar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Explicar'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Vivir_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Explicar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Decir_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Hablar'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Pensar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Hablar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Pagar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Hacer'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Preguntar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Comprar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Hacer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Jugar'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Jugar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Ver_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Avisar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Limpiar'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Empezar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Limpiar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Creer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Necesitar'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Esperar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Necesitar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Terminar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Olvidar'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Entender_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Descansar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Olvidar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pagar'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Poder_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Comer_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Pagar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pensar'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Pensar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Estudiar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Ensenar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Perder'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Perder_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Platicar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Trabajar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Platicar'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Comprar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Platicar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Preguntar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Poder'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Pagar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Poder_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Comer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Preguntar'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Sentar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Preguntar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Pagar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Sentar'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Sentar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Descansar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Comer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Terminar'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Estudiar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Ver_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Terminar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Trabajar'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Trabajar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Jugar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Vender_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Vender'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Dar_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Pensar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Vender_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ver'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Ver_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Escribir_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Decir_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Vivir'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosComunes_Web/Vivir_Web.m4v",
+          "b": "videos/LSM_VerbosComunes_Web/Comprar_Web.m4v",
+          "c": "videos/LSM_VerbosComunes_Web/Preguntar_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-21",
+    "title": "Evaluación: VerbosNarrativos",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Conocer'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Noconocer_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Conocer_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Entender_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Entender'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Poder_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Nohaber_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Entender_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Gustar'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Nogustar_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Gustar_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Querer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Haber'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Nogustar_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Haber_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Noquerer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Noconocer'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Nogustar_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Nosaber_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Noconocer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Noentender'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Noentender_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Entender_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Nohaber_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nogustar'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Nogustar_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Haber_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Noentender_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nohaber'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Noconocer_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Nohaber_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Noservir_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nopoder'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Nosaber_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Nopoder_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Gustar_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Noquerer'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Haber_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Noentender_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Noquerer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nosaber'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Nosaber_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Noentender_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Servir_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Noservir'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Conocer_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Servir_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Noservir_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Poder'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Nogustar_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Nohaber_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Poder_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Querer'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Nosaber_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Entender_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Querer_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Saber'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Saber_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Nopoder_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Noservir_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Servir'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_VerbosNarrativos_Web/Servir_Web.m4v",
+          "b": "videos/LSM_VerbosNarrativos_Web/Noquerer_Web.m4v",
+          "c": "videos/LSM_VerbosNarrativos_Web/Querer_Web.m4v"
+        }
+      }
+    ]
+  },
+  {
+    "module_code": "MOD-22",
+    "title": "Evaluación: Verduras",
+    "type": "multiple_choice",
+    "questions": [
+      {
+        "prompt": "Selecciona la seña que representa 'Aguacate'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Aguacate_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Jitomate_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Lechuga_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Ajo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Camote_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Ajo_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Papa_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Betabel'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Calabacita_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Camote_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Betabel_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Calabacita'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Ajo_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Calabaza_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Calabacita_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Calabaza'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Calabaza_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Chicharo_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Hongo_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Camote'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Calabaza_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Camote_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Cebolla_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Cebolla'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Frijol_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Betabel_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Cebolla_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Chicharo'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Chicharo_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Lechuga_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Zanahoria_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Chile'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Chile_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Aguacate_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Jitomate_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Elote'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Ajo_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Cebolla_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Elote_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Frijol'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Frijol_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Calabacita_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Betabel_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Hongo'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Frijol_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Hongo_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Camote_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Jitomate'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Jitomate_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Aguacate_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Cebolla_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Lechuga'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Camote_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Zanahoria_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Lechuga_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Nopal'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Aguacate_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Papa_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Nopal_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Papá'.",
+        "answer": "b",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Elote_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Papa_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Nopal_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Pepino'.",
+        "answer": "c",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Camote_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Frijol_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Pepino_Web.m4v"
+        }
+      },
+      {
+        "prompt": "Selecciona la seña que representa 'Zanahoria'.",
+        "answer": "a",
+        "options": {
+          "a": "videos/LSM_Verduras_Web/Zanahoria_Web.m4v",
+          "b": "videos/LSM_Verduras_Web/Nopal_Web.m4v",
+          "c": "videos/LSM_Verduras_Web/Aguacate_Web.m4v"
+        }
+      }
+    ]
+  }
+]
