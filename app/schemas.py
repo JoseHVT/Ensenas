@@ -51,6 +51,7 @@ class Module(ModuleBase):
     id: int
     # Esto le dice a Pydantic que anide la lista de lecciones
     # dentro de la respuesta del modulo
+    created_at: Optional[datetime] = None # <--- AGREGADO (Para coincidir con Android)
     lessons: List[Lesson] = [] 
     class Config:
         from_attributes = True
@@ -93,6 +94,10 @@ class QuizBase(BaseModel):
 
 class QuizCreate(QuizBase):
     pass
+
+# Este esquema permite crear un Quiz y sus preguntas al mismo tiempo
+class QuizCreateFull(QuizBase):
+    questions: List[QuizQuestionCreate]
 
 class Quiz(QuizBase):
     id: int
@@ -155,7 +160,6 @@ class MemoryRunBase(BaseModel):
     streak: Optional[int] = None
     duration_ms: int
     module_id: Optional[int] = None
-    streak: Optional[int] = None
 
 class MemoryRunCreate(MemoryRunBase):
     pass
