@@ -1,6 +1,7 @@
 package com.example.chat_bot.data.repository
 
 import com.example.chat_bot.data.api.ApiService
+import com.example.chat_bot.data.api.RetrofitInstance
 import com.example.chat_bot.data.models.ModuleResponse
 import com.example.chat_bot.data.models.UserProgressRequest
 import com.example.chat_bot.data.models.UserProgressResponse
@@ -13,6 +14,7 @@ import retrofit2.Response
 interface ModulesRepository {
     suspend fun getModules(): Response<List<ModuleResponse>>
     suspend fun updateProgress(token: String, progress: UserProgressRequest): Response<UserProgressResponse>
+
 }
 
 /**

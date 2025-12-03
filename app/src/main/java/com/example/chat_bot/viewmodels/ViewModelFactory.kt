@@ -45,9 +45,7 @@ class ViewModelFactory(
             }
             modelClass.isAssignableFrom(QuizViewModel::class.java) -> {
                 QuizViewModel(
-                    tokenManager = tokenManager,
-                    authViewModel = authViewModel
-                ) as T
+                    tokenManager = TokenManager(context.applicationContext)) as T
             }
             /// Ahora pasamos el ViewModel, no el Repo
             modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {

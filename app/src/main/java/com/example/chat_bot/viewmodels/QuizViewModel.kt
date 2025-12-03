@@ -7,8 +7,11 @@ import com.example.chat_bot.data.auth.TokenManager
 import com.example.chat_bot.data.models.QuizResponse
 import com.example.chat_bot.data.models.QuizQuestionResponse
 import com.example.chat_bot.data.models.QuizAttemptRequest
+import com.example.chat_bot.data.models.UserProgressRequest
 import com.example.chat_bot.data.repositories.QuizRepository
 import com.example.chat_bot.data.repositories.QuizRepositoryImpl
+import com.example.chat_bot.data.repository.ModulesRepository
+import com.example.chat_bot.data.repository.ModulesRepositoryImpl
 import com.example.chat_bot.ui.components.SnackbarController
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -22,42 +25,43 @@ import kotlinx.coroutines.launch
  */
 class QuizViewModel(
     private val tokenManager: TokenManager,
-    private val authViewModel: AuthViewModel,
-    private val quizRepository: QuizRepository = QuizRepositoryImpl(RetrofitInstance.api)
+    // no sw usa  private val authViewModel: AuthViewModel,
+    private val quizRepository: QuizRepository = QuizRepositoryImpl(RetrofitInstance.api),
+    private val modulesRepository: ModulesRepository = ModulesRepositoryImpl(RetrofitInstance.api)
 ) : ViewModel() {
-    
+
     // Estado de carga
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
-    
+
     // Quiz actual
     private val _quiz = MutableStateFlow<QuizResponse?>(null)
     val quiz: StateFlow<QuizResponse?> = _quiz.asStateFlow()
-    
+
     // Preguntas del quiz
     private val _questions = MutableStateFlow<List<QuizQuestionResponse>>(emptyList())
     val questions: StateFlow<List<QuizQuestionResponse>> = _questions.asStateFlow()
-    
+
     // Respuestas del usuario
     private val _userAnswers = MutableStateFlow<MutableMap<Int, Int>>(mutableMapOf())
     val userAnswers: StateFlow<Map<Int, Int>> = _userAnswers.asStateFlow()
-    
+
     // Índice de pregunta actual
     private val _currentQuestionIndex = MutableStateFlow(0)
     val currentQuestionIndex: StateFlow<Int> = _currentQuestionIndex.asStateFlow()
-    
+
     // Tiempo restante (en segundos)
     private val _timeRemaining = MutableStateFlow(0)
     val timeRemaining: StateFlow<Int> = _timeRemaining.asStateFlow()
-    
+
     // Score del intento
     private val _score = MutableStateFlow<Float?>(null)
     val score: StateFlow<Float?> = _score.asStateFlow()
-    
+
     // Estado de error
     private val _errorMessage = MutableStateFlow<String?>(null)
     val errorMessage: StateFlow<String?> = _errorMessage.asStateFlow()
-    
+
     /**
      * Carga un quiz desde el backend
      */
@@ -65,10 +69,10 @@ class QuizViewModel(
         viewModelScope.launch {
             _isLoading.value = true
             _errorMessage.value = null
-            
+
             try {
                 val response = quizRepository.getQuizDetails(quizId)
-                
+
                 if (response.isSuccessful && response.body() != null) {
                     val quizData = response.body()!!
                     _quiz.value = quizData
@@ -90,7 +94,7 @@ class QuizViewModel(
             }
         }
     }
-    
+
     /**
      * Registra la respuesta del usuario para una pregunta
      */
@@ -99,7 +103,7 @@ class QuizViewModel(
         answers[questionId] = answerId
         _userAnswers.value = answers
     }
-    
+
     /**
      * Avanza a la siguiente pregunta
      */
@@ -108,7 +112,7 @@ class QuizViewModel(
             _currentQuestionIndex.value += 1
         }
     }
-    
+
     /**
      * Retrocede a la pregunta anterior
      */
@@ -117,7 +121,7 @@ class QuizViewModel(
             _currentQuestionIndex.value -= 1
         }
     }
-    
+
     /**
      * Envía el intento de quiz al backend
      */
@@ -125,23 +129,28 @@ class QuizViewModel(
         viewModelScope.launch {
             _isLoading.value = true
             _errorMessage.value = null
-            
+
             try {
                 val token = tokenManager.getAuthToken().first()
                 if (token == null) {
                     _errorMessage.value = "No hay sesión activa"
                     return@launch
                 }
-                
+                //ref del quizz act
+                val currentQuiz = _quiz.value
                 val quizId = _quiz.value?.id ?: return@launch
+
                 val totalQuestions = _questions.value.size
                 val correctAnswers = calculateCorrectAnswers()
-                val timeSpent = (_quiz.value?.questions?.size ?: 10) * 60 - _timeRemaining.value
-                
+                //Total inicial - Tiempo restante
+                val timeSpent = (_timeRemaining.value.let { start ->
+                    (questions.value.size * 60).coerceAtLeast(60) - start
+                }).coerceAtLeast(0)
+
                 // Convertir Map<Int, Int> a Map<String, String>
                 val answersAsStrings = _userAnswers.value.mapKeys { it.key.toString() }
                     .mapValues { it.value.toString() }
-                
+
                 val attemptRequest = QuizAttemptRequest(
                     quizId = quizId,
                     answers = answersAsStrings,
@@ -149,16 +158,23 @@ class QuizViewModel(
                     total = totalQuestions,
                     durationMs = timeSpent * 1000
                 )
-                
+
                 val response = quizRepository.submitQuizAttempt(
                     token = "Bearer $token",
                     attempt = attemptRequest
                 )
-                
+
                 if (response.isSuccessful && response.body() != null) {
                     val result = response.body()!!
-                    _score.value = (result.score.toFloat() / result.total.toFloat()) * 100f
+                    val finalScore= (result.score.toFloat() / result.total.toFloat()) * 100f
+                    _score.value = finalScore // Actualizamos el score observable
+
                     SnackbarController.showSuccess("Quiz completado: ${result.score}/${result.total}")
+
+                    if (finalScore >= 60.0 && currentQuiz != null) {
+                        updateModuleProgress(token, currentQuiz.moduleId)
+                    }
+
                 } else {
                     val errorMsg = "Error al enviar quiz"
                     _errorMessage.value = errorMsg
@@ -173,7 +189,17 @@ class QuizViewModel(
             }
         }
     }
-    
+    private suspend fun updateModuleProgress(token: String, moduleId: Int) {
+        try {
+            val request = UserProgressRequest(moduleId = moduleId, percent = 100)
+            val response = modulesRepository.updateProgress("Bearer $token", request)
+            if (response.isSuccessful) {
+                android.util.Log.d("QuizViewModel", "Progreso actualizado: 100%")
+            }
+        } catch (e: Exception) {
+            android.util.Log.e("QuizViewModel", "Error actualizando progreso: ${e.message}")
+        }
+    }
     /**
      * Calcula el número de respuestas correctas validando contra las preguntas
      */
@@ -181,7 +207,7 @@ class QuizViewModel(
         val questions = _questions.value
         val userAnswers = _userAnswers.value
         var correctCount = 0
-        
+
         userAnswers.forEach { (questionId, userAnswerId) ->
             // Buscar la pregunta correspondiente
             val question = questions.find { it.id == questionId }
@@ -190,16 +216,16 @@ class QuizViewModel(
                 // La respuesta correcta está en question.answer como String (e.g., "A", "B", "C")
                 val correctAnswerKey = question.answer
                 val userAnswerKey = userAnswerId.toString() // Convertir ID a key
-                
+
                 if (correctAnswerKey == userAnswerKey) {
                     correctCount++
                 }
             }
         }
-        
+
         return correctCount
     }
-    
+
     /**
      * Reinicia el quiz
      */
@@ -210,14 +236,18 @@ class QuizViewModel(
         val questionsCount = _quiz.value?.questions?.size ?: 10
         _timeRemaining.value = questionsCount * 60
     }
-    
+
     /**
      * Actualiza el tiempo restante
      */
     fun updateTime(seconds: Int) {
         _timeRemaining.value = seconds
     }
-    
+
+    private fun showError(msg: String) {
+        _errorMessage.value = msg
+        SnackbarController.showError(msg)
+    }
     /**
      * Limpia el mensaje de error
      */
