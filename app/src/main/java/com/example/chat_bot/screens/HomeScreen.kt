@@ -44,7 +44,8 @@ fun HomeScreen(
     onNavigateToAchievements: () -> Unit = {},
     onNavigateToLeaderboard: () -> Unit = {},
     onNavigateToChatBot: () -> Unit = {},
-    onNavigateToMemoryGame: (moduleId: Int) -> Unit = {}
+    onNavigateToMemoryGame: (moduleId: Int) -> Unit = {},
+    onNavigateToStatistics: () -> Unit = {}
 ) {
     val context = LocalContext.current
     val viewModel: HomeViewModel = viewModel(factory = ViewModelFactory(context))
@@ -168,18 +169,6 @@ fun HomeScreen(
                 }
             }
         }
-        Spacer(modifier = Modifier.height(24.dp))
-        
-        // XP Progress Bar
-        AnimatedVisibility(
-            visible = isVisible,
-            enter = fadeIn() + slideInVertically(),
-            label = "XP Progress"
-        ) {
-            Column(modifier = Modifier.padding(horizontal = 24.dp)) {
-                XPProgressCard(currentXP = 245, dailyGoal = 50)
-            }
-        }
         
         Spacer(modifier = Modifier.height(24.dp))
         
@@ -274,7 +263,7 @@ fun HomeScreen(
                     title = "Estadísticas",
                     icon = Icons.Default.Analytics,
                     color = AzulInfo,
-                    onClick = onNavigateToLeaderboard,
+                    onClick = onNavigateToStatistics,
                     modifier = Modifier.weight(1f)
                 )
             }
@@ -290,13 +279,6 @@ fun HomeScreen(
                     icon = Icons.Default.SportsEsports,
                     color = RojoError.copy(alpha = 0.8f),
                     onClick = { onNavigateToMemoryGame(0) }, // moduleId 0 para modo libre
-                    modifier = Modifier.weight(1f)
-                )
-                MiniQuickAccessCard(
-                    title = "Logros",
-                    icon = Icons.Default.EmojiEvents,
-                    color = AmarilloAdvertencia,
-                    onClick = onNavigateToAchievements,
                     modifier = Modifier.weight(1f)
                 )
             }
@@ -553,15 +535,15 @@ private fun StreakCalendar(currentStreak: Int) {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                val days = listOf("L", "M", "X", "J", "V", "S", "D")
-                // Simular días completados basado en racha actual
-                val completedDays = days.mapIndexed { index, _ -> index < currentStreak.coerceAtMost(7) }
+                val days = listOf("L", "M", "M", "J", "V", "S", "D")
+                // Marcar miércoles (M) como el día actual con racha activa
+                val completedDays = listOf(true, true, true, false, false, false, false) // L, M, M completados
                 
                 days.forEachIndexed { index, day ->
                     DayCircle(
                         day = day,
                         isCompleted = completedDays[index],
-                        isCurrent = index == (currentStreak - 1).coerceIn(0, 6)
+                        isCurrent = index == 2 // Miércoles es el día actual
                     )
                 }
             }

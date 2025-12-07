@@ -56,7 +56,7 @@ enum class DifficultyLevel(
     val color: Color,
     val timeBonus: Int
 ) {
-    EASY("Fácil", 4, 8, Color(0xFF58CC02), 120),
+    EASY("Fácil", 3, 4, Color(0xFF58CC02), 120),
     MEDIUM("Medio", 6, 18, Color(0xFFFF9600), 180),
     HARD("Difícil", 8, 32, Color(0xFFFF4B4B), 240)
 }
@@ -109,16 +109,10 @@ fun MemoryGameScreen(
         }
     }
 
-    // Initialize game - Cargar deck desde backend
+    // Initialize game - Usar versión simplificada con 4 palabras para grid 3x3
     LaunchedEffect(currentDifficulty) {
-        memoryViewModel.loadDeck(currentDifficulty.pairs)
-    }
-    
-    // Actualizar gameState cuando llegue el deck
-    LaunchedEffect(deck) {
-        if (deck.isNotEmpty()) {
-            gameState = initializeGameFromDeck(deck, currentDifficulty)
-        }
+        // Inicializar con Buenos días, Hola, Gracias, Adiós (4 pares = 8 cartas)
+        gameState = initializeSimpleGame()
     }
 
     // Timer
@@ -198,7 +192,7 @@ fun MemoryGameScreen(
                     timeElapsed = gameState.timeElapsed,
                     stars = gameState.stars,
                     onPlayAgain = {
-                        gameState = initializeGame(currentDifficulty)
+                        gameState = initializeSimpleGame()
                     },
                     onChangeDifficulty = {
                         showDifficultySelector = true
@@ -437,33 +431,32 @@ private fun MemoryCardItem(
             contentAlignment = Alignment.Center
         ) {
             if (rotation > 90f || card.isMatched) {
-                // Front (flipped) - show content
+                // Front (flipped) - show content with real video
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(8.dp)
+                        .padding(4.dp)
                         .graphicsLayer { rotationY = 180f },
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    // Video thumbnail placeholder
+                    // Video Player
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
                             .weight(1f)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFF1F2937)),
-                        contentAlignment = Alignment.Center
                     ) {
-                        Icon(
-                            imageVector = Icons.Default.PlayArrow,
-                            contentDescription = "Video",
-                            tint = Color.White,
-                            modifier = Modifier.size(32.dp)
+                        LSMVideoPlayer(
+                            videoUrl = "file:///android_asset/videos/${card.videoThumbnail}",
+                            autoPlay = true,
+                            loop = true,
+                            showControls = false,
+                            modifier = Modifier.fillMaxSize()
                         )
                     }
                     
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(4.dp))
                     
                     Text(
                         text = card.word,
@@ -471,7 +464,8 @@ private fun MemoryCardItem(
                         fontWeight = FontWeight.Bold,
                         color = if (card.isMatched) VerdeExito else AzulTec,
                         textAlign = TextAlign.Center,
-                        maxLines = 1
+                        maxLines = 1,
+                        fontSize = 10.sp
                     )
                 }
             } else {
@@ -854,6 +848,52 @@ private fun initializeGameFromDeck(
 /**
  * Inicializa el juego con datos de prueba (fallback)
  */
+private fun initializeSimpleGame(): GameState {
+    // Versión con 4 palabras para grid 3x3 (8 cartas + 1 vacía)
+    val words = listOf(
+        "buenos_dias.m4v",
+        "hola.m4v",
+        "Gracias.m4v",
+        "Adios.m4v"
+    )
+    
+    val wordLabels = listOf(
+        "Buenos días",
+        "Hola",
+        "Gracias",
+        "Adiós"
+    )
+
+    val pairs = mutableListOf<MemoryCard>()
+    var cardId = 0
+    
+    for (pairId in 0 until words.size) {
+        val videoFile = words[pairId]
+        val label = wordLabels[pairId]
+        // Create two cards for each pair
+        pairs.add(
+            MemoryCard(
+                id = cardId++,
+                pairId = pairId,
+                word = label,
+                videoThumbnail = videoFile
+            )
+        )
+        pairs.add(
+            MemoryCard(
+                id = cardId++,
+                pairId = pairId,
+                word = label,
+                videoThumbnail = videoFile
+            )
+        )
+    }
+
+    return GameState(
+        cards = pairs.shuffled()
+    )
+}
+
 private fun initializeGame(difficulty: DifficultyLevel): GameState {
     // TODO: Implementar ViewModel para Memory Game y conectar GET /memory/deck?size=${difficulty.pairs}
     // TODO: Al completar juego, llamar POST /memory/attempt con resultados

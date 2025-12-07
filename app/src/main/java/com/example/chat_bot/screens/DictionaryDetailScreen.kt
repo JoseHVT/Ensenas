@@ -28,6 +28,7 @@ import com.example.chat_bot.ui.components.*
 import com.example.chat_bot.ui.theme.AzulTec
 import com.example.chat_bot.ui.theme.BlancoTec
 import com.example.chat_bot.ui.theme.VerdeExito
+import com.example.chat_bot.utils.VideoPathMapper
 import kotlinx.coroutines.launch
 
 data class SignDetail(
@@ -49,24 +50,110 @@ fun DictionaryDetailScreen(
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
     
-    // Mock data - esto se reemplazará con datos del backend
-    val signDetail = remember {
+    // Obtener información de la palabra usando VideoPathMapper
+    val videoPath = VideoPathMapper.getFullVideoPath(signWord)
+    val hasVideo = VideoPathMapper.hasVideo(signWord)
+    
+    // Datos específicos según la palabra
+    val signDetail = remember(signWord) {
+        val definition = when(signWord.lowercase()) {
+            "amarillo" -> "Color primario brillante como el sol."
+            "azul" -> "Color del cielo y el mar."
+            "rojo" -> "Color intenso como la sangre o el fuego."
+            "verde" -> "Color de la naturaleza y las plantas."
+            "hola" -> "Saludo cordial para iniciar una conversación."
+            "buenos días", "buenos dias" -> "Saludo matutino formal."
+            "mamá", "mama" -> "Madre, progenitora femenina."
+            "papá", "papa" -> "Padre, progenitor masculino."
+            "gato" -> "Animal doméstico felino."
+            "perro" -> "Animal doméstico canino, mejor amigo del hombre."
+            "ratón", "raton" -> "Pequeño roedor."
+            else -> "Seña en Lengua de Señas Mexicana (LSM)."
+        }
+        
+        val examples = when(signWord.lowercase()) {
+            "hola" -> listOf(
+                "¡Hola! ¿Cómo estás?",
+                "Hola, mucho gusto en conocerte",
+                "Hola, buenos días"
+            )
+            "buenos días", "buenos dias" -> listOf(
+                "Buenos días, ¿cómo amaneciste?",
+                "Buenos días a todos",
+                "Te deseo buenos días"
+            )
+            "mamá", "mama" -> listOf(
+                "Mi mamá me ayuda con la tarea",
+                "Mamá, ¿puedo salir a jugar?",
+                "Le dije a mamá que la quiero mucho"
+            )
+            "amarillo" -> listOf(
+                "El sol es amarillo",
+                "Mi color favorito es el amarillo",
+                "Las flores amarillas son hermosas"
+            )
+            "mamá", "mama" -> listOf(
+                "Mi mamá me quiere mucho",
+                "Mamá cocina delicioso",
+                "Mamá me ayuda con la tarea"
+            )
+            "papá", "papa" -> listOf(
+                "Papá trabaja muy duro",
+                "Mi papá me lleva a la escuela",
+                "Papá juega conmigo"
+            )
+            "azul" -> listOf(
+                "El cielo es azul",
+                "Me gusta el azul marino",
+                "Tengo una camisa azul"
+            )
+            "gato" -> listOf(
+                "Tengo un gato en casa",
+                "El gato juega con la pelota",
+                "Mi gato se llama Michi"
+            )
+            else -> listOf(
+                "Uso en conversación cotidiana",
+                "Práctica con señas relacionadas",
+                "Integración en oraciones completas"
+            )
+        }
+        
+        val category = when {
+            videoPath.contains("Colores") -> "Colores"
+            videoPath.contains("Animales") -> "Animales"
+            videoPath.contains("Saludos") -> "Saludos y Cortesías"
+            videoPath.contains("Personas") -> "Personas y Familia"
+            videoPath.contains("Numero") -> "Números"
+            videoPath.contains("Abecedario") -> "Abecedario"
+            else -> "General"
+        }
+        
         SignDetail(
             word = signWord,
-            category = "Colores",
-            videoPath = "amarillo_web", // Sin extensión, ExoPlayer la busca automáticamente
-            definition = "Color primario que se obtiene mezclando rojo y verde en el espectro de luz.",
-            examples = listOf(
-                "El sol es amarillo",
-                "Mi camiseta favorita es amarilla",
-                "Las flores de este jardín son amarillas"
-            ),
-            relatedSigns = listOf("Naranja", "Dorado", "Limón")
+            category = category,
+            videoPath = videoPath,
+            definition = definition,
+            examples = examples,
+            relatedSigns = emptyList()
         )
     }
     
-    // Construir URI del video desde resources
-    val videoUri = "android.resource://${context.packageName}/raw/${signDetail.videoPath}"
+    // Cargar video desde assets
+    val videoFileName = when(signWord.lowercase()) {
+        "hola" -> "hola.m4v"
+        "adios", "adiós" -> "Adios.m4v"
+        "buenos dias", "buenos días" -> "buenos_dias.m4v"
+        "buenas noches" -> "buenas_noches.m4v"
+        "gracias" -> "Gracias.m4v"
+        "mama", "mamá" -> "mama.m4v"
+        "papa", "papá" -> "papa.m4v"
+        "amarillo" -> "amarillo.m4v"
+        "azul" -> "azul.m4v"
+        "rojo" -> "rojo.m4v"
+        else -> "hola.m4v" // video por defecto
+    }
+    val videoUri = "file:///android_asset/videos/$videoFileName"
     
     Scaffold(
         snackbarHost = {

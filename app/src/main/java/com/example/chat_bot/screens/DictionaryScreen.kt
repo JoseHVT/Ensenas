@@ -8,12 +8,13 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.chat_bot.ui.components.*
@@ -207,6 +208,8 @@ fun SignCard(
     sign: Sign,
     onClick: () -> Unit
 ) {
+    val iconData = getSignIcon(sign.word)
+    
     Card(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
@@ -218,18 +221,18 @@ fun SignCard(
             modifier = Modifier.padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Placeholder para thumbnail (después será imagen real)
+            // Icono asociado a la palabra
             Box(
                 modifier = Modifier
                     .size(60.dp)
-                    .background(AzulTec.copy(alpha = 0.1f), RoundedCornerShape(8.dp)),
+                    .background(iconData.backgroundColor, RoundedCornerShape(8.dp)),
                 contentAlignment = Alignment.Center
             ) {
-                Text(
-                    text = sign.word.first().toString(),
-                    style = MaterialTheme.typography.headlineMedium,
-                    color = AzulTec,
-                    fontWeight = FontWeight.Bold
+                Icon(
+                    imageVector = iconData.icon,
+                    contentDescription = sign.word,
+                    tint = iconData.iconColor,
+                    modifier = Modifier.size(36.dp)
                 )
             }
             
@@ -249,6 +252,79 @@ fun SignCard(
                 )
             }
         }
+    }
+}
+
+data class SignIconData(
+    val icon: ImageVector,
+    val backgroundColor: Color,
+    val iconColor: Color
+)
+
+// Función que retorna el icono apropiado para cada palabra
+@Composable
+fun getSignIcon(word: String): SignIconData {
+    return when (word.lowercase()) {
+        "hola" -> SignIconData(
+            icon = Icons.Default.WavingHand,
+            backgroundColor = AmarilloOro.copy(alpha = 0.15f),
+            iconColor = AmarilloOro
+        )
+        "buenos días", "buenos dias" -> SignIconData(
+            icon = Icons.Default.WbSunny,
+            backgroundColor = NaranjaEnergia.copy(alpha = 0.15f),
+            iconColor = NaranjaEnergia
+        )
+        "mamá", "mama" -> SignIconData(
+            icon = Icons.Default.FamilyRestroom,
+            backgroundColor = Color(0xFFF8BBD0).copy(alpha = 0.3f),
+            iconColor = Color(0xFFEC407A)
+        )
+        "papá", "papa" -> SignIconData(
+            icon = Icons.Default.Person,
+            backgroundColor = AzulInfo.copy(alpha = 0.15f),
+            iconColor = AzulInfo
+        )
+        "azul" -> SignIconData(
+            icon = Icons.Default.Circle,
+            backgroundColor = AzulTec.copy(alpha = 0.15f),
+            iconColor = AzulTec
+        )
+        "ratón", "raton" -> SignIconData(
+            icon = Icons.Default.Pets,
+            backgroundColor = GrisOscuro.copy(alpha = 0.15f),
+            iconColor = GrisOscuro
+        )
+        "amarillo" -> SignIconData(
+            icon = Icons.Default.Circle,
+            backgroundColor = Color(0xFFFFD54F).copy(alpha = 0.2f),
+            iconColor = Color(0xFFFFD54F)
+        )
+        "rojo" -> SignIconData(
+            icon = Icons.Default.Circle,
+            backgroundColor = RojoError.copy(alpha = 0.15f),
+            iconColor = RojoError
+        )
+        "verde" -> SignIconData(
+            icon = Icons.Default.Circle,
+            backgroundColor = VerdeExito.copy(alpha = 0.15f),
+            iconColor = VerdeExito
+        )
+        "gato" -> SignIconData(
+            icon = Icons.Default.Pets,
+            backgroundColor = NaranjaEnergia.copy(alpha = 0.15f),
+            iconColor = NaranjaEnergia
+        )
+        "perro" -> SignIconData(
+            icon = Icons.Default.Pets,
+            backgroundColor = VerdeExito.copy(alpha = 0.15f),
+            iconColor = VerdeExito.copy(alpha = 0.8f)
+        )
+        else -> SignIconData(
+            icon = Icons.Default.Translate,
+            backgroundColor = AzulTec.copy(alpha = 0.1f),
+            iconColor = AzulTec
+        )
     }
 }
 

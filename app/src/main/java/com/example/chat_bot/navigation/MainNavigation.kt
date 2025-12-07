@@ -189,6 +189,9 @@ fun MainNavigation() {
                         },
                         onNavigateToMemoryGame = { moduleId ->
                             navController.navigate(Screen.MemoryGame.createRoute(moduleId))
+                        },
+                        onNavigateToStatistics = {
+                            navController.navigate(Screen.Statistics.route)
                         }
                     )
                 }
@@ -333,6 +336,15 @@ fun MainNavigation() {
                             navController.navigate(Screen.Leaderboard.createRoute(newType)) {
                                 popUpTo(Screen.Leaderboard.route) { inclusive = true }
                             }
+                        }
+                    )
+                }
+                
+                // Statistics Screen
+                composable(Screen.Statistics.route) {
+                    StatisticsScreen(
+                        onNavigateBack = {
+                            navController.popBackStack()
                         }
                     )
                 }

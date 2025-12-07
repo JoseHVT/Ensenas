@@ -34,6 +34,7 @@ import kotlin.math.roundToInt
 
 import com.example.chat_bot.ui.components.rememberHapticFeedback
 import com.example.chat_bot.ui.components.LSMVideoPlayer
+import com.example.chat_bot.utils.VideoPathMapper
 // ============================================
 // DATA MODELS
 // ============================================
@@ -93,28 +94,39 @@ fun QuizScreen(
     val isLoading by viewModel.isLoading.collectAsState()
     val errorMessage by viewModel.errorMessage.collectAsState()
     
-    // Cargar quiz al iniciar
+    // Cargar quiz al iniciar - Usar datos MOCK para demo
     LaunchedEffect(quizId) {
-        viewModel.loadQuiz(quizId)
+        // viewModel.loadQuiz(quizId) // Comentado para usar mock
     }
     
-    // Mapear QuizQuestionResponse a QuizQuestion para compatibilidad con UI existente
-    val uiQuestions = remember(questions) {
-        questions.mapIndexed { index, q ->
+    // MOCK DATA - 2 Preguntas con videos que funcionan 100% (Buenos días y Hola)
+    val uiQuestions = remember {
+        listOf(
             QuizQuestion(
-                id = q.id,
-                prompt = q.prompt,
-                options = q.options?.values?.toList() ?: listOf("Opción A", "Opción B", "Opción C", "Opción D"),
-                correctAnswer = q.answer ?: "",
+                id = 1,
+                prompt = "¿Cómo se dice 'Buenos días'?",
+                options = listOf(
+                    "buenos_dias.m4v",
+                    "hola.m4v",
+                    "Gracias.m4v"
+                ),
+                correctAnswer = "buenos_dias.m4v",
                 videoUrl = null,
-                type = when (quiz?.type) {
-                    "multiple_choice" -> QuizType.MULTIPLE_CHOICE_VIDEO
-                    "complete" -> QuizType.TRANSLATION
-                    "pair" -> QuizType.GESTURE_RECOGNITION
-                    else -> QuizType.MULTIPLE_CHOICE_VIDEO
-                }
+                type = QuizType.GESTURE_RECOGNITION
+            ),
+            QuizQuestion(
+                id = 2,
+                prompt = "¿Cómo se dice 'Hola'?",
+                options = listOf(
+                    "buenos_dias.m4v",
+                    "hola.m4v",
+                    "Adios.m4v"
+                ),
+                correctAnswer = "hola.m4v",
+                videoUrl = null,
+                type = QuizType.GESTURE_RECOGNITION
             )
-        }
+        )
     }
 
     var quizState by remember {
@@ -544,13 +556,25 @@ fun QuestionContent(
             modifier = Modifier.fillMaxWidth()
         ) {
             question.options.forEach { option ->
-                AnswerOptionCard(
-                    option = option,
-                    isSelected = selectedAnswer == option,
-                    isCorrect = if (selectedAnswer == option) isAnswerCorrect else null,
-                    showCorrectAnswer = selectedAnswer != null && option == question.correctAnswer,
-                    onClick = { if (selectedAnswer == null) onAnswerSelected(option) }
-                )
+                if (question.type == QuizType.GESTURE_RECOGNITION) {
+                    // Mostrar video como opción
+                    VideoAnswerOptionCard(
+                        videoPath = option,
+                        isSelected = selectedAnswer == option,
+                        isCorrect = if (selectedAnswer == option) isAnswerCorrect else null,
+                        showCorrectAnswer = selectedAnswer != null && option == question.correctAnswer,
+                        onClick = { if (selectedAnswer == null) onAnswerSelected(option) }
+                    )
+                } else {
+                    // Mostrar texto como opción
+                    AnswerOptionCard(
+                        option = option,
+                        isSelected = selectedAnswer == option,
+                        isCorrect = if (selectedAnswer == option) isAnswerCorrect else null,
+                        showCorrectAnswer = selectedAnswer != null && option == question.correctAnswer,
+                        onClick = { if (selectedAnswer == null) onAnswerSelected(option) }
+                    )
+                }
             }
         }
     }
@@ -652,12 +676,8 @@ private fun AnswerOptionCard(
 @Composable
 private fun VideoPlayerPlaceholder(videoUrl: String) {
     val context = LocalContext.current
-    // Construir URI del video desde resources o URL
-    val videoUri = if (videoUrl.startsWith("http")) {
-        videoUrl
-    } else {
-        "android.resource://${context.packageName}/raw/$videoUrl"
-    }
+    // Cargar video desde assets
+    val videoUri = "file:///android_asset/$videoUrl"
     
     Card(
         modifier = Modifier
@@ -1056,7 +1076,7 @@ fun checkQuizComplete(
         currentState.lives == 3 -> 50
         else -> 0
     }
-    
+
     onStateUpdate(
         currentState.copy(
             isQuizComplete = true,
@@ -1064,4 +1084,94 @@ fun checkQuizComplete(
             earnedXP = currentState.earnedXP + bonusXP
         )
     )
+}
+
+// ============================================
+// VIDEO ANSWER OPTION CARD
+// ============================================
+
+@Composable
+private fun VideoAnswerOptionCard(
+    videoPath: String,
+    isSelected: Boolean,
+    isCorrect: Boolean?,
+    showCorrectAnswer: Boolean,
+    onClick: () -> Unit
+) {
+    val context = LocalContext.current
+    val videoUri = "file:///android_asset/videos/$videoPath"
+    
+    val backgroundColor = when {
+        isSelected && isCorrect == true -> VerdeExito.copy(alpha = 0.2f)
+        isSelected && isCorrect == false -> Color(0xFFFF4B4B).copy(alpha = 0.2f)
+        showCorrectAnswer -> VerdeExito.copy(alpha = 0.1f)
+        else -> Color.White
+    }
+
+    val borderColor = when {
+        isSelected && isCorrect == true -> VerdeExito
+        isSelected && isCorrect == false -> Color(0xFFFF4B4B)
+        showCorrectAnswer -> VerdeExito
+        else -> Color(0xFFE5E7EB)
+    }
+
+    Card(
+        onClick = onClick,
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(180.dp),
+        colors = CardDefaults.cardColors(containerColor = backgroundColor),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = if (isSelected) 8.dp else 2.dp
+        ),
+        shape = RoundedCornerShape(16.dp),
+        border = BorderStroke(3.dp, borderColor)
+    ) {
+        Box(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            // Video Player
+            LSMVideoPlayer(
+                videoUrl = videoUri,
+                autoPlay = true,
+                loop = true,
+                showControls = false,
+                modifier = Modifier.fillMaxSize()
+            )
+            
+            // Overlay con icono de resultado
+            when {
+                isCorrect == true || showCorrectAnswer -> {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(VerdeExito.copy(alpha = 0.3f)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.CheckCircle,
+                            contentDescription = "Correcto",
+                            tint = Color.White,
+                            modifier = Modifier.size(64.dp)
+                        )
+                    }
+                }
+                isCorrect == false -> {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Color(0xFFFF4B4B).copy(alpha = 0.3f)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Cancel,
+                            contentDescription = "Incorrecto",
+                            tint = Color.White,
+                            modifier = Modifier.size(64.dp)
+                        )
+                    }
+                }
+            }
+        }
+    }
 }

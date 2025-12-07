@@ -22,6 +22,7 @@ sealed class Screen(val route: String) {
     object Leaderboard : Screen("leaderboard/{type}") {
         fun createRoute(type: String) = "leaderboard/$type"
     }
+    object Statistics : Screen("statistics")
     
     // Settings Screens
     object NotificationsSettings : Screen("settings/notifications")
